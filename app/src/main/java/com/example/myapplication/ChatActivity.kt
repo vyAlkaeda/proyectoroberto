@@ -28,7 +28,7 @@ class ChatActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ForumScreen()
+                    ChatScreen()
                 }
             }
         }
@@ -37,9 +37,9 @@ class ChatActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ForumScreen() {
+fun ChatScreen() {
     val viewModel: ChatViewModel = viewModel()
-    var commentText by remember { mutableStateOf("") }
+    var messageText by remember { mutableStateOf("") }
     val messages by viewModel.messages.collectAsState()
 
     Column(
@@ -47,9 +47,9 @@ fun ForumScreen() {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        // Título del foro
+        // Título del chat
         Text(
-            text = "Foro de Discusión",
+            text = "Chat",
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier
                 .fillMaxWidth()
@@ -57,7 +57,7 @@ fun ForumScreen() {
             textAlign = TextAlign.Center
         )
 
-        // Comentarios
+        // Mensajes
         LazyColumn(
             modifier = Modifier
                 .weight(1f)
@@ -65,12 +65,12 @@ fun ForumScreen() {
             reverseLayout = true
         ) {
             items(messages) { message ->
-                CommentCard(message)
+                MessageBubble(message)
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
 
-        // Campo de entrada de comentario
+        // Campo de entrada de mensaje
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -78,12 +78,12 @@ fun ForumScreen() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             TextField(
-                value = commentText,
-                onValueChange = { commentText = it },
+                value = messageText,
+                onValueChange = { messageText = it },
                 modifier = Modifier
                     .weight(1f)
                     .padding(end = 8.dp),
-                placeholder = { Text("Escribe un comentario...") },
+                placeholder = { Text("Escribe un mensaje...") },
                 colors = TextFieldDefaults.textFieldColors(
                     containerColor = MaterialTheme.colorScheme.surface
                 )
@@ -91,72 +91,50 @@ fun ForumScreen() {
 
             Button(
                 onClick = {
-                    if (commentText.isNotBlank()) {
-                        viewModel.sendMessage(commentText)
-                        commentText = ""
+                    if (messageText.isNotBlank()) {
+                        viewModel.sendMessage(messageText)
+                        messageText = ""
                     }
                 }
             ) {
-                Text("Publicar")
+                Text("Enviar")
             }
         }
     }
 }
 
 @Composable
-fun CommentCard(message: ChatMessage) {
-    val dateFormat = remember { SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()) }
+fun MessageBubble(message: ChatMessage) {
+    val dateFormat = remember { SimpleDateFormat("HH:mm", Locale.getDefault()) }
     
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        shape = RoundedCornerShape(8.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = if (message.isFromUser) 
-                MaterialTheme.colorScheme.primaryContainer 
-            else 
-                MaterialTheme.colorScheme.secondaryContainer
-        )
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = if (message.isFromUser) Alignment.End else Alignment.Start
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
+        Surface(
+            shape = RoundedCornerShape(8.dp),
+            color = if (message.isFromUser) 
+                MaterialTheme.colorScheme.primary 
+            else 
+                MaterialTheme.colorScheme.secondary,
+            modifier = Modifier.padding(vertical = 4.dp)
         ) {
-            // Nombre del usuario
-            Text(
-                text = if (message.isFromUser) "Tú" else "Usuario",
-                style = MaterialTheme.typography.titleMedium,
-                color = if (message.isFromUser) 
-                    MaterialTheme.colorScheme.onPrimaryContainer 
-                else 
-                    MaterialTheme.colorScheme.onSecondaryContainer
-            )
-            
-            Spacer(modifier = Modifier.height(4.dp))
-            
-            // Contenido del comentario
-            Text(
-                text = message.text,
-                style = MaterialTheme.typography.bodyLarge,
-                color = if (message.isFromUser) 
-                    MaterialTheme.colorScheme.onPrimaryContainer 
-                else 
-                    MaterialTheme.colorScheme.onSecondaryContainer
-            )
-            
-            Spacer(modifier = Modifier.height(4.dp))
-            
-            // Fecha y hora
-            Text(
-                text = dateFormat.format(message.timestamp),
-                style = MaterialTheme.typography.bodySmall,
-                color = if (message.isFromUser) 
-                    MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f) 
-                else 
-                    MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.7f),
-                textAlign = TextAlign.End,
-                modifier = Modifier.align(Alignment.End)
-            )
+            Column(
+                modifier = Modifier.padding(8.dp)
+            ) {
+                Text(
+                    text = message.text,
+                    color = Color.White,
+                    modifier = Modifier.padding(bottom = 4.dp)
+                )
+                Text(
+                    text = dateFormat.format(message.timestamp),
+                    color = Color.White.copy(alpha = 0.7f),
+                    style = MaterialTheme.typography.bodySmall,
+                    textAlign = TextAlign.End,
+                    modifier = Modifier.align(Alignment.End)
+                )
+            }
         }
     }
 } 

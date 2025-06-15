@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TRASLADAR CERDOS ENFERMOS A UN CORRAL DE ENFERMERÍA"
+                        android:textColor="@color/primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Recomendaciones para el corral de enfermería:"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_background"
+                        android:padding="16dp">
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• El corral de enfermería debe tener buena calefacción, tener temperatura adecuada." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• Buena iluminación, reducción de obscuridad en la sala." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• División sólida (divisiones de plástico) de corrales" 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• Corrales pequeños, de fácil acceso." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• Pisos suaves (paja o arena de preferencia)." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• El corral de enfermería debe estar lo más alejado de los corrales o salas sin problemas." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• El corral de enfermería debe tener fácil acceso al agua." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                        <TextView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="wrap_content" 
+                            android:text="• El corral de enfermería debe tener fácil acceso al alimento." 
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@android:color/black"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout> 

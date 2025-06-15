@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tegumentarios_sintomas">
+        <item>Fiebre (39.3°c - 39.8°c): Temperatura corporal elevada que puede indicar infección o enfermedad sistémica.</item>
+        <item>Fiebre (41.5°c): Temperatura muy alta que requiere atención inmediata, puede indicar infección severa.</item>
+        <item>Fiebre (40.5°c - 41.5°c): Fiebre alta que sugiere infección aguda o enfermedad inflamatoria.</item>
+        <item>Fiebre (40°c - 40.5°c): Fiebre moderada que puede indicar infección o respuesta inflamatoria.</item>
+        <item>Fiebre (43°c): Temperatura crítica que puede causar daño orgánico severo.</item>
+        <item>Fiebre (40.3°c): Fiebre moderada que requiere monitoreo.</item>
+        <item>Fiebre (41°c-42°c): Fiebre alta que indica infección severa.</item>
+        <item>Fiebre (41.7°c): Fiebre alta que requiere intervención veterinaria.</item>
+        <item>Fiebre (40°c-42°c): Rango de fiebre que indica infección activa.</item>
+        <item>Deshidratación: Pérdida excesiva de fluidos corporales que puede ser mortal si no se trata.</item>
+        <item>Consumo excesivo de agua (polidipsia): Indicador de deshidratación o enfermedad metabólica.</item>
+        <item>Bajo consumo de agua (adipsia): Signo de enfermedad o malestar general.</item>
+        <item>Cerdo peludo (pelo hirsuto): Pelo áspero y erizado que indica mal estado general.</item>
+        <item>Consumo de orina: Comportamiento anormal que puede indicar deficiencias nutricionales.</item>
+        <item>Salivacion excesiva (sialorrea): Puede indicar problemas digestivos o neurológicos.</item>
+        <item>Inflamación de los ojos (conjuntivitis): Infección o irritación de la membrana ocular.</item>
+        <item>Lagrimeo continuo (epifora): Puede indicar infección o irritación ocular.</item>
+        <item>Enrojecimiento de los ojos: Signo de inflamación o infección ocular.</item>
+        <item>Parpados hinchados (edema palpebral): Inflamación que puede indicar infección o alergia.</item>
+        <item>Ceguera: Pérdida de visión que puede ser temporal o permanente.</item>
+        <item>Color azul de los ojos (cornea opaca): Indicador de enfermedad ocular avanzada.</item>
+        <item>Lagañas: Secreción ocular que puede indicar infección.</item>
+        <item>Edema conjuntival (quemosis): Inflamación severa de la conjuntiva.</item>
+        <item>Resequedad de ojos (queratoconjuntivitis seca): Falta de lubricación ocular.</item>
+        <item>Cola quemada (necrosis de cola): Muerte del tejido en la cola.</item>
+        <item>Orejas quemadas (necrosis de oreja): Muerte del tejido en las orejas.</item>
+        <item>Ulcera en pezuñas: Lesión abierta en las pezuñas que puede infectarse.</item>
+        <item>Ulcera en la piel (necrosis cútanea): Muerte del tejido cutáneo.</item>
+        <item>Erosión cutanea en boca y labios (necrosis): Lesiones en la mucosa oral.</item>
+        <item>Edema de la piel (piel hinchada): Acumulación de líquido en los tejidos.</item>
+        <item>Hemorragia subcutánea: Sangrado bajo la piel que forma moretones.</item>
+        <item>Orejas azuladas: Indicador de problemas circulatorios o hipoxia.</item>
+        <item>Piel irritada (dermatitis): Inflamación de la piel por diversas causas.</item>
+        <item>Piel con manchas moradas: Puede indicar problemas circulatorios o hemorragias.</item>
+        <item>Piel con ronchas rojas: Reacción alérgica o infección cutánea.</item>
+        <item>Piel con ronchas negras: Necrosis o hemorragia en la piel.</item>
+        <item>Piel pálida (anemia): Indicador de bajo nivel de glóbulos rojos.</item>
+        <item>Piel amarilla (ictericia): Problemas hepáticos o biliares.</item>
+        <item>Piel azul (cianocis): Falta de oxigenación en la sangre.</item>
+        <item>Piel amoratada: Moretones o hemorragias subcutáneas.</item>
+        <item>Piel enrojecida (eritema): Inflamación o irritación de la piel.</item>
+        <item>Piel grasosa: Alteración en la producción de sebo.</item>
+        <item>Sangre en la orina: Indicador de problemas renales o del tracto urinario.</item>
+        <item>Exceso de orina (oliguria): Producción excesiva de orina.</item>
+        <item>No orina (anuria): Falta de producción de orina, emergencia médica.</item>
+        <item>Moretones (equimosis): Hemorragias subcutáneas que forman manchas.</item>
+    </string-array>
+</resources> 

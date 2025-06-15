@@ -1,5 +1,286 @@
-<activity
-    android:name=".ChatActivity"
-    android:exported="false"
-    android:label="Foro de Discusión"
-    android:theme="@style/Theme.MyApplication" /> 
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:label="Registro" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:label="Mi Perfil" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:label="Foro de Discusión"
+            android:theme="@style/Theme.MyApplication" />
+        <activity
+            android:name=".FAQActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AgeGroupSelectionActivity"
+            android:exported="false"
+            android:label="Selecciona un grupo de Edad"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AgeGroupSelection2Activity"
+            android:exported="false"
+            android:label="Selecciona un grupo de Edad"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SymptomsActivity"
+            android:label="Signos y Síntomas"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".EpicarditisDetailActivity"
+            android:label="EPICARDITIS FIBRINO PURULENTA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".LinfadenitisDetailActivity"
+            android:label="LINFADENITIS MESENTERICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".EdemaBronquialesDetailActivity"
+            android:label="EDEMA DE LINFONODULOS BRONQUIALES"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".VomitoBlanquecinoDetailActivity"
+            android:label="VOMITO BLANQUECINO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".InfartoEsplenicoDetailActivity"
+            android:label="INFARTO ESPLÉNICO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".InfartosVesiculaDetailActivity"
+            android:label="INFARTO DE VESÍCULA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".PetequiaEsplenicaDetailActivity"
+            android:label="PETEQUIA ESPLÉNICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".PancreatitisDetailActivity"
+            android:label="PANCREATITIS"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".EdemaMesocolonDetailActivity"
+            android:label="EDEMA MESOCOLÓNICO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".VomitoSangreDetailActivity"
+            android:label="VOMITO DE SANGRE"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".DolorAbdominalDetailActivity"
+            android:label="DOLOR ABDOMINAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".CalambresAbdominalesDetailActivity"
+            android:label="CALAMBRES ABDOMINALES"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".EdemaIleocecalesDetailActivity"
+            android:label="EDEMA ILEOCÉLECAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".DiarreaCremosaDetailActivity"
+            android:label="DIARRÉA CREMOSA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".DiarreaSanguinolentaDetailActivity"
+            android:label="DIARRÉA SANGUINOLENTA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ExudadoDelgadoDetailActivity"
+            android:label="EXUDADO DELGADO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ExudadoGruesoDetailActivity"
+            android:label="EXUDADO GRUESO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".DiarreaGrasosaDetailActivity"
+            android:label="DIARRÉA GRASA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".DiarreaBlanquecinaDetailActivity"
+            android:label="DIARRÉA BLANQUECINA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".OlorAcidoDetailActivity"
+            android:label="OLOR ACIDO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".UlceracionFocalDetailActivity"
+            android:label="ULCERACIÓN FOCAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".EnteritisFibrinonecroticoDetailActivity"
+            android:label="ENTERITIS FIBRINOCRÓTICO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".HemorragiaHepaticaDetailActivity"
+            android:label="HEMORRAGIA HEPÁTICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ManchasLecheDetailActivity"
+            android:label="MANCHAS DE LECHE"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".EnteritisCatarralDetailActivity"
+            android:label="ENTERITIS CATARAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".OclusionIntestinalDetailActivity"
+            android:label="OCULSIÓN INTESTINAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".PanzaAbultadaDetailActivity"
+            android:label="PANZA ABULTADA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".RechazoAlimentoDetailActivity"
+            android:label="RECHAZO AL ALIMENTO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".UlcerasOralesDetailActivity"
+            android:label="ULCERAS ORALES"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".NecrosisPancreaticaDetailActivity"
+            android:label="NECROSIS PANCREÁTICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".NecropsiaActivity"
+            android:exported="false"
+            android:label="Necropsia"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CabezaAgachadaDetailActivity"
+            android:label="CABEZA AGACHADA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".DepresionDetailActivity"
+            android:label="DEPRESIÓN"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".CabezaDeLadoDetailActivity"
+            android:label="CABEZA DE LADO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisEsofagicaDetailActivity"
+            android:label="PARÁLISIS ESOFÁGICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParaplejiaDetailActivity"
+            android:label="PARAPLEJÍA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisOvaricaDetailActivity"
+            android:label="PARÁLISIS OVÁRICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".AtaxiaDetailActivity"
+            android:label="ATAXIA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".LetargoDetailActivity"
+            android:label="LETARGO"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".AnsiedadDetailActivity"
+            android:label="ANSIEDAD"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ConvulsionesDetailActivity"
+            android:label="CONVULSIONES"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisAnalDetailActivity"
+            android:label="PARÁLISIS ANAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisDuodenalDetailActivity"
+            android:label="PARÁLISIS DUODENAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".IncordinacionDetailActivity"
+            android:label="INCOORDINACIÓN"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisLaringeaDetailActivity"
+            android:label="PARÁLISIS LARÍNGEA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisGastricaDetailActivity"
+            android:label="PARÁLISIS GÁSTRICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisProstaticaDetailActivity"
+            android:label="PARÁLISIS PROSTÁTICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisRenalDetailActivity"
+            android:label="PARÁLISIS RENAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisHepaticaDetailActivity"
+            android:label="PARÁLISIS HEPÁTICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisPancreaticaDetailActivity"
+            android:label="PARÁLISIS PANCREÁTICA"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisBiliarDetailActivity"
+            android:label="PARÁLISIS BILIAR"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisYeyunalDetailActivity"
+            android:label="PARÁLISIS YEYUNAL"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity
+            android:name=".ParalisisIlealDetailActivity"
+            android:label="PARÁLISIS ILEAL"
+            android:parentActivityName=".SymptomsActivity" />
+    </application>
+</manifest>
