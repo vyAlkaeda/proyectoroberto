@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "839271385453",
+    "project_id": "curepet-28b0b",
+    "storage_bucket": "curepet-28b0b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839271385453:android:340f0a10276d9045b97264",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI9Pz4sgbbyEkZIMUcn06Qy8fjID2_K34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

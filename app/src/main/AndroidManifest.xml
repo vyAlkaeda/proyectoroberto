@@ -1,0 +1,5 @@
+<activity
+    android:name=".ChatActivity"
+    android:exported="false"
+    android:label="Foro de Discusión"
+    android:theme="@style/Theme.MyApplication" /> 
