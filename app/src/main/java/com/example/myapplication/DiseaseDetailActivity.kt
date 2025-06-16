@@ -5,14 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityDiseaseDetailBinding
 
 class DiseaseDetailActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDiseaseDetailBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDiseaseDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val diseaseName = intent.getStringExtra("disease_name") ?: "Sin nombre"
-        binding.diseaseNameText.text = diseaseName
+        // Esta pantalla ya no se usa para mostrar enfermedades por intent
+        // Puedes eliminar este archivo si no se usa en ningún flujo
     }
 } 

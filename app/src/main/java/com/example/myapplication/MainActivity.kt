@@ -175,12 +175,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             binding.cardDiagnosticoProfesional.setOnClickListener {
-                try {
-                    startActivity(Intent(this, ChatActivity::class.java))
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error al abrir el chat: ${e.message}", e)
-                    Toast.makeText(this, "Error al abrir el chat", Toast.LENGTH_SHORT).show()
-                }
+                startActivity(Intent(this, DiagnosticoProfesionalActivity::class.java))
             }
             Log.d(TAG, "Click listeners configurados correctamente")
         } catch (e: Exception) {

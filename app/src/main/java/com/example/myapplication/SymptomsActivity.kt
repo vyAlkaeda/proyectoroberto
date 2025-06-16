@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivitySymptomsBinding
+import com.example.myapplication.PeloHirsutoDetailActivity
 
 class SymptomsActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySymptomsBinding
@@ -172,59 +173,86 @@ class SymptomsActivity : AppCompatActivity() {
                     "Debilidad (postración)",
                     "Falta de fuerza o energía, el cerdo permanece recostado sin ánimo de moverse.",
                     "SÍNTOMA",
-                    DebilidadDetailActivity::class.java),
+                    DebilidadDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Incordinación (ataxia)",
                     "Pérdida de coordinación motora, el cerdo camina con movimientos erráticos o torpes.",
-                    "SÍNTOMA", IncordinacionDetailActivity::class.java),
+                    "SÍNTOMA",
+                    IncordinacionDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Decúbito lateral (echado de lado)",
                     "Postura en la que el cerdo permanece acostado de lado sin poder incorporarse.",
-                    "SÍNTOMA", DecubitoLateralDetailActivity::class.java),
+                    "SÍNTOMA",
+                    DecubitoLateralDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Cabeza de lado",
                     "La cabeza permanece inclinada hacia un costado, posible alteración neurológica.",
-                    "SÍNTOMA", CabezaDeLadoDetailActivity::class.java),
+                    "SÍNTOMA",
+                    CabezaDeLadoDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Cabeza hacia atrás (Opistótono)",
                     "Contracción severa de los músculos de la espalda y cuello, curvando la cabeza hacia atrás.",
-                    "SÍNTOMA", OpistotonoDetailActivity::class.java),
+                    "SÍNTOMA",
+                    OpistotonoDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Rigidez muscular (paresia)",
                     "Los músculos están tensos, el cerdo muestra dificultad para moverse.",
-                    "SÍNTOMA", RigidezMuscularDetailActivity::class.java),
+                    "SÍNTOMA",
+                    RigidezMuscularDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Pedaleo",
                     "Movimiento de las patas como si estuviera corriendo mientras está echado.",
-                    "SÍNTOMA", PedaleoDetailActivity::class.java),
+                    "SÍNTOMA",
+                    PedaleoDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Depresión",
                     "Estado de decaimiento general, sin respuesta al entorno.",
-                    "SÍNTOMA", DepresionDetailActivity::class.java),
+                    "SÍNTOMA",
+                    DepresionDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Posturas anormales",
                     "Posiciones corporales extrañas o torcidas, indicativas de daño neurológico.",
-                    "SÍNTOMA", PosturasAnormalesDetailActivity::class.java),
+                    "SÍNTOMA",
+                    PosturasAnormalesDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Movimiento involuntario de ojos (nistagmo)",
                     "Movimiento rítmico y repetitivo de los ojos, suele indicar problemas en el sistema nervioso central.",
-                    "SÍNTOMA", NistagmoDetailActivity::class.java),
+                    "SÍNTOMA",
+                    NistagmoDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Cabeza agachada",
                     "La cabeza permanece baja o colgando, sin intención de levantarla.",
-                    "SÍNTOMA", CabezaAgachadaDetailActivity::class.java),
+                    "SÍNTOMA",
+                    CabezaAgachadaDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Letargo",
                     "Somnolencia excesiva, el cerdo permanece adormecido por periodos prolongados.",
-                    "SÍNTOMA", LetargoDetailActivity::class.java),
+                    "SÍNTOMA",
+                    LetargoDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Marcha en círculos",
                     "El cerdo camina en círculos sin rumbo aparente, síntoma neurológico común.",
-                    "SÍNTOMA", MarchaEnCirculosDetailActivity::class.java),
+                    "SÍNTOMA",
+                    MarchaEnCirculosDetailActivity::class.java
+                ),
                 SymptomItem(
                     "Marcha en reversa",
                     "El animal camina hacia atrás de manera involuntaria o continua.",
-                    "SÍNTOMA", MarchaReversaDetailActivity::class.java),
+                    "SÍNTOMA",
+                    MarchaReversaDetailActivity::class.java
+                ),
                 SymptomItem(
                     "TEMBLORES",
                     "Contracciones musculares involuntarias que indican alteraciones en el sistema nervioso central del cerdo.",
@@ -466,6 +494,364 @@ class SymptomsActivity : AppCompatActivity() {
                     "Duración de la gestación mayor a 118 días, puede deberse a alteraciones hormonales o fetales.",
                     "SÍNTOMA",
                     GestacionProlongadaDetailActivity::class.java
+                )
+            )
+            "Respiratorio" -> listOf(
+                SymptomItem(
+                    "DIFICULTAD RESPIRATORIA (DISNEA)",
+                    "Respiración forzada o trabajosa que puede indicar problemas pulmonares o cardíacos",
+                    "SÍNTOMA",
+                    DisneaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "RESPIRACIÓN RÁPIDA/AGITADA (TAQUIPNEA)",
+                    "Aumento en la frecuencia respiratoria que puede indicar estrés o problemas respiratorios",
+                    "SÍNTOMA",
+                    TaquipneaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "TOS SECA (TOS DE FOCA/PERRO)",
+                    "Tos sin producción de flema que puede indicar irritación de las vías respiratorias",
+                    "SÍNTOMA",
+                    TosSecaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "TOS PRODUCTIVA (CON FLEMA)",
+                    "Tos con expectoración de moco que puede indicar infección respiratoria",
+                    "SÍNTOMA",
+                    TosProductivaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "TOS DE AHOGO (ATRAGANTAMIENTO)",
+                    "Tos violenta que puede indicar obstrucción de las vías respiratorias",
+                    "SÍNTOMA",
+                    TosAhogoDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "NARIZ TORCIDA",
+                    "Deformidad en la nariz que puede afectar la respiración",
+                    "SÍNTOMA",
+                    NarizTorcidaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ESTORNUDO",
+                    "Expulsión brusca de aire por la nariz que puede indicar irritación",
+                    "SÍNTOMA",
+                    EstornudoDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ESCURRIMIENTO NASAL (LÍQUIDO TRANSPARENTE)",
+                    "Secreción nasal clara que puede indicar irritación o infección leve",
+                    "SÍNTOMA",
+                    EscurrimientoNasalDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "MOCO CON SANGRE",
+                    "Secreción nasal con presencia de sangre que puede indicar lesión o infección severa",
+                    "SÍNTOMA",
+                    MocoSangreDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "SANGRE EN LA NARIZ (EPISTAXIS)",
+                    "Hemorragia nasal que puede indicar trauma o enfermedad sistémica",
+                    "SÍNTOMA",
+                    EpistaxisDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "SECRECIÓN NASAL (MOCO SECO)",
+                    "Secreción nasal espesa y seca que se adhiere a las fosas nasales",
+                    "SÍNTOMA",
+                    SecrecionNasalDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ESPUMA BLANCA EN LA NARIZ",
+                    "Presencia de espuma blanca en las fosas nasales, indicando posible edema pulmonar",
+                    "SÍNTOMA",
+                    EspumaBlancaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "MUERTE SÚBITA",
+                    "Fallecimiento inesperado y rápido del cerdo sin signos previos evidentes",
+                    "SÍNTOMA",
+                    MuerteSubitaDetailActivity::class.java
+                )
+            )
+            "Tegumento" -> listOf(
+                SymptomItem(
+                    "FIEBRE BAJA",
+                    "Temperatura corporal ligeramente elevada",
+                    "SÍNTOMA",
+                    FiebreBajaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE ALTA",
+                    "Temperatura corporal significativamente elevada",
+                    "SÍNTOMA",
+                    FiebreAltaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE MODERADA",
+                    "Temperatura corporal moderadamente elevada",
+                    "SÍNTOMA",
+                    FiebreModeradaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE LEVE",
+                    "Temperatura corporal ligeramente elevada",
+                    "SÍNTOMA",
+                    FiebreLeveDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE CRÍTICA",
+                    "Temperatura corporal extremadamente elevada",
+                    "SÍNTOMA",
+                    FiebreCriticaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE MODERADA 2",
+                    "Temperatura corporal moderadamente elevada",
+                    "SÍNTOMA",
+                    FiebreModerada2DetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE ALTA 2",
+                    "Temperatura corporal significativamente elevada",
+                    "SÍNTOMA",
+                    FiebreAlta2DetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE ALTA 3",
+                    "Temperatura corporal significativamente elevada",
+                    "SÍNTOMA",
+                    FiebreAlta3DetailActivity::class.java
+                ),
+                SymptomItem(
+                    "FIEBRE MODERADA 3",
+                    "Temperatura corporal moderadamente elevada",
+                    "SÍNTOMA",
+                    FiebreModerada3DetailActivity::class.java
+                ),
+                SymptomItem(
+                    "DESHIDRATACIÓN",
+                    "Pérdida excesiva de líquidos corporales",
+                    "SÍNTOMA",
+                    DeshidratacionDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "POLIDIPSIA",
+                    "Sed excesiva y aumento en el consumo de agua",
+                    "SÍNTOMA",
+                    PolidipsiaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ADIPSIA",
+                    "Ausencia de sed y disminución en el consumo de agua",
+                    "SÍNTOMA",
+                    AdipsiaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "PELO HIRSUTO",
+                    "Pelo áspero y desordenado",
+                    "SÍNTOMA",
+                    PeloHirsutoDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "CONSUMO DE ORINA",
+                    "Ingesta de orina por parte del cerdo",
+                    "SÍNTOMA",
+                    ConsumoOrinaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "SIALORREA",
+                    "Salivación excesiva",
+                    "SÍNTOMA",
+                    SialorreaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "CONJUNTIVITIS",
+                    "Inflamación de la membrana que recubre el ojo",
+                    "SÍNTOMA",
+                    ConjuntivitisDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "EPIFORA",
+                    "Lagrimeo excesivo",
+                    "SÍNTOMA",
+                    EpiforaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ENROJECIMIENTO DE OJOS",
+                    "Ojos rojos e inflamados",
+                    "SÍNTOMA",
+                    EnrojecimientoOjosDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "EDEMA PALPEBRAL",
+                    "Hinchazón de los párpados",
+                    "SÍNTOMA",
+                    EdemaPalpebralDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "CEGUERA",
+                    "Pérdida total o parcial de la visión",
+                    "SÍNTOMA",
+                    CegueraDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "CÓRNEA OPACA",
+                    "Opacidad en la córnea del ojo",
+                    "SÍNTOMA",
+                    CorneaOpacaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "LAGAÑAS",
+                    "Secreción seca en los ojos",
+                    "SÍNTOMA",
+                    LaganasDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "QUEMOSIS",
+                    "Inflamación de la conjuntiva",
+                    "SÍNTOMA",
+                    QuemosisDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "QUERATOCONJUNTIVITIS SECA",
+                    "Inflamación de la córnea y conjuntiva con sequedad",
+                    "SÍNTOMA",
+                    QueratoconjuntivitisSecaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "NECROSIS DE COLA",
+                    "Muerte del tejido en la cola",
+                    "SÍNTOMA",
+                    NecrosisColaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "NECROSIS DE OREJA",
+                    "Muerte del tejido en las orejas",
+                    "SÍNTOMA",
+                    NecrosisOrejaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ÚLCERA EN PEZUÑAS",
+                    "Lesión abierta en las pezuñas",
+                    "SÍNTOMA",
+                    UlceraPezunasDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "NECROSIS CUTÁNEA",
+                    "Muerte del tejido de la piel",
+                    "SÍNTOMA",
+                    NecrosisCutaneaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "NECROSIS EN BOCA",
+                    "Muerte del tejido en la cavidad bucal",
+                    "SÍNTOMA",
+                    NecrosisBocaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "EDEMA DE PIEL",
+                    "Hinchazón de la piel",
+                    "SÍNTOMA",
+                    EdemaPielDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "HEMORRAGIA SUBCUTÁNEA",
+                    "Sangrado bajo la piel",
+                    "SÍNTOMA",
+                    HemorragiaSubcutaneaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "OREJAS AZULADAS",
+                    "Coloración azulada en las orejas",
+                    "SÍNTOMA",
+                    OrejasAzuladasDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "DERMATITIS",
+                    "Inflamación de la piel",
+                    "SÍNTOMA",
+                    DermatitisDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "MANCHAS MORADAS",
+                    "Manchas de color morado en la piel",
+                    "SÍNTOMA",
+                    ManchasMoradasDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "RONCHAS ROJAS",
+                    "Lesiones elevadas y rojas en la piel",
+                    "SÍNTOMA",
+                    RonchasRojasDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "RONCHAS NEGRAS",
+                    "Lesiones elevadas y negras en la piel",
+                    "SÍNTOMA",
+                    RonchasNegrasDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ANEMIA",
+                    "Disminución de glóbulos rojos en sangre",
+                    "SÍNTOMA",
+                    AnemiaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ICTERICIA",
+                    "Coloración amarillenta de la piel",
+                    "SÍNTOMA",
+                    IctericiaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "CIANOSIS",
+                    "Coloración azulada de la piel",
+                    "SÍNTOMA",
+                    CianosisDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "PIEL AMORATADA",
+                    "Coloración morada en la piel",
+                    "SÍNTOMA",
+                    PielAmoratadaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ERITEMA",
+                    "Enrojecimiento de la piel",
+                    "SÍNTOMA",
+                    EritemaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "PIEL GRASOSA",
+                    "Exceso de grasa en la piel",
+                    "SÍNTOMA",
+                    PielGrasosaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "HEMATURIA",
+                    "Presencia de sangre en la orina",
+                    "SÍNTOMA",
+                    HematuriaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "OLIGURIA",
+                    "Producción excesiva de orina",
+                    "SÍNTOMA",
+                    OliguriaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "ANURIA",
+                    "Ausencia de producción de orina",
+                    "SÍNTOMA",
+                    AnuriaDetailActivity::class.java
+                ),
+                SymptomItem(
+                    "EQUIMOSIS",
+                    "Moretones en la piel",
+                    "SÍNTOMA",
+                    EquimosisDetailActivity::class.java
                 )
             )
             else -> emptyList()

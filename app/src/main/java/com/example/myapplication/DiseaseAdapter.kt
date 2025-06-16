@@ -7,8 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class DiseaseAdapter(
-    private val diseases: List<String>,
-    private val onItemClick: (String) -> Unit
+    private val diseases: List<String>
 ) : RecyclerView.Adapter<DiseaseAdapter.DiseaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiseaseViewHolder {
@@ -20,7 +19,6 @@ class DiseaseAdapter(
     override fun onBindViewHolder(holder: DiseaseViewHolder, position: Int) {
         val disease = diseases[position]
         holder.textView.text = disease
-        holder.itemView.setOnClickListener { onItemClick(disease) }
     }
 
     override fun getItemCount(): Int = diseases.size
