@@ -254,12 +254,12 @@ class RegisterActivity : AppCompatActivity() {
                         runOnUiThread {
                             binding.registerButton.isEnabled = true
                             binding.registerButton.text = "Registrarse"
-                            val errorMessage = when (e.message) {
-                                "The email address is already in use by another account." ->
+                            val errorMessage = when {
+                                e.message?.contains("The email address is already in use") == true ->
                                     "Ya existe una cuenta con este correo"
-                                "The email address is badly formatted." ->
+                                e.message?.contains("badly formatted") == true ->
                                     "El formato del correo electrónico no es válido"
-                                "The given password is invalid. [ Password should be at least 6 characters ]" ->
+                                e.message?.contains("Password should be at least 6 characters") == true ->
                                     "La contraseña debe tener al menos 6 caracteres"
                                 else -> "Error al registrarse: ${e.message}"
                             }

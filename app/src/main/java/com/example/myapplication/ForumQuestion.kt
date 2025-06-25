@@ -6,12 +6,10 @@ import com.google.firebase.firestore.DocumentId
 data class ForumQuestion(
     @DocumentId
     var id: String = "",
-    val title: String = "",
-    val description: String = "",
-    val userId: String = "",
-    val userName: String = "",
-    val timestamp: Timestamp = Timestamp.now(),
-    val answers: List<ForumAnswer> = emptyList()
+    var title: String = "",
+    var content: String = "",
+    var timestamp: Timestamp = Timestamp.now(),
+    var author: String = ""
 )
 
 data class ForumAnswer(

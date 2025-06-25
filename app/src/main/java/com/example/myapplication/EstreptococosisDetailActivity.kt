@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityEstreptococosisDetailBinding
@@ -43,5 +44,11 @@ class EstreptococosisDetailActivity : AppCompatActivity() {
             "• PERICARDITIS\n" +
             "• MENINGITIS\n" +
             "• NEUMONÍA INTERSTICIAL"
+
+        // Agregar listener para el botón de recomendaciones
+        binding.recommendationsButton.setOnClickListener {
+            val intent = Intent(this, RecomendacionesEstreptococosisActivity::class.java)
+            startActivity(intent)
+        }
     }
 } 

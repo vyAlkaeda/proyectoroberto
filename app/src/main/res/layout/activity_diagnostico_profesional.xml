@@ -1,26 +1,648 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewForum"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabNewQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add"
-        app:backgroundTint="@color/primary"
-        app:tint="@android:color/white"
-        app:contentDescription="Nueva pregunta"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout> 
+            <!-- Pregunta 1: Edad de los cerdos -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Edad de los cerdos?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1-4 semanas (0-28 días)"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5-10 semanas (29-70 días)"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="11-16 semanas (71-112 días)"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBox4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="17-22 semanas (113-154 días)"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Pregunta 2: Número de cerdos afectados -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿Número de cerdos afectados?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupAfectados"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMas10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MAS DEL 10%"
+                            android:layout_marginBottom="8dp"/>
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMenos10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MENOS DEL 10%"/>
+
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Pregunta 3: Incremento de mortalidad -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿INCREMENTO DE MORTALIDAD?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupMortalidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMas5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MAS DEL 5%"
+                            android:layout_marginBottom="8dp"/>
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMenos5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MENOS DEL 5%"/>
+
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Pregunta 4: Área de producción afectada -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¿AREA DE PRODUCCION AFECTADA?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxGestacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GESTACION"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxMaternidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="MATERNIDAD"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDestete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DESTETE"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxEngorda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ENGORDA"
+                        android:layout_marginBottom="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxCuarentena"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CUARENTENA"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SÍNTOMAS NERVIOSOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SÍNTOMAS NERVIOSOS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Fila 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxDebilidad" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Debilidad (postración)"/>
+                        <CheckBox android:id="@+id/checkBoxConvulsiones" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Convulsiones"/>
+                        <CheckBox android:id="@+id/checkBoxIncordinacion" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Incordinación (ataxia)"/>
+                    </LinearLayout>
+                    <!-- Fila 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxParalisis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Parálisis de patas traseras"/>
+                        <CheckBox android:id="@+id/checkBoxDecubito" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Decúbito lateral"/>
+                        <CheckBox android:id="@+id/checkBoxTemblor" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Temblor"/>
+                    </LinearLayout>
+                    <!-- Fila 3 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxCabezaLado" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cabeza de lado"/>
+                        <CheckBox android:id="@+id/checkBoxOpistotono" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cabeza hacia atrás (Opistótono)"/>
+                        <CheckBox android:id="@+id/checkBoxRigidez" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Rigidez muscular (paresia)"/>
+                    </LinearLayout>
+                    <!-- Fila 4 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxPedaleo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Pedaleo"/>
+                        <CheckBox android:id="@+id/checkBoxDepresion" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Depresión"/>
+                        <CheckBox android:id="@+id/checkBoxPosturasAnormales" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Posturas anormales"/>
+                    </LinearLayout>
+                    <!-- Fila 5 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxNistagmo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Movimiento involuntario de ojos (nistagmo)"/>
+                        <CheckBox android:id="@+id/checkBoxCabezaAgachada" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cabeza agachada"/>
+                        <CheckBox android:id="@+id/checkBoxLetargo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Letargo"/>
+                    </LinearLayout>
+                    <!-- Fila 6 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxMarchaCirculos" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Marcha en círculos"/>
+                        <CheckBox android:id="@+id/checkBoxMarchaReversa" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Marcha en reversa"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SÍNTOMAS MUSCULOESQUELÉTICOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SÍNTOMAS MUSCULOESQUELÉTICOS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxCojeras" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cojeras"/>
+                        <CheckBox android:id="@+id/checkBoxResistenciaMoverse" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Resistencia a moverse"/>
+                        <CheckBox android:id="@+id/checkBoxBursitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación de brazo (Bursitis)"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxInflamacionPierna" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación de Pierna"/>
+                        <CheckBox android:id="@+id/checkBoxArticulacionesInflamadas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Articulaciones inflamadas"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SÍNTOMAS DIGESTIVOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SÍNTOMAS DIGESTIVOS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <!-- Fila 1 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxAnorexia" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Falta de apetito (anorexia)"/>
+                        <CheckBox android:id="@+id/checkBoxBajoConsumoAlimento" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bajo consumo de alimento"/>
+                        <CheckBox android:id="@+id/checkBoxEmaciacion" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Pérdida de peso (emaciación)"/>
+                    </LinearLayout>
+                    <!-- Fila 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxCrecimientoLento" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Crecimiento lento"/>
+                        <CheckBox android:id="@+id/checkBoxVomito" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Vómito"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaLiquida" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea líquida"/>
+                    </LinearLayout>
+                    <!-- Fila 3 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxDiarreaGelatinosa" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea gelatinosa"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaCremosa" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea cremosa"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaVerdosa" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea verdosa"/>
+                    </LinearLayout>
+                    <!-- Fila 4 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxDiarreaAmarilla" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea amarilla"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaGris" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea gris"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaCafe" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea café"/>
+                    </LinearLayout>
+                    <!-- Fila 5 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxDiarreaNegra" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea negra"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaSangre" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea con sangre"/>
+                        <CheckBox android:id="@+id/checkBoxDiarreaBlanquecina" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diarrea blanquecina"/>
+                    </LinearLayout>
+                    <!-- Fila 6 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxAnoEnrojecido" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ano enrojecido (irritación perianal)"/>
+                        <CheckBox android:id="@+id/checkBoxOlorFermentado" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Olor fermentado de excremento"/>
+                        <CheckBox android:id="@+id/checkBoxOlorFetido" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Olor fétido de excremento"/>
+                    </LinearLayout>
+                    <!-- Fila 7 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxEstreñimiento" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Estreñimiento"/>
+                        <CheckBox android:id="@+id/checkBoxExcrementoDuro" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Excremento duro y seco"/>
+                        <CheckBox android:id="@+id/checkBoxProlapsoRectal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Prolapso rectal"/>
+                    </LinearLayout>
+                    <!-- Fila 8 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxAbdomenHinchado" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Abdomen hinchado (distensión abdominal)"/>
+                        <CheckBox android:id="@+id/checkBoxPusExcremento" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Pus en el excremento"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SÍNTOMAS REPRODUCTIVOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SÍNTOMAS REPRODUCTIVOS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <!-- Fila 1 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxAborto" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Aborto"/>
+                        <CheckBox android:id="@+id/checkBoxAbortoSegundoTercio" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Aborto segundo tercio"/>
+                        <CheckBox android:id="@+id/checkBoxAbortoTercerTercio" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Aborto tercer tercio"/>
+                    </LinearLayout>
+                    <!-- Fila 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxCerdaVacia" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cerda vacía"/>
+                        <CheckBox android:id="@+id/checkBoxAnestro" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Falta de celo (anestro)"/>
+                        <CheckBox android:id="@+id/checkBoxCeloSilencioso" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Celo silencioso"/>
+                    </LinearLayout>
+                    <!-- Fila 3 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxPartoPrematuro" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Parto prematuro"/>
+                        <CheckBox android:id="@+id/checkBoxRepeticionCelo21" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Repetición de celo a 21 días"/>
+                        <CheckBox android:id="@+id/checkBoxRepeticionCelo28_35" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Repetición de celo a 28-35 días"/>
+                    </LinearLayout>
+                    <!-- Fila 4 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxBajoNacidosVivos" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bajo número de nacidos vivos"/>
+                        <CheckBox android:id="@+id/checkBoxLechonesMomificadosVarios" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lechones momificados varios tamaños"/>
+                        <CheckBox android:id="@+id/checkBoxLechonesMomificadosGrandes" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lechones momificados grandes"/>
+                    </LinearLayout>
+                    <!-- Fila 5 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxLechonesNacidosMuertos" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lechones nacidos muertos"/>
+                        <CheckBox android:id="@+id/checkBoxLechonesNacidosDebiles" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lechones nacidos débiles"/>
+                        <CheckBox android:id="@+id/checkBoxLechonesNacidosBlancos" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lechones nacidos blancos"/>
+                    </LinearLayout>
+                    <!-- Fila 6 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxEndometritis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Descarga vaginal purulenta (endometritis)"/>
+                        <CheckBox android:id="@+id/checkBoxMetritis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Descarga vaginal (metritis)"/>
+                        <CheckBox android:id="@+id/checkBoxHemorragiaPlacenta" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hemorragia en placenta"/>
+                    </LinearLayout>
+                    <!-- Fila 7 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxRetencionPlacenta" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Retención placentaria"/>
+                        <CheckBox android:id="@+id/checkBoxAgalaxia" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Nula producción de leche (agalaxia)"/>
+                        <CheckBox android:id="@+id/checkBoxHipogalaxia" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Poca producción de leche (hipogalaxia)"/>
+                    </LinearLayout>
+                    <!-- Fila 8 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxMastitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación de la ubre (mastitis)"/>
+                        <CheckBox android:id="@+id/checkBoxOrquitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación testicular (orquitis)"/>
+                        <CheckBox android:id="@+id/checkBoxPostitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación prepucial (postitis)"/>
+                    </LinearLayout>
+                    <!-- Fila 9 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxBajaLibidoMacho" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Baja líbido del macho"/>
+                        <CheckBox android:id="@+id/checkBoxBajoConteoEspermatico" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bajo conteo espermático"/>
+                        <CheckBox android:id="@+id/checkBoxConjuntivitisLechon" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Conjuntivitis en lechón recién nacido"/>
+                    </LinearLayout>
+                    <!-- Fila 10 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxCordónUmbilicalHemorragico" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cordón umbilical hemorragico"/>
+                        <CheckBox android:id="@+id/checkBoxCordonUmbilicalEdematoso" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cordón umbilical edematoso (hinchado)"/>
+                        <CheckBox android:id="@+id/checkBoxLechonesPatasAbiertas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lechones de patas abiertas"/>
+                    </LinearLayout>
+                    <!-- Fila 11 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxVulvovaginitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación vulvar de la lechonas (vulvovaginitis)"/>
+                        <CheckBox android:id="@+id/checkBoxEdemaEscrotal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Edema escrotal (inflamación del escroto)"/>
+                        <CheckBox android:id="@+id/checkBoxProlapsoUterino" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Prolapso uterino"/>
+                    </LinearLayout>
+                    <!-- Fila 12 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxMalformaciones" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Malformaciones congénitas"/>
+                        <CheckBox android:id="@+id/checkBoxTremorCongenito" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Temblor de recién nacido (tremor congénito)"/>
+                        <CheckBox android:id="@+id/checkBoxGestacionProlongada" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Gestación anormalmente prolongada (>118 días)"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SÍNTOMAS TEGUMENTARIOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SÍNTOMAS TEGUMENTARIOS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <!-- Fila 1 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxFiebre393_398" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (39.3°c - 39.8°c)"/>
+                        <CheckBox android:id="@+id/checkBoxFiebre415" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (41.5°c)"/>
+                        <CheckBox android:id="@+id/checkBoxFiebre405_415" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (40.5°c - 41.5°c)"/>
+                    </LinearLayout>
+                    <!-- Fila 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxFiebre400_405" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (40°c - 40.5°c)"/>
+                        <CheckBox android:id="@+id/checkBoxFiebre43" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (43°c)"/>
+                        <CheckBox android:id="@+id/checkBoxFiebre403" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (40.3°c)"/>
+                    </LinearLayout>
+                    <!-- Fila 3 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxFiebre41_42" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (41°c-42°c)"/>
+                        <CheckBox android:id="@+id/checkBoxFiebre417" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (41.7°c)"/>
+                        <CheckBox android:id="@+id/checkBoxFiebre40_42" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiebre (40°c-42°c)"/>
+                    </LinearLayout>
+                    <!-- Fila 4 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxDeshidratacion" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Deshidratación"/>
+                        <CheckBox android:id="@+id/checkBoxPolidipsia" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Consumo excesivo de agua (polidipsia)"/>
+                        <CheckBox android:id="@+id/checkBoxAdipsia" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bajo consumo de agua (adipsia)"/>
+                    </LinearLayout>
+                    <!-- Fila 5 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxPeloHirsuto" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cerdo peludo (pelo hirsuto)"/>
+                        <CheckBox android:id="@+id/checkBoxConsumoOrina" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Consumo de orina"/>
+                        <CheckBox android:id="@+id/checkBoxSialorrea" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Salivación excesiva (sialorrea)"/>
+                    </LinearLayout>
+                    <!-- Fila 6 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxConjuntivitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Inflamación de los ojos (conjuntivitis)"/>
+                        <CheckBox android:id="@+id/checkBoxEpifora" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lagrimeo continuo (epífora)"/>
+                        <CheckBox android:id="@+id/checkBoxEnrojecimientoOjos" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Enrojecimiento de los ojos"/>
+                    </LinearLayout>
+                    <!-- Fila 7 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxEdemaPalpebral" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Párpados hinchados (edema palpebral)"/>
+                        <CheckBox android:id="@+id/checkBoxCeguera" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ceguera"/>
+                        <CheckBox android:id="@+id/checkBoxCorneaOpaca" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Color azul de los ojos (córnea opaca)"/>
+                    </LinearLayout>
+                    <!-- Fila 8 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxLagañas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lagañas"/>
+                        <CheckBox android:id="@+id/checkBoxQuemosis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Edema conjuntival (quemosis)"/>
+                        <CheckBox android:id="@+id/checkBoxQueratoconjuntivitisSeca" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Resequedad de ojos (queratoconjuntivitis seca)"/>
+                    </LinearLayout>
+                    <!-- Fila 9 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxColaQuemada" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cola quemada (necrosis de cola)"/>
+                        <CheckBox android:id="@+id/checkBoxOrejasQuemadas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Orejas quemadas (necrosis de oreja)"/>
+                        <CheckBox android:id="@+id/checkBoxUlceraPezuñas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Úlcera en pezuñas"/>
+                    </LinearLayout>
+                    <!-- Fila 10 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxUlceraPiel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Úlcera en la piel (necrosis cutánea)"/>
+                        <CheckBox android:id="@+id/checkBoxErosionBocaLabios" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Erosión cutánea en boca y labios (necrosis)"/>
+                        <CheckBox android:id="@+id/checkBoxEdemaPiel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Edema de la piel (piel hinchada)"/>
+                    </LinearLayout>
+                    <!-- Fila 11 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxHemorragiaSubcutanea" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hemorragia subcutánea"/>
+                        <CheckBox android:id="@+id/checkBoxOrejasAzuladas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Orejas azuladas"/>
+                        <CheckBox android:id="@+id/checkBoxDermatitis" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel irritada (dermatitis)"/>
+                    </LinearLayout>
+                    <!-- Fila 12 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxManchasMoradas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel con manchas moradas"/>
+                        <CheckBox android:id="@+id/checkBoxRonchasRojas" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel con ronchas rojas"/>
+                        <CheckBox android:id="@+id/checkBoxRonchasNegras" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel con ronchas negras"/>
+                    </LinearLayout>
+                    <!-- Fila 13 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxPielPalida" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel pálida (anemia)"/>
+                        <CheckBox android:id="@+id/checkBoxPielAmarilla" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel amarilla (ictericia)"/>
+                        <CheckBox android:id="@+id/checkBoxPielAzul" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel azul (cianosis)"/>
+                    </LinearLayout>
+                    <!-- Fila 14 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxPielAmoratada" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel amoratada"/>
+                        <CheckBox android:id="@+id/checkBoxPielEnrojecida" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel enrojecida (eritema)"/>
+                        <CheckBox android:id="@+id/checkBoxPielGrasosa" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Piel grasosa"/>
+                    </LinearLayout>
+                    <!-- Fila 15 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxSangreOrina" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sangre en la orina"/>
+                        <CheckBox android:id="@+id/checkBoxOliguria" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Exceso de orina (oliguria)"/>
+                        <CheckBox android:id="@+id/checkBoxAnuria" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="No orina (anuria)"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SÍNTOMAS RESPIRATORIOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SÍNTOMAS RESPIRATORIOS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <!-- Fila 1 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxDisnea" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Dificultad respiratoria (disnea)"/>
+                        <CheckBox android:id="@+id/checkBoxTaquipnea" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Respiración rápida/agitada (taquipnea)"/>
+                        <CheckBox android:id="@+id/checkBoxTosSeca" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Tos seca (tos de foca/perro)"/>
+                    </LinearLayout>
+                    <!-- Fila 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxTosProductiva" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Tos productiva (con flema)"/>
+                        <CheckBox android:id="@+id/checkBoxTosAhogo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Tos de ahogo (atragantamiento)"/>
+                        <CheckBox android:id="@+id/checkBoxNarizTorcida" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Nariz torcida"/>
+                    </LinearLayout>
+                    <!-- Fila 3 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxEstornudo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Estornudo"/>
+                        <CheckBox android:id="@+id/checkBoxEscurrimientoNasal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Escurrimiento nasal (líquido transparente)"/>
+                        <CheckBox android:id="@+id/checkBoxMocoSangre" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Moco con sangre"/>
+                    </LinearLayout>
+                    <!-- Fila 4 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxSangreNariz" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sangre en la nariz"/>
+                        <CheckBox android:id="@+id/checkBoxSecrecionNasal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Secreción nasal (moco seco)"/>
+                        <CheckBox android:id="@+id/checkBoxEspumaBlancaNariz" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Espuma blanca en la nariz"/>
+                    </LinearLayout>
+                    <!-- Fila 5 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/checkBoxMuerteSubita" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Muerte súbita"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón para continuar -->
+            <Button
+                android:id="@+id/buttonContinuar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Continuar"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout> 

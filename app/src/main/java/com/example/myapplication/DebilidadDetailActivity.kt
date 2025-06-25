@@ -16,10 +16,11 @@ class DebilidadDetailActivity : AppCompatActivity() {
         supportActionBar?.title = "DIAGNÓSTICO DIFERENCIAL"
 
         // Mostrar solo la enfermedad principal con estilo médico
-        binding.medicalDiseaseText.text = "ESTREPTOCOCOSIS"
+        binding.sectionTitle1.text = "DIAGNÓSTICO DIFERENCIAL"
+        binding.sectionContent1.text = "ESTREPTOCOCOSIS"
 
         // Redirigir al detalle al hacer click
-        binding.medicalDiseaseText.setOnClickListener {
+        binding.sectionContent1.setOnClickListener {
             val intent = Intent(this, EstreptococosisDetailActivity::class.java)
             startActivity(intent)
         }

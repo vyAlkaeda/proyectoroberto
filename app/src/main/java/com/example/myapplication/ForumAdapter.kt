@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,25 +20,26 @@ class ForumAdapter : ListAdapter<ForumQuestion, ForumAdapter.QuestionViewHolder>
     }
 
     override fun onBindViewHolder(holder: QuestionViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val question = getItem(position)
+        holder.bind(question)
     }
 
     class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val titleTextView: TextView = itemView.findViewById(R.id.textViewTitle)
-        private val descriptionTextView: TextView = itemView.findViewById(R.id.textViewDescription)
-        private val userNameTextView: TextView = itemView.findViewById(R.id.textViewUserName)
-        private val dateTextView: TextView = itemView.findViewById(R.id.textViewDate)
-        private val answersCountTextView: TextView = itemView.findViewById(R.id.textViewAnswersCount)
+        private val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
+        private val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
+        private val authorTextView: TextView = itemView.findViewById(R.id.authorTextView)
+        private val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
 
         fun bind(question: ForumQuestion) {
             titleTextView.text = question.title
-            descriptionTextView.text = question.description
-            userNameTextView.text = question.userName
-            
-            val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
-            dateTextView.text = dateFormat.format(question.timestamp.toDate())
-            
-            answersCountTextView.text = "${question.answers.size} respuestas"
+            contentTextView.text = question.content
+            authorTextView.text = question.author
+            dateTextView.text = formatDate(question.timestamp)
+        }
+
+        private fun formatDate(timestamp: Timestamp): String {
+            val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+            return sdf.format(timestamp.toDate())
         }
     }
 

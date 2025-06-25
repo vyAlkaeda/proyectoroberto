@@ -26,23 +26,105 @@
             android:padding="16dp">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSection1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardElevation="4dp"
                 app:cardCornerRadius="12dp">
 
-                <TextView
-                    android:id="@+id/medicalDiseaseText"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ESTREPTOCOCOSIS"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A237E"
-                    android:gravity="center"
-                    android:padding="24dp"
-                    android:background="@android:color/white"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/sectionTitle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título de sección"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A237E"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/sectionContent1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contenido de la sección médica..."
+                        android:textSize="16sp"
+                        android:textColor="#222"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSection2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/sectionTitle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título de sección"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A237E"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/sectionContent2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contenido de la sección médica..."
+                        android:textSize="16sp"
+                        android:textColor="#222"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSection3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/sectionTitle3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título de sección"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A237E"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/sectionContent3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contenido de la sección médica..."
+                        android:textSize="16sp"
+                        android:textColor="#222"/>
+                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>

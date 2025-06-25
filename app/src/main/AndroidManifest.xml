@@ -467,6 +467,10 @@
             android:label="Diagnóstico Profesional"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".ForumActivity"
+            android:label="Foro de Diagnósticos"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".DisneaDetailActivity"
             android:label="DIFICULTAD RESPIRATORIA"
             android:parentActivityName=".SymptomsActivity" />
@@ -709,6 +713,29 @@
         <activity
             android:name=".EstreptococosisDetailActivity"
             android:label="Estreptococosis"
+            android:exported="false" />
+        <activity
+            android:name=".RecomendacionesEstreptococosisActivity"
+            android:label="Recomendaciones Estreptococosis"
+            android:parentActivityName=".EstreptococosisDetailActivity" />
+        <activity
+            android:name=".MedidasBioseguridadActivity"
+            android:label="Medidas de Bioseguridad"
+            android:parentActivityName=".BioseguridadActivity" />
+        <activity
+            android:name=".TrasladoEnfermosActivity"
+            android:label="Traslado de Cerdos Enfermos"
+            android:parentActivityName=".BioseguridadActivity" />
+        <activity
+            android:name=".EvitarCausasEstresActivity"
+            android:label="Evitar Causas de Estres"
+            android:parentActivityName=".BioseguridadActivity" />
+        <activity
+            android:name=".BioseguridadActivity"
+            android:label="Bioseguridad"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ForoDiagnosticoActivity"
             android:exported="false" />
     </application>
 </manifest>
