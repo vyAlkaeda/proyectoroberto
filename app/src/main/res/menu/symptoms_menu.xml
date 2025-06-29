@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_multi_select"
+        android:title="Selección Múltiple"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_search_diseases"
+        android:title="Buscar Enfermedades"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_clear_selection"
+        android:title="Limpiar Selección"
+        android:icon="@drawable/ic_clear"
+        app:showAsAction="ifRoom" />
+
+</menu> 

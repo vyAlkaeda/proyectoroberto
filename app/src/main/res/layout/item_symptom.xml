@@ -30,23 +30,6 @@
             tools:text="Título del Síntoma" />
 
         <TextView
-            android:id="@+id/typeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@color/primary"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="2dp"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleTextView"
-            tools:text="LESIÓN"
-            tools:backgroundTint="@color/lesion_tag" />
-
-        <TextView
             android:id="@+id/descriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +39,7 @@
             android:lineSpacingExtra="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/typeTextView"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
             tools:text="Descripción detallada del síntoma que puede ocupar varias líneas de texto." />
 
     </LinearLayout>

@@ -1,29 +1,35 @@
 package com.example.myapplication
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.databinding.ItemDiseaseBinding
 
 class DiseaseAdapter(
-    private val diseases: List<String>
+    private var diseases: List<String>
 ) : RecyclerView.Adapter<DiseaseAdapter.DiseaseViewHolder>() {
 
+    inner class DiseaseViewHolder(private val binding: ItemDiseaseBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(disease: String) {
+            binding.apply {
+                diseaseNameTextView.text = disease
+            }
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiseaseViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(android.R.layout.simple_list_item_1, parent, false)
-        return DiseaseViewHolder(view)
+        val binding = ItemDiseaseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return DiseaseViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: DiseaseViewHolder, position: Int) {
-        val disease = diseases[position]
-        holder.textView.text = disease
+        holder.bind(diseases[position])
     }
 
-    override fun getItemCount(): Int = diseases.size
+    override fun getItemCount() = diseases.size
 
-    class DiseaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(android.R.id.text1)
+    fun updateDiseases(newDiseases: List<String>) {
+        diseases = newDiseases
+        notifyDataSetChanged()
     }
 } 

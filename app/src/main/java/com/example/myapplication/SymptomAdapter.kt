@@ -10,7 +10,7 @@ data class SymptomItem(
     val title: String,
     val description: String,
     val type: String,
-    val activityClass: Class<*>
+    val activityClass: Class<*>? = null
 )
 
 class SymptomAdapter(
@@ -23,16 +23,7 @@ class SymptomAdapter(
             binding.apply {
                 titleTextView.text = symptom.title
                 descriptionTextView.text = symptom.description
-                typeTextView.text = symptom.type
                 
-                // Configurar el color de fondo del tipo según sea LESIÓN o SÍNTOMA
-                val backgroundColor = when (symptom.type) {
-                    "LESIÓN" -> R.color.lesion_tag
-                    "SÍNTOMA" -> R.color.sintoma_tag
-                    else -> R.color.primary
-                }
-                typeTextView.setBackgroundColor(ContextCompat.getColor(root.context, backgroundColor))
-
                 // Añadir efecto de elevación al tocar la tarjeta
                 root.setOnClickListener { 
                     root.animate()
@@ -45,7 +36,7 @@ class SymptomAdapter(
                                 .scaleY(1f)
                                 .setDuration(100)
                                 .withEndAction {
-                                    onItemClick(symptom.activityClass)
+                                    symptom.activityClass?.let { onItemClick(it) }
                                 }
                         }
                 }

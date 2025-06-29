@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -69,6 +68,10 @@
             android:name=".SymptomsActivity"
             android:label="Signos y Síntomas"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DiseaseResultsActivity"
+            android:label="Enfermedades Posibles"
+            android:parentActivityName=".SymptomsActivity" />
         <activity
             android:name=".EpicarditisDetailActivity"
             android:label="EPICARDITIS FIBRINO PURULENTA"
@@ -737,5 +740,14 @@
         <activity
             android:name=".ForoDiagnosticoActivity"
             android:exported="false" />
+        <activity
+            android:name=".FoundDiseasesActivity"
+            android:label="Enfermedades encontradas"
+            android:parentActivityName=".SymptomsActivity" />
+        <activity android:name=".DiseaseDetailActivity" />
+        <activity
+            android:name=".EtapaResultadosActivity"
+            android:label="Resultados por Etapa"
+            android:parentActivityName=".AgeGroupSelectionActivity" />
     </application>
 </manifest>

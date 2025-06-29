@@ -1,0 +1,153 @@
+{
+  "enfermedades": [
+    {
+      "nombre": "Estreptococosis",
+      "sintomas": [
+        "fiebre",
+        "cojera",
+        "nerviosismo",
+        "temblores",
+        "meningitis",
+        "convulsiones"
+      ],
+      "rangoEdad": [
+        "Maternidad",
+        "Destete",
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Pleuroneumonía",
+      "sintomas": [
+        "tos",
+        "dificultad respiratoria",
+        "fiebre alta",
+        "muerte súbita",
+        "anorexia"
+      ],
+      "rangoEdad": [
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "PRRS",
+      "sintomas": [
+        "abortos",
+        "fiebre",
+        "tos",
+        "mortalidad neonatal",
+        "retraso en crecimiento"
+      ],
+      "rangoEdad": [
+        "Gestación",
+        "Maternidad",
+        "Destete",
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Leptospirosis",
+      "sintomas": [
+        "fiebre",
+        "ictericia",
+        "abortos",
+        "hematuria",
+        "letargo"
+      ],
+      "rangoEdad": [
+        "Gestación",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Rinitis Atrófica",
+      "sintomas": [
+        "estornudos",
+        "deformidad nasal",
+        "hemorragia nasal",
+        "lagrimeo",
+        "pérdida de peso"
+      ],
+      "rangoEdad": [
+        "Destete",
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Salmonelosis",
+      "sintomas": [
+        "diarrea",
+        "fiebre",
+        "deshidratación",
+        "letargo",
+        "pérdida de apetito"
+      ],
+      "rangoEdad": [
+        "Maternidad",
+        "Destete",
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Circovirus",
+      "sintomas": [
+        "adelgazamiento",
+        "anemia",
+        "aumento de ganglios",
+        "dificultad respiratoria",
+        "diarrea"
+      ],
+      "rangoEdad": [
+        "Destete",
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Brucelosis",
+      "sintomas": [
+        "abortos",
+        "esterilidad",
+        "cojera",
+        "inflamación testicular"
+      ],
+      "rangoEdad": [
+        "Gestación",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Erisipela",
+      "sintomas": [
+        "fiebre",
+        "lesiones cutáneas",
+        "cojera",
+        "abortos"
+      ],
+      "rangoEdad": [
+        "Gestación",
+        "Destete",
+        "Engorda",
+        "Cuarentena"
+      ]
+    },
+    {
+      "nombre": "Clostridiosis",
+      "sintomas": [
+        "diarrea",
+        "depresión",
+        "deshidratación",
+        "muerte súbita"
+      ],
+      "rangoEdad": [
+        "Maternidad",
+        "Destete"
+      ]
+    }
+  ]
+} 

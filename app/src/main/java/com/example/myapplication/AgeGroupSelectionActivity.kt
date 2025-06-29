@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityAgeGroupSelectionBinding
+import com.example.myapplication.data.EtapaProductiva
+import com.example.myapplication.data.enfermedadesPorEtapa
+import com.example.myapplication.data.DiseaseData
 
 class AgeGroupSelectionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAgeGroupSelectionBinding
@@ -53,14 +56,27 @@ class AgeGroupSelectionActivity : AppCompatActivity() {
                     // Restaurar listeners
                     setupCheckBoxes()
 
-                    // Redirigir según el checkbox marcado
-                    when (selectedCheckBox) {
-                        binding.checkGestacion -> startActivity(Intent(this, GestacionActivity::class.java))
-                        binding.checkMaternidad -> startActivity(Intent(this, MaternidadActivity::class.java))
-                        binding.checkDestete -> startActivity(Intent(this, DesteteActivity::class.java))
-                        binding.checkEngorda -> startActivity(Intent(this, EngordaActivity::class.java))
-                        binding.checkCuarentena -> startActivity(Intent(this, CuarentenaActivity::class.java))
-                        binding.checkTodas -> startActivity(Intent(this, SymptomsActivity::class.java))
+                    // Filtrar enfermedades según etapa
+                    val etapa = when (selectedCheckBox) {
+                        binding.checkGestacion -> EtapaProductiva.GESTACION
+                        binding.checkMaternidad -> EtapaProductiva.MATERNIDAD
+                        binding.checkDestete -> EtapaProductiva.DESTETE
+                        binding.checkEngorda -> EtapaProductiva.ENGORDA
+                        binding.checkCuarentena -> EtapaProductiva.CUARENTENA
+                        else -> null
+                    }
+                    if (etapa != null) {
+                        val enfermedadesFiltradas = enfermedadesPorEtapa.filterValues { it.contains(etapa) }.keys.toList()
+                        // Obtener síntomas únicos de las enfermedades asociadas a la etapa
+                        val sintomasFiltrados = DiseaseData.diseases
+                            .filter { enfermedadesFiltradas.contains(it.name) }
+                            .flatMap { it.symptoms }
+                            .distinct()
+                        val intent = Intent(this, SymptomsActivity::class.java)
+                        intent.putStringArrayListExtra("filtered_symptoms", ArrayList(sintomasFiltrados))
+                        startActivity(intent)
+                    } else if (selectedCheckBox == binding.checkTodas) {
+                        startActivity(Intent(this, SymptomsActivity::class.java))
                     }
                 }
             }

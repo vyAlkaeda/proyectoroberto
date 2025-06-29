@@ -14,7 +14,6 @@ class NecropsiaAdapter(
         fun bind(item: NecropsiaItem, onItemClick: (Class<*>) -> Unit) {
             binding.titleTextView.text = item.title
             binding.descriptionTextView.text = item.description
-            binding.typeTextView.text = item.type
             binding.root.setOnClickListener { onItemClick(item.detailActivity) }
         }
     }
