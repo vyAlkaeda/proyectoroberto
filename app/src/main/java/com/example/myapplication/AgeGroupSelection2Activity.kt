@@ -40,27 +40,30 @@ class AgeGroupSelection2Activity : AppCompatActivity() {
             binding.checkTodas
         )
 
-        // Configurar el comportamiento del checkbox "TODAS"
-        binding.checkTodas.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                // Si se marca "TODAS", desmarcar las demás y navegar a SymptomsActivity
-                checkBoxes.forEach { checkbox ->
-                    if (checkbox != binding.checkTodas) {
-                        checkbox.isChecked = false
-                    }
-                }
-                // Navegar a SymptomsActivity
-                startActivity(Intent(this, NecropsiaActivity::class.java))
-            }
-        }
-
-        // Configurar el comportamiento de los demás checkboxes
         checkBoxes.forEach { checkbox ->
-            if (checkbox != binding.checkTodas) {
-                checkbox.setOnCheckedChangeListener { _, isChecked ->
-                    if (isChecked) {
-                        // Si se marca cualquier otra opción, desmarcar "TODAS"
-                        binding.checkTodas.isChecked = false
+            checkbox.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    // Desmarcar los demás checkboxes
+                    checkBoxes.forEach { other ->
+                        if (other != checkbox) other.isChecked = false
+                    }
+                    // Obtener el texto del grupo de edad seleccionado
+                    val edadSeleccionada = when (checkbox) {
+                        binding.checkGestacion -> "Gestación"
+                        binding.checkMaternidad -> "Maternidad"
+                        binding.checkDestete -> "Destete"
+                        binding.checkEngorda -> "Engorda"
+                        binding.checkCuarentena -> "Cuarentena"
+                        binding.checkTodas -> "Todas las edades"
+                        else -> "Todas las edades"
+                    }
+                    // Obtener el nombre de la actividad destino
+                    val destino = intent.getStringExtra("DESTINO_ACTIVITY")
+                    if (destino != null) {
+                        val destinoClass = Class.forName(destino)
+                        val intentDestino = Intent(this@AgeGroupSelection2Activity, destinoClass)
+                        intentDestino.putExtra("EDAD_SELECCIONADA", edadSeleccionada)
+                        startActivity(intentDestino)
                     }
                 }
             }

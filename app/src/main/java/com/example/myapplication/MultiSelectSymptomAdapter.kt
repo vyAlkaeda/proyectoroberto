@@ -50,6 +50,22 @@ class MultiSelectSymptomAdapter(
                     }
                     onSelectionChanged(selectedSymptoms.toList())
                 }
+
+                // Mostrar la imagen solo para 'ESPUMA BLANCA EN LA NARIZ'
+                if (symptom.title.equals("ESPUMA BLANCA EN LA NARIZ", ignoreCase = true)) {
+                    imageViewEspumaNariz.visibility = android.view.View.VISIBLE
+                    // Configurar click listener para mostrar la imagen en grande
+                    imageViewEspumaNariz.setOnClickListener {
+                        val dialog = android.app.Dialog(root.context)
+                        dialog.setContentView(R.layout.dialog_image)
+                        val imageViewGrande = dialog.findViewById<android.widget.ImageView>(R.id.imageViewGrande)
+                        imageViewGrande.setImageResource(R.drawable.espuma_blanca_nariz)
+                        imageViewGrande.setOnClickListener { dialog.dismiss() }
+                        dialog.show()
+                    }
+                } else {
+                    imageViewEspumaNariz.visibility = android.view.View.GONE
+                }
             }
         }
     }

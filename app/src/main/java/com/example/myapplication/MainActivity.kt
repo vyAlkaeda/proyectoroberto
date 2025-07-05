@@ -159,11 +159,15 @@ class MainActivity : AppCompatActivity() {
     private fun setupClickListeners() {
         try {
             binding.cardDiagnosticoSintomas.setOnClickListener {
-                startActivity(Intent(this, AgeGroupSelectionActivity::class.java))
+                val intent = Intent(this, AgeGroupSelection2Activity::class.java)
+                intent.putExtra("DESTINO_ACTIVITY", SymptomsActivity::class.java.name)
+                startActivity(intent)
             }
 
             binding.cardDiagnosticoNecropsia.setOnClickListener {
-                startActivity(Intent(this, AgeGroupSelection2Activity::class.java))
+                val intent = Intent(this, AgeGroupSelection2Activity::class.java)
+                intent.putExtra("DESTINO_ACTIVITY", NecropsiaActivity::class.java.name)
+                startActivity(intent)
             }
 
             binding.cardVideos.setOnClickListener {

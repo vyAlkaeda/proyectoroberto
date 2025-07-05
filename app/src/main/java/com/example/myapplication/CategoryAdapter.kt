@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
 
 class CategoryAdapter(
-    private val categories: List<String>,
+    private var categories: List<String>,
     private val onCategorySelected: (String) -> Unit
 ) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
-    private var selectedPosition = 1 // Digestivo por defecto
+    private var selectedPosition = 0 // Primera categoría por defecto
 
     inner class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val cardView: MaterialCardView = itemView.findViewById(R.id.categoryCard)
@@ -54,4 +54,10 @@ class CategoryAdapter(
     }
 
     override fun getItemCount() = categories.size
+
+    fun updateCategories(newCategories: List<String>) {
+        categories = newCategories
+        selectedPosition = 0 // Reset a la primera categoría
+        notifyDataSetChanged()
+    }
 } 

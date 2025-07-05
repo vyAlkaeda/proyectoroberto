@@ -7,11 +7,11 @@ import com.example.myapplication.databinding.ItemSymptomBinding
 
 class NecropsiaAdapter(
     private var necropsia: List<NecropsiaItem>,
-    private val onItemClick: (Class<*>) -> Unit
+    private val onItemClick: (Class<*>?) -> Unit
 ) : RecyclerView.Adapter<NecropsiaAdapter.NecropsiaViewHolder>() {
 
     class NecropsiaViewHolder(private val binding: ItemSymptomBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: NecropsiaItem, onItemClick: (Class<*>) -> Unit) {
+        fun bind(item: NecropsiaItem, onItemClick: (Class<*>?) -> Unit) {
             binding.titleTextView.text = item.title
             binding.descriptionTextView.text = item.description
             binding.root.setOnClickListener { onItemClick(item.detailActivity) }
@@ -39,5 +39,5 @@ data class NecropsiaItem(
     val title: String,
     val description: String,
     val type: String,
-    val detailActivity: Class<*>
+    val detailActivity: Class<*>?
 ) 

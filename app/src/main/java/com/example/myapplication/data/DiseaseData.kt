@@ -204,6 +204,7 @@ object DiseaseData {
             "HIDROPERICARDIO",
             "ADHERENCIAS EN PULMON Y COSTILLA",
             "ESPUMA BLANCA EN TRAQUEA",
+            "ESPUMA BLANCA EN LA NARIZ",
             "EDEMA PULMONAR"
         )),
         Disease("Epidermitis exudativa", listOf(
@@ -706,6 +707,84 @@ object DiseaseData {
             "TREMOR CONGENITO",
             "ULCERAS BOTONOSAS EN INTESTINO DELGADO Y GRUESO",
             "VOMITO"
+        )),
+        Disease("ZEARALENONA", listOf(
+            "ABORTO EN CUALQUIER ETAPA",
+            "LECHONES NACIDOS CON PATAS ABIERTAS (SPLAYLEGS)",
+            "REDUCCIÓN DE CELO EN CERDAS",
+            "ULCERAS EN LA PIEL",
+            "MASTITIS INTERSTICIAL",
+            "PSEUDOPREÑEZ"
+        )),
+        Disease("AFLATOXINA", listOf(
+            "ANOREXIA",
+            "EQUIMOSIS"
+        )),
+        Disease("OCRATOXINA", listOf(
+            "ANOREXIA",
+            "POLIDIPSIA",
+            "DIARREA",
+            "RETRASO DEL CRECIMIENTO"
+        )),
+        Disease("TRICOTECENOS", listOf(
+            "ANOREXIA",
+            "RECHAZO DEL ALIMENTO",
+            "LECHONES NACIDOS CON PATAS ABIERTAS (SPLAYLEGS)",
+            "VOMITO",
+            "DIARREA"
+        )),
+        Disease("FUMONISINA", listOf(
+            "ANOREXIA",
+            "RECHAZO DE ALIMENTO",
+            "RETRASO DEL CRECIMIENTO",
+            "ICTERICIA",
+            "DISNEA",
+            "TOS PRODUCTIVA"
+        )),
+        Disease("CAMPILOBACTERIOSIS", listOf(
+            "ANOREXIA",
+            "DIARREA MUCOSA O CREMOSA",
+            "DESHIDRATACION",
+            "FIEBRE",
+            "TENESMO",
+            "VOMITO CON MANCHAS DE SANGRE",
+            "DOLOR ABDOMINAL",
+            "CALAMBRES ABDOMINALES"
+        )),
+        Disease("COCCIDIOSIS", listOf(
+            "DIARREA GRASOSA",
+            "DIARREA AMARILLENTA O BLANQUECINA",
+            "ANOREXIA",
+            "DEBILIDAD",
+            "DESHIDRATACION",
+            "OLOR ACIDO DEL EXCREMENTO",
+            "TENESMO",
+            "CAQUEXIA",
+            "MUERTE",
+            "ANOREXIA",
+            "PELO HIRSUTO",
+            "RETRASO DEL CRECIMIENTO"
+        )),
+        Disease("ASCARIS SUUM", listOf(
+            "ANOREXIA",
+            "RETRASO DEL CRECIMIENTO",
+            "ICTERICIA",
+            "DISNEA",
+            "TOS ASMATICA",
+            "DIARREA AGUDA AMARILLA",
+            "LORDOSIS",
+            "DOLOR ABDOMINAL",
+            "VIENTRE PROMINENTE",
+            "RAQUITISMO",
+            "DESNUTRICION",
+            "CONVULSIONES"
+        )),
+        Disease("ESTRONGILOIDES", listOf(
+            "ANEMIA",
+            "DIARREA  AGUDA AMARILLA",
+            "EMACIACION",
+            "MUERTE SÚBITA",
+            "TOS ASMATICA"
         )),
         // Enfermedades adicionales basadas en los síntomas de la app
         Disease("Enfermedad de los Edemas", listOf("edema", "ataxia", "convulsiones", "muerte súbita")),
