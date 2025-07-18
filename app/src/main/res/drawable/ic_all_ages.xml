@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- Círculo grande central -->
+    <path
+        android:fillColor="#FF6B35"
+        android:pathData="M12,12m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    
+    <!-- Círculo pequeño superior izquierdo -->
+    <path
+        android:fillColor="#4ECDC4"
+        android:pathData="M8,8m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    
+    <!-- Círculo pequeño superior derecho -->
+    <path
+        android:fillColor="#45B7D1"
+        android:pathData="M16,8m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    
+    <!-- Círculo pequeño inferior izquierdo -->
+    <path
+        android:fillColor="#96CEB4"
+        android:pathData="M8,16m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    
+    <!-- Círculo pequeño inferior derecho -->
+    <path
+        android:fillColor="#FFEAA7"
+        android:pathData="M16,16m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    
+    <!-- Líneas de conexión -->
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="1"
+        android:pathData="M10,10 L14,10" />
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="1"
+        android:pathData="M10,14 L14,14" />
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="1"
+        android:pathData="M10,10 L10,14" />
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="1"
+        android:pathData="M14,10 L14,14" />
+</vector> 

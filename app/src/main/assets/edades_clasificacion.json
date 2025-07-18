@@ -1,0 +1,22 @@
+[
+  {
+    "etapa": "Todas",
+    "descripcion": "Incluye todos los síntomas y lesiones disponibles para todas las edades. Útil para diagnósticos generales o cuando no se conoce la edad específica del animal."
+  },
+  {
+    "etapa": "Lechones lactantes",
+    "descripcion": "Cerdos desde el nacimiento hasta el destete (0-21 días). Se alimentan exclusivamente de leche materna y son muy vulnerables a enfermedades y cambios de temperatura."
+  },
+  {
+    "etapa": "Lechones destetados",
+    "descripcion": "Cerdos jóvenes recién separados de la madre (22-56 días). Comienzan a consumir alimento sólido y requieren adaptación nutricional y ambiental."
+  },
+  {
+    "etapa": "Crecimiento/Engorda",
+    "descripcion": "Cerdos en fase de rápido crecimiento, desde el destete hasta alcanzar el peso de mercado (57 días a 5-6 meses). Se enfocan en ganar peso y masa muscular."
+  },
+  {
+    "etapa": "Adultos/Reproductores",
+    "descripcion": "Cerdos adultos destinados a la reproducción (cerdas y verracos) o que han alcanzado la madurez sexual. Incluye hembras gestantes, lactantes y machos reproductores."
+  }
+] 

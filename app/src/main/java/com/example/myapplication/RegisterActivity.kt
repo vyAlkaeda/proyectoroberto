@@ -181,10 +181,10 @@ class RegisterActivity : AppCompatActivity() {
 
             try {
                 // Obtener los valores de los campos
-                val fullName = binding.fullNameEditText.text.toString().trim()
-                val city = binding.cityAutoComplete.text.toString().trim()
+                val fullName = binding.fullNameEditText.text.toString().trim().uppercase()
+                val city = binding.cityAutoComplete.text.toString().trim().uppercase()
                 val age = binding.ageEditText.text.toString().trim().toInt()
-                val gender = binding.genderAutoComplete.text.toString().trim()
+                val gender = binding.genderAutoComplete.text.toString().trim().uppercase()
                 val email = binding.emailEditText.text.toString().trim()
                 val password = binding.passwordEditText.text.toString()
 

@@ -1,153 +1,392 @@
-{
-  "enfermedades": [
-    {
-      "nombre": "Estreptococosis",
-      "sintomas": [
-        "fiebre",
-        "cojera",
-        "nerviosismo",
-        "temblores",
-        "meningitis",
-        "convulsiones"
-      ],
-      "rangoEdad": [
-        "Maternidad",
-        "Destete",
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Pleuroneumonía",
-      "sintomas": [
-        "tos",
-        "dificultad respiratoria",
-        "fiebre alta",
-        "muerte súbita",
-        "anorexia"
-      ],
-      "rangoEdad": [
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "PRRS",
-      "sintomas": [
-        "abortos",
-        "fiebre",
-        "tos",
-        "mortalidad neonatal",
-        "retraso en crecimiento"
-      ],
-      "rangoEdad": [
-        "Gestación",
-        "Maternidad",
-        "Destete",
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Leptospirosis",
-      "sintomas": [
-        "fiebre",
-        "ictericia",
-        "abortos",
-        "hematuria",
-        "letargo"
-      ],
-      "rangoEdad": [
-        "Gestación",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Rinitis Atrófica",
-      "sintomas": [
-        "estornudos",
-        "deformidad nasal",
-        "hemorragia nasal",
-        "lagrimeo",
-        "pérdida de peso"
-      ],
-      "rangoEdad": [
-        "Destete",
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Salmonelosis",
-      "sintomas": [
-        "diarrea",
-        "fiebre",
-        "deshidratación",
-        "letargo",
-        "pérdida de apetito"
-      ],
-      "rangoEdad": [
-        "Maternidad",
-        "Destete",
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Circovirus",
-      "sintomas": [
-        "adelgazamiento",
-        "anemia",
-        "aumento de ganglios",
-        "dificultad respiratoria",
-        "diarrea"
-      ],
-      "rangoEdad": [
-        "Destete",
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Brucelosis",
-      "sintomas": [
-        "abortos",
-        "esterilidad",
-        "cojera",
-        "inflamación testicular"
-      ],
-      "rangoEdad": [
-        "Gestación",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Erisipela",
-      "sintomas": [
-        "fiebre",
-        "lesiones cutáneas",
-        "cojera",
-        "abortos"
-      ],
-      "rangoEdad": [
-        "Gestación",
-        "Destete",
-        "Engorda",
-        "Cuarentena"
-      ]
-    },
-    {
-      "nombre": "Clostridiosis",
-      "sintomas": [
-        "diarrea",
-        "depresión",
-        "deshidratación",
-        "muerte súbita"
-      ],
-      "rangoEdad": [
-        "Maternidad",
-        "Destete"
-      ]
-    }
-  ]
-} 
+[
+  {
+    "sintoma": "ABCESOS CUTANEOS",
+    "enfermedades": ["TRUEPERELA PYOGENES", "CLAMIDIA"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ABCESOS EN BAZO",
+    "enfermedades": ["BRUCELOSIS"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ABCESOS EN RIÑONES",
+    "enfermedades": ["BRUCELOSIS"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ABCESOS HEPATICOS",
+    "enfermedades": ["TRUEPERELA PYOGENES"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ABCESOS PULMONARES",
+    "enfermedades": ["TRUEPERELA PYOGENES"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ABDOMEN PURPURA",
+    "enfermedades": ["SALMONELLA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ABORTO",
+    "enfermedades": ["INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "BRUCELOSIS", "ERISIPELA", "CLAMIDIA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "ZEARALENONA"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "ABORTO TERCER TERCIO",
+    "enfermedades": ["PRRS", "LEPTOSPIROSIS", "CIRCOVIRUS"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "ADENOMATOSIS INTESTINAL",
+    "enfermedades": ["ILEITIS"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ADHERENCIAS EN PULMON Y COSTILLAS",
+    "enfermedades": ["ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ADHERENCIAS FIBRINONECROTICAS EN ABDOMEN",
+    "enfermedades": ["CLOSTRIDIUM P."],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ADIPSIA",
+    "enfermedades": ["PLEURONEUMONIA", "PASTEURELOSIS", "ESTREPTOCOCOSIS"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "AGALAXIA",
+    "enfermedades": ["PRRS", "GASTROENTERITIS TRASMISIBLE", "AFLATOXINA", "FUMONISINA", "ERISIPELA"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "ANEMIA",
+    "enfermedades": ["ESTRONGILOIDES"],
+    "etapas": ["Lechones lactantes", "Lechones destetados"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "ANESTRO",
+    "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "BRUCELOSIS", "CLAMIDIA"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "ANOREXIA",
+    "enfermedades": ["AFLATOXINA", "OCRATOXINA", "TRICOTECENOS", "FUMONISINA", "CAMPILOBACTERIOSIS", "COCCIDIOSIS", "ASCARIS SUUM", "ROTAVIRUS PORCINO", "PRRS", "INFLUENZA PORCINA", "GASTROENTERITIS TRASMISIBLE", "ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "PLEURONEUMONIA", "ENFERMEDAD DE GLÄSSER", "CLAMIDIA", "TRUEPERELA PYOGENES", "PASTEURELOSIS", "LEPTOSPIROSIS", "ERISIPELA", "E. COLI", "SALMONELLA", "DIARREA EPIDEMICA PORCINA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "EPIDERMITIS EXUDATIVA", "CLOSTRIDIUM P."],
+    "etapas": ["Todas"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "APARENCIA SUCIA DEL LECHON",
+    "enfermedades": ["GASTROENTERITIS TRASMISIBLE"],
+    "etapas": ["Lechones lactantes"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "AREAS DE CONSOLIDACION PURPURA-GRIS EN PULMON",
+    "enfermedades": ["MICOPLASMA"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "AREAS DE NECROSIS CIRCULARES Y CONCENTRICAS EN INTESTINOS",
+    "enfermedades": ["PESTE PORCINA CLASICA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ARTRITIS",
+    "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "MICOPLASMA", "ERISIPELA", "PESTE PORCINA AFRICANA", "EPIDERMITIS EXUDATIVA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ARTRITIS PURULENTA",
+    "enfermedades": ["ESTREPTOCOCOSIS", "TRUEPERELA PYOGENES"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ARTRITIS SUPURATIVA",
+    "enfermedades": ["TRUEPERELA PYOGENES"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ASCITIS",
+    "enfermedades": ["CLOSTRIDIUM P.", "PRRS", "ENFERMEDAD DE GLÄSSER"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ATAXIA",
+    "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "LEPTOSPIROSIS", "E. COLI"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "ATROFIA DE VELLOSIDADES INTESTINALES",
+    "enfermedades": ["GASTROENTERITIS TRASMISIBLE", "ROTAVIRUS PORCINO", "E. COLI"],
+    "etapas": ["Lechones lactantes", "Lechones destetados"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "ATROFIA TESTICULAR",
+    "enfermedades": ["ZEARALENONA", "BRUCELOSIS"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BAJO NUMERO DE NACIDOS VIVOS",
+    "enfermedades": ["PRRS", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "PARVOVIRUS PORCINO", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "BANDAS CICATRICIALES EN PULMONES",
+    "enfermedades": ["MICOPLASMA"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BOTONES PESTOSOS EN INTESTINO DELGADO",
+    "enfermedades": ["PESTE PORCINA CLASICA", "PESTE PORCINA AFRICANA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRAQUIGNATISMO SUPERIOR",
+    "enfermedades": ["RINITIS ATROFICA"],
+    "etapas": ["Lechones lactantes", "Lechones destetados"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONCONEUMONIA",
+    "enfermedades": ["ESTRONGILOIDES", "INFLUENZA PORCINA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONCONEUMONIA CATARRAL PURULENTA",
+    "enfermedades": ["ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONCONEUMONIA PURULENTA",
+    "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONCONEUMONIA SUPURATIVA LOBULAR",
+    "enfermedades": ["MICOPLASMA"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONQIOLITIS EXUDATIVA",
+    "enfermedades": ["INFLUENZA PORCINA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONQUITIS",
+    "enfermedades": ["ENFERMEDAD DE AUJESZKY", "INFLUENZA PORCINA", "MICOPLASMA", "PASTEURELOSIS", "PRRS", "RENITIS ATROFICA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BRONQUITIS SUPURATIVA",
+    "enfermedades": ["CLAMIDIA", "CLEURONEUMONIA", "PASTEURELOSIS", "ENFERMEDAD DE GLÄSSER"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BULLAS PULMONARES",
+    "enfermedades": ["PLEURONEUMONIA"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "BURSITIS",
+    "enfermedades": ["BRUCELOSIS"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "CABEZA AGACHADA",
+    "enfermedades": ["ESTREPTOCOCOSIS", "E. COLI", "ENFERMEDAD DE GLÄSSER", "ENFERMEDAD DE AUJESZKY"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CALAMBRES ABDOMINALES",
+    "enfermedades": ["CAMPILOBACTERIOSIS"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CANCER",
+    "enfermedades": ["AFLATOXINA"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "CAQUEXIA",
+    "enfermedades": ["AFLATOXINA", "COCCIDIOSIS", "ESTRONGILOIDES", "ASCARIS SUUM", "GASTROENTERITIS TRASMISIBLE"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CEGUERA",
+    "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE OJO AZUL"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CELO SILENCIOSO",
+    "enfermedades": ["CIRCOVIRUS"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CELO TARDIO POSTDESTETE",
+    "enfermedades": ["PRRS", "LEPTOSPIROSIS", "ENFERMEDAD DE AUJESZKY", "ESTRONGILOIDES", "CIRCOVIRUS"],
+    "etapas": ["Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CIANOSIS",
+    "enfermedades": ["ERISIPELA", "PRRS", "PLEURONEUMONIA", "ENFERMEDAD DE GLÄSSER", "SALMONELLA", "PESTE PORCINA AFRICANA", "E. COLI", "PESTE PORCINA CLASICA", "MICOPLASMA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CIANOSIS EN PECHO Y ESTOMAGO",
+    "enfermedades": ["PASTEURELOSIS"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "COJERA",
+    "enfermedades": ["ESTREPTOCOCOSIS", "CLAMIDIA", "BRUCELOSIS", "ERISIPELA", "CAMPILOBACTERIOSIS", "EPIDERMITIS EXUDATIVA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "COLITIS CATARRAL",
+    "enfermedades": ["CIRCOVIRUS", "DISENTERIA PORCINA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "CONGESTIÓN PULMONAR",
+    "enfermedades": ["EPIDERMITIS EXUDATIVA", "MICOPLASMA", "INFLUENZA PORCINA", "PLEURONEUMONIA", "PRRS", "ENFERMEDAD DE AUJESZKY"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "CONGESTION Y EDEMA DE COLON",
+    "enfermedades": ["DISENTERIA PORCINA", "E. COLI"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "CONJUNTIVITIS",
+    "enfermedades": ["ENFERMEDAD DE OJO AZUL", "PRRS", "INFLUENZA PORCINA", "PESTE PORCINA CLASICA", "RINITIS ATROFICA"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CONJUNTIVITIS DEL RECIEN NACIDO",
+    "enfermedades": ["CLAMIDIA"],
+    "etapas": ["Lechones lactantes"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CONSOLIDACION CRÁNEO VENTRAL PURPURA-GRIS EN PULMONES",
+    "enfermedades": ["MICOPLASMA"],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "CONSUMO DE ORINA",
+    "enfermedades": ["CIRCOVIRUS"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CONVERSION ALIMENTICIA ELEVADA",
+    "enfermedades": ["RINITIS ATROFICA", "MICOPLASMA", "AFLATOXINA", "ASCARIS SUUM", "CAMPILOBACTERIOSIS", "CIRCOVIRUS", "CLAMIDIA", "CLOSTRIDIUM P.", "COCCIDIOSIS", "DIARREA EPIDEMICA PORCINA", "DISENTERIA PORCINA", "E. COLI", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE GLÄSSER", "ENFERMEDAD DE OJO AZUL", "EPIDERMITIS EXUDATIVA", "ERISIPELA", "ESTREPTOCOCOSIS", "ESTRONGILOIDES", "FUMONISINA", "GASTROENTERITIS TRASMISIBLE", "INFLUENZA PORCINA", "LEPTOSPIROSIS", "OCRATOXINA", "PARVOVIRUS PORCINO", "PASTEURELOSIS", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "PLEURONEUMONIA", "PRRS", "ROTAVIRUS PORCINO", "SALMONELLA", "TRICOTECENOS", "TRUEPERELA PYOGENES", "RINITIS ATROFICA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CONVULSIONES",
+    "enfermedades": ["ASCARIS SUUM", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "E. COLI", "PESTE PORCINA CLASICA", "ENFERMEDAD DE OJO AZUL"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "CORAZON BLANDO",
+    "enfermedades": ["CIRCOVIRUS", "ERISIPELA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "COSTRAS SECAS EN PIEL",
+    "enfermedades": ["LEPTOSPIROSIS", "EPIDERMITIS EXUDATIVA", "ERISIPELA"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "DECOLORACION DEL MUSCULO DORSAL",
+    "enfermedades": ["CLOSTRIDIUM P."],
+    "etapas": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "DECUBITO LATERAL",
+    "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "E. COLI", "ERISIPELA"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "DEFORMACION DE ARTICULACIONES",
+    "enfermedades": ["CLAMIDIA", "ENFERMEDAD DE GLÄSSER", "MICOPLASMA", "ESTREPTOCOCOSIS"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Lesión"
+  },
+  {
+    "sintoma": "DEPRESION",
+    "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "PLEURONEUMONIA", "PESTE PORCINA AFRICANA", "INFLUENZA PORCINA", "SALMONELLA"],
+    "etapas": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+    "tipo": "Síntoma"
+  },
+  {
+    "sintoma": "DERMATITIS",
+    "enfermedades": ["CIRCOVIRUS"],
+    "etapas": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+    "tipo": "Lesión"
+  }
+] 

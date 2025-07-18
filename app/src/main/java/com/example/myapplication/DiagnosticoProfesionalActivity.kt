@@ -2,151 +2,396 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.data.DiagnosticoData
+import com.example.myapplication.data.UserData
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.*
 
 class DiagnosticoProfesionalActivity : AppCompatActivity() {
-    private lateinit var checkBox1: CheckBox
-    private lateinit var checkBox2: CheckBox
-    private lateinit var checkBox3: CheckBox
-    private lateinit var checkBox4: CheckBox
-    private lateinit var radioGroupAfectados: RadioGroup
-    private lateinit var radioGroupMortalidad: RadioGroup
-    private lateinit var checkBoxGestacion: CheckBox
-    private lateinit var checkBoxMaternidad: CheckBox
-    private lateinit var checkBoxDestete: CheckBox
-    private lateinit var checkBoxEngorda: CheckBox
-    private lateinit var checkBoxCuarentena: CheckBox
-    private lateinit var buttonContinuar: Button
-    private val db = FirebaseFirestore.getInstance()
+
+    private lateinit var radioGroupVivo: RadioGroup
+    private lateinit var containerPreguntasAdicionales: LinearLayout
+    private lateinit var btnDiagnostico: Button
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
+    private var userData: UserData? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diagnostico_profesional)
 
+        // Inicializar Firebase
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+
         // Inicializar vistas
-        initializeViews()
-        setupListeners()
-    }
+        radioGroupVivo = findViewById(R.id.radioGroupVivo)
+        containerPreguntasAdicionales = findViewById(R.id.containerPreguntasAdicionales)
+        btnDiagnostico = findViewById(R.id.btnDiagnostico)
 
-    private fun initializeViews() {
-        checkBox1 = findViewById(R.id.checkBox1)
-        checkBox2 = findViewById(R.id.checkBox2)
-        checkBox3 = findViewById(R.id.checkBox3)
-        checkBox4 = findViewById(R.id.checkBox4)
-        radioGroupAfectados = findViewById(R.id.radioGroupAfectados)
-        radioGroupMortalidad = findViewById(R.id.radioGroupMortalidad)
-        checkBoxGestacion = findViewById(R.id.checkBoxGestacion)
-        checkBoxMaternidad = findViewById(R.id.checkBoxMaternidad)
-        checkBoxDestete = findViewById(R.id.checkBoxDestete)
-        checkBoxEngorda = findViewById(R.id.checkBoxEngorda)
-        checkBoxCuarentena = findViewById(R.id.checkBoxCuarentena)
-        buttonContinuar = findViewById(R.id.buttonContinuar)
-    }
+        // Cargar datos del usuario
+        cargarDatosUsuario()
 
-    private fun setupListeners() {
-        buttonContinuar.setOnClickListener {
-            val intent = Intent(this, ForoDiagnosticoActivity::class.java)
-            startActivity(intent)
+        // Configurar listener para la pregunta inicial
+        radioGroupVivo.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radioVivoSi -> {
+                    containerPreguntasAdicionales.visibility = View.VISIBLE
+                    btnDiagnostico.visibility = View.VISIBLE
+                }
+                R.id.radioVivoNo -> {
+                    containerPreguntasAdicionales.visibility = View.GONE
+                    btnDiagnostico.visibility = View.VISIBLE
+                    // Mostrar mensaje para casos de muerte
+                    mostrarMensajeMuerte()
+                }
+            }
+        }
+
+        // Configurar botón de diagnóstico
+        btnDiagnostico.setOnClickListener {
+            realizarDiagnostico()
         }
     }
 
-    private fun validateAnswers(): Boolean {
-        // Validar que al menos una opción esté seleccionada en cada pregunta
-        val edadSeleccionada = checkBox1.isChecked || checkBox2.isChecked || 
-                             checkBox3.isChecked || checkBox4.isChecked
+    private fun cargarDatosUsuario() {
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            db.collection("users").document(currentUser.uid)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        userData = document.toObject(UserData::class.java)
+                    }
+                }
+                .addOnFailureListener { e ->
+                    // Si falla, crear datos básicos
+                    userData = UserData(
+                        uid = currentUser.uid,
+                        fullName = "Usuario",
+                        email = currentUser.email ?: "",
+                        points = 0,
+                        profileImageUrl = "",
+                        cardNumber = ""
+                    )
+                }
+        }
+    }
+
+    private fun mostrarMensajeMuerte() {
+        Toast.makeText(
+            this,
+            "En caso de muerte del animal, se recomienda realizar necropsia para diagnóstico preciso",
+            Toast.LENGTH_LONG
+        ).show()
+    }
+
+    private fun realizarDiagnostico() {
+        // Mostrar indicador de progreso
+        btnDiagnostico.isEnabled = false
+        btnDiagnostico.text = "PROCESANDO..."
+
+        // Obtener respuestas del cuestionario
+        val respuestas = obtenerRespuestas()
         
-        val afectadosSeleccionado = radioGroupAfectados.checkedRadioButtonId != -1
-        val mortalidadSeleccionada = radioGroupMortalidad.checkedRadioButtonId != -1
+        // Realizar análisis de síntomas
+        val diagnostico = analizarSintomas(respuestas)
         
-        val areaSeleccionada = checkBoxGestacion.isChecked || checkBoxMaternidad.isChecked || 
-                              checkBoxDestete.isChecked || checkBoxEngorda.isChecked || 
-                              checkBoxCuarentena.isChecked
-
-        if (!edadSeleccionada) {
-            Toast.makeText(this, "Por favor seleccione la edad de los cerdos", Toast.LENGTH_SHORT).show()
-            return false
-        }
-
-        if (!afectadosSeleccionado) {
-            Toast.makeText(this, "Por favor seleccione el número de cerdos afectados", Toast.LENGTH_SHORT).show()
-            return false
-        }
-
-        if (!mortalidadSeleccionada) {
-            Toast.makeText(this, "Por favor seleccione el incremento de mortalidad", Toast.LENGTH_SHORT).show()
-            return false
-        }
-
-        if (!areaSeleccionada) {
-            Toast.makeText(this, "Por favor seleccione al menos un área de producción afectada", Toast.LENGTH_SHORT).show()
-            return false
-        }
-
-        return true
+        // Guardar en Firestore y mostrar resultados
+        guardarDiagnostico(respuestas, diagnostico)
     }
 
-    private fun processAnswers() {
-        // Recolectar respuestas
-        val edadesSeleccionadas = mutableListOf<String>()
-        if (checkBox1.isChecked) edadesSeleccionadas.add("1-4 semanas")
-        if (checkBox2.isChecked) edadesSeleccionadas.add("5-10 semanas")
-        if (checkBox3.isChecked) edadesSeleccionadas.add("11-16 semanas")
-        if (checkBox4.isChecked) edadesSeleccionadas.add("17-22 semanas")
+    private fun obtenerRespuestas(): MutableMap<String, Any> {
+        val respuestas = mutableMapOf<String, Any>()
 
-        val afectados = when (radioGroupAfectados.checkedRadioButtonId) {
-            R.id.radioButtonMas10 -> "MAS DEL 10%"
-            R.id.radioButtonMenos10 -> "MENOS DEL 10%"
-            else -> ""
+        // Pregunta 1: ¿Está vivo?
+        respuestas["vivo"] = when (radioGroupVivo.checkedRadioButtonId) {
+            R.id.radioVivoSi -> "SÍ"
+            R.id.radioVivoNo -> "NO"
+            else -> "NO SELECCIONADO"
         }
 
-        val mortalidad = when (radioGroupMortalidad.checkedRadioButtonId) {
-            R.id.radioButtonMas5 -> "MAS DEL 5%"
-            R.id.radioButtonMenos5 -> "MENOS DEL 5%"
-            else -> ""
+        // Solo continuar si está vivo
+        if (respuestas["vivo"] == "SÍ") {
+            // Pregunta 2: Edad
+            respuestas["edad"] = when (findViewById<RadioGroup>(R.id.radioGroupEdad).checkedRadioButtonId) {
+                R.id.radioEdad1 -> "1-4 semanas"
+                R.id.radioEdad2 -> "5-10 semanas"
+                R.id.radioEdad3 -> "11-16 semanas"
+                R.id.radioEdad4 -> "17-22 semanas"
+                else -> "NO SELECCIONADO"
+            }
+
+            // Pregunta 3: Número de afectados
+            respuestas["afectados"] = when (findViewById<RadioGroup>(R.id.radioGroupAfectados).checkedRadioButtonId) {
+                R.id.radioAfectadosMas -> "Más del 10%"
+                R.id.radioAfectadosMenos -> "Menos del 10%"
+                else -> "NO SELECCIONADO"
+            }
+
+            // Pregunta 4: Mortalidad
+            respuestas["mortalidad"] = when (findViewById<RadioGroup>(R.id.radioGroupMortalidad).checkedRadioButtonId) {
+                R.id.radioMortalidadMas -> "Más del 5%"
+                R.id.radioMortalidadMenos -> "Menos del 5%"
+                else -> "NO SELECCIONADO"
+            }
+
+            // Pregunta 5: Área de producción
+            respuestas["area"] = when (findViewById<RadioGroup>(R.id.radioGroupArea).checkedRadioButtonId) {
+                R.id.radioAreaGestacion -> "Gestación"
+                R.id.radioAreaMaternidad -> "Maternidad"
+                R.id.radioAreaDestete -> "Destete"
+                R.id.radioAreaEngorda -> "Engorda"
+                R.id.radioAreaCuarentena -> "Cuarentena"
+                else -> "NO SELECCIONADO"
+            }
+
+            // Síntomas seleccionados por categoría
+            val sintomasNerviosos = mutableListOf<String>()
+            val sintomasMusculoesqueleticos = mutableListOf<String>()
+            val sintomasDigestivos = mutableListOf<String>()
+            val sintomasReproductivos = mutableListOf<String>()
+            val sintomasTegumentarios = mutableListOf<String>()
+            val sintomasRespiratorios = mutableListOf<String>()
+
+            // Síntomas Nerviosos
+            if (findViewById<CheckBox>(R.id.checkDebilidad).isChecked) sintomasNerviosos.add("Debilidad")
+            if (findViewById<CheckBox>(R.id.checkConvulsiones).isChecked) sintomasNerviosos.add("Convulsiones")
+            if (findViewById<CheckBox>(R.id.checkIncordinacion).isChecked) sintomasNerviosos.add("Incordinación")
+            if (findViewById<CheckBox>(R.id.checkParalisis).isChecked) sintomasNerviosos.add("Parálisis")
+            if (findViewById<CheckBox>(R.id.checkDecubito).isChecked) sintomasNerviosos.add("Decúbito lateral")
+            if (findViewById<CheckBox>(R.id.checkTemblores).isChecked) sintomasNerviosos.add("Temblores")
+            if (findViewById<CheckBox>(R.id.checkCabezaLado).isChecked) sintomasNerviosos.add("Cabeza de lado")
+            if (findViewById<CheckBox>(R.id.checkOpistotono).isChecked) sintomasNerviosos.add("Opistótono")
+            if (findViewById<CheckBox>(R.id.checkRigidez).isChecked) sintomasNerviosos.add("Rigidez muscular")
+            if (findViewById<CheckBox>(R.id.checkPedaleo).isChecked) sintomasNerviosos.add("Pedaleo")
+            if (findViewById<CheckBox>(R.id.checkDepresion).isChecked) sintomasNerviosos.add("Depresión")
+            if (findViewById<CheckBox>(R.id.checkPosturasAnormales).isChecked) sintomasNerviosos.add("Posturas anormales")
+            if (findViewById<CheckBox>(R.id.checkNistagmo).isChecked) sintomasNerviosos.add("Nistagmo")
+            if (findViewById<CheckBox>(R.id.checkCabezaAgachada).isChecked) sintomasNerviosos.add("Cabeza agachada")
+            if (findViewById<CheckBox>(R.id.checkLetargo).isChecked) sintomasNerviosos.add("Letargo")
+            if (findViewById<CheckBox>(R.id.checkMarchaCirculos).isChecked) sintomasNerviosos.add("Marcha en círculos")
+            if (findViewById<CheckBox>(R.id.checkMarchaReversa).isChecked) sintomasNerviosos.add("Marcha en reversa")
+
+            // Síntomas Musculoesqueléticos
+            if (findViewById<CheckBox>(R.id.checkCojeras).isChecked) sintomasMusculoesqueleticos.add("Cojeras")
+            if (findViewById<CheckBox>(R.id.checkResistencia).isChecked) sintomasMusculoesqueleticos.add("Resistencia a moverse")
+            if (findViewById<CheckBox>(R.id.checkBursitis).isChecked) sintomasMusculoesqueleticos.add("Bursitis")
+            if (findViewById<CheckBox>(R.id.checkInflamacionPierna).isChecked) sintomasMusculoesqueleticos.add("Inflamación de pierna")
+            if (findViewById<CheckBox>(R.id.checkArticulaciones).isChecked) sintomasMusculoesqueleticos.add("Articulaciones inflamadas")
+
+            // Síntomas Digestivos
+            if (findViewById<CheckBox>(R.id.checkAnorexia).isChecked) sintomasDigestivos.add("Anorexia")
+            if (findViewById<CheckBox>(R.id.checkBajoConsumo).isChecked) sintomasDigestivos.add("Bajo consumo")
+            if (findViewById<CheckBox>(R.id.checkPerdidaPeso).isChecked) sintomasDigestivos.add("Pérdida de peso")
+            if (findViewById<CheckBox>(R.id.checkCrecimientoLento).isChecked) sintomasDigestivos.add("Crecimiento lento")
+            if (findViewById<CheckBox>(R.id.checkVomito).isChecked) sintomasDigestivos.add("Vómito")
+            if (findViewById<CheckBox>(R.id.checkDiarreaLiquida).isChecked) sintomasDigestivos.add("Diarrea líquida")
+            if (findViewById<CheckBox>(R.id.checkDiarreaGelatinosa).isChecked) sintomasDigestivos.add("Diarrea gelatinosa")
+            if (findViewById<CheckBox>(R.id.checkDiarreaCremosa).isChecked) sintomasDigestivos.add("Diarrea cremosa")
+            if (findViewById<CheckBox>(R.id.checkDiarreaVerdosa).isChecked) sintomasDigestivos.add("Diarrea verdosa")
+            if (findViewById<CheckBox>(R.id.checkDiarreaAmarilla).isChecked) sintomasDigestivos.add("Diarrea amarilla")
+            if (findViewById<CheckBox>(R.id.checkDiarreaGris).isChecked) sintomasDigestivos.add("Diarrea gris")
+            if (findViewById<CheckBox>(R.id.checkDiarreaCafe).isChecked) sintomasDigestivos.add("Diarrea café")
+            if (findViewById<CheckBox>(R.id.checkDiarreaNegra).isChecked) sintomasDigestivos.add("Diarrea negra")
+            if (findViewById<CheckBox>(R.id.checkDiarreaSangre).isChecked) sintomasDigestivos.add("Diarrea con sangre")
+            if (findViewById<CheckBox>(R.id.checkDiarreaBlanquecina).isChecked) sintomasDigestivos.add("Diarrea blanquecina")
+
+            // Síntomas Reproductivos
+            if (findViewById<CheckBox>(R.id.checkAbortoPrimer).isChecked) sintomasReproductivos.add("Aborto primer tercio")
+            if (findViewById<CheckBox>(R.id.checkAbortoSegundo).isChecked) sintomasReproductivos.add("Aborto segundo tercio")
+            if (findViewById<CheckBox>(R.id.checkAbortoTercer).isChecked) sintomasReproductivos.add("Aborto tercer tercio")
+            if (findViewById<CheckBox>(R.id.checkCerdaVacia).isChecked) sintomasReproductivos.add("Cerda vacía")
+            if (findViewById<CheckBox>(R.id.checkAnestro).isChecked) sintomasReproductivos.add("Anestro")
+            if (findViewById<CheckBox>(R.id.checkCeloSilencioso).isChecked) sintomasReproductivos.add("Celo silencioso")
+
+            // Síntomas Tegumentarios
+            if (findViewById<CheckBox>(R.id.checkFiebre39).isChecked) sintomasTegumentarios.add("Fiebre 39.3-39.8°C")
+            if (findViewById<CheckBox>(R.id.checkFiebre41).isChecked) sintomasTegumentarios.add("Fiebre 41.5°C")
+            if (findViewById<CheckBox>(R.id.checkFiebre40).isChecked) sintomasTegumentarios.add("Fiebre 40.5-41.5°C")
+            if (findViewById<CheckBox>(R.id.checkFiebre43).isChecked) sintomasTegumentarios.add("Fiebre 43°C")
+            if (findViewById<CheckBox>(R.id.checkDeshidratacion).isChecked) sintomasTegumentarios.add("Deshidratación")
+            if (findViewById<CheckBox>(R.id.checkConjuntivitis).isChecked) sintomasTegumentarios.add("Conjuntivitis")
+            if (findViewById<CheckBox>(R.id.checkCeguera).isChecked) sintomasTegumentarios.add("Ceguera")
+            if (findViewById<CheckBox>(R.id.checkPielPalida).isChecked) sintomasTegumentarios.add("Piel pálida")
+            if (findViewById<CheckBox>(R.id.checkPielAmarilla).isChecked) sintomasTegumentarios.add("Piel amarilla")
+            if (findViewById<CheckBox>(R.id.checkPielAzul).isChecked) sintomasTegumentarios.add("Piel azul")
+
+            // Síntomas Respiratorios
+            if (findViewById<CheckBox>(R.id.checkDisnea).isChecked) sintomasRespiratorios.add("Disnea")
+            if (findViewById<CheckBox>(R.id.checkTaquipnea).isChecked) sintomasRespiratorios.add("Taquipnea")
+            if (findViewById<CheckBox>(R.id.checkTosSeca).isChecked) sintomasRespiratorios.add("Tos seca")
+            if (findViewById<CheckBox>(R.id.checkTosProductiva).isChecked) sintomasRespiratorios.add("Tos productiva")
+            if (findViewById<CheckBox>(R.id.checkEstornudo).isChecked) sintomasRespiratorios.add("Estornudo")
+            if (findViewById<CheckBox>(R.id.checkEscurrimientoNasal).isChecked) sintomasRespiratorios.add("Escurrimiento nasal")
+            if (findViewById<CheckBox>(R.id.checkMuerteSubita).isChecked) sintomasRespiratorios.add("Muerte súbita")
+
+            respuestas["sintomasNerviosos"] = sintomasNerviosos
+            respuestas["sintomasMusculoesqueleticos"] = sintomasMusculoesqueleticos
+            respuestas["sintomasDigestivos"] = sintomasDigestivos
+            respuestas["sintomasReproductivos"] = sintomasReproductivos
+            respuestas["sintomasTegumentarios"] = sintomasTegumentarios
+            respuestas["sintomasRespiratorios"] = sintomasRespiratorios
         }
 
-        val areasSeleccionadas = mutableListOf<String>()
-        if (checkBoxGestacion.isChecked) areasSeleccionadas.add("GESTACION")
-        if (checkBoxMaternidad.isChecked) areasSeleccionadas.add("MATERNIDAD")
-        if (checkBoxDestete.isChecked) areasSeleccionadas.add("DESTETE")
-        if (checkBoxEngorda.isChecked) areasSeleccionadas.add("ENGORDA")
-        if (checkBoxCuarentena.isChecked) areasSeleccionadas.add("CUARENTENA")
+        return respuestas
+    }
 
-        // Crear el mensaje del foro
-        val mensaje = """
-            Resultados del Diagnóstico:
+    private fun analizarSintomas(respuestas: MutableMap<String, Any>): MutableMap<String, Any> {
+        val sintomasNerviosos = respuestas["sintomasNerviosos"] as? List<String> ?: emptyList()
+        val sintomasDigestivos = respuestas["sintomasDigestivos"] as? List<String> ?: emptyList()
+        val sintomasRespiratorios = respuestas["sintomasRespiratorios"] as? List<String> ?: emptyList()
+        val sintomasReproductivos = respuestas["sintomasReproductivos"] as? List<String> ?: emptyList()
+        val sintomasTegumentarios = respuestas["sintomasTegumentarios"] as? List<String> ?: emptyList()
+        val edad = respuestas["edad"] as? String ?: ""
+        val area = respuestas["area"] as? String ?: ""
+
+        val diagnostico = StringBuilder()
+        diagnostico.append("ANÁLISIS DE DIAGNÓSTICO PROFESIONAL\n\n")
+
+        // Análisis por edad
+        diagnostico.append("EDAD: $edad\n")
+        diagnostico.append("ÁREA AFECTADA: $area\n\n")
+
+        // Análisis de síntomas por sistema
+        val todosLosSintomas = sintomasNerviosos + sintomasDigestivos + sintomasRespiratorios + 
+                              sintomasReproductivos + sintomasTegumentarios + 
+                              (respuestas["sintomasMusculoesqueleticos"] as? List<String> ?: emptyList())
+
+        if (todosLosSintomas.isNotEmpty()) {
+            diagnostico.append("SÍNTOMAS IDENTIFICADOS:\n")
+            todosLosSintomas.forEach { sintoma ->
+                diagnostico.append("• $sintoma\n")
+            }
+            diagnostico.append("\n")
+
+            // Análisis de posibles enfermedades basado en síntomas
+            val enfermedadesPosibles = analizarEnfermedades(todosLosSintomas)
+            if (enfermedadesPosibles.isNotEmpty()) {
+                diagnostico.append("POSIBLES ENFERMEDADES:\n")
+                enfermedadesPosibles.forEach { enfermedad ->
+                    diagnostico.append("• $enfermedad\n")
+                }
+                diagnostico.append("\n")
+            }
+
+            // Recomendaciones
+            val recomendaciones = listOf(
+                "Realizar examen físico completo",
+                "Tomar muestras para análisis de laboratorio",
+                "Implementar medidas de bioseguridad",
+                "Consultar con veterinario especialista",
+                "Considerar necropsia si hay mortalidad"
+            )
+            diagnostico.append("RECOMENDACIONES:\n")
+            recomendaciones.forEach { recomendacion ->
+                diagnostico.append("• $recomendacion\n")
+            }
+
+            respuestas["diagnosticoGenerado"] = diagnostico.toString()
+            respuestas["enfermedadesPosibles"] = enfermedadesPosibles
+            respuestas["recomendaciones"] = recomendaciones
+        } else {
+            diagnostico.append("No se han seleccionado síntomas específicos.\n")
+            diagnostico.append("Se recomienda realizar examen físico completo.\n")
             
-            Edad de los cerdos: ${edadesSeleccionadas.joinToString(", ")}
-            Número de cerdos afectados: $afectados
-            Incremento de mortalidad: $mortalidad
-            Áreas de producción afectadas: ${areasSeleccionadas.joinToString(", ")}
-        """.trimIndent()
+            respuestas["diagnosticoGenerado"] = diagnostico.toString()
+            respuestas["enfermedadesPosibles"] = emptyList<String>()
+            respuestas["recomendaciones"] = listOf("Realizar examen físico completo")
+        }
 
-        // Guardar en Firestore
-        val question = ForumQuestion(
-            title = "Nuevo Diagnóstico",
-            content = mensaje,
-            timestamp = Timestamp.now(),
-            author = "Usuario" // Aquí podrías obtener el usuario actual si tienes autenticación
+        return respuestas
+    }
+
+    private fun analizarEnfermedades(sintomas: List<String>): List<String> {
+        val enfermedades = mutableListOf<String>()
+
+        // Análisis basado en síntomas comunes
+        val sintomasNerviosos = sintomas.any { it.contains("Convulsión") || it.contains("Parálisis") || it.contains("Temblor") }
+        val sintomasDigestivos = sintomas.any { it.contains("Diarrea") || it.contains("Vómito") || it.contains("Anorexia") }
+        val sintomasRespiratorios = sintomas.any { it.contains("Tos") || it.contains("Disnea") || it.contains("Estornudo") }
+        val sintomasReproductivos = sintomas.any { it.contains("Aborto") || it.contains("Celo") || it.contains("Cerda vacía") }
+        val fiebre = sintomas.any { it.contains("Fiebre") }
+
+        // Mapeo de síntomas a posibles enfermedades
+        if (sintomasNerviosos && fiebre) {
+            enfermedades.add("Estreptococosis")
+        }
+        if (sintomasRespiratorios && fiebre) {
+            enfermedades.add("Pleuroneumonía")
+        }
+        if (sintomasReproductivos) {
+            enfermedades.add("PRRS (Síndrome Reproductivo y Respiratorio Porcino)")
+        }
+        if (sintomasDigestivos && sintomas.any { it.contains("Diarrea verdosa") }) {
+            enfermedades.add("Circovirus Porcino")
+        }
+        if (sintomasDigestivos && sintomas.any { it.contains("Diarrea amarilla") }) {
+            enfermedades.add("Salmonelosis")
+        }
+        if (sintomas.any { it.contains("Cojeras") } && fiebre) {
+            enfermedades.add("Erisipela")
+        }
+        if (sintomas.any { it.contains("Muerte súbita") }) {
+            enfermedades.add("Clostridiosis")
+        }
+
+        return enfermedades.distinct()
+    }
+
+    private fun guardarDiagnostico(respuestas: MutableMap<String, Any>, diagnostico: MutableMap<String, Any>) {
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            Toast.makeText(this, "Error: Usuario no autenticado", Toast.LENGTH_SHORT).show()
+            btnDiagnostico.isEnabled = true
+            btnDiagnostico.text = "REALIZAR DIAGNÓSTICO"
+            return
+        }
+
+        // Crear objeto DiagnosticoData
+        val diagnosticoData = DiagnosticoData(
+            userId = currentUser.uid,
+            userName = userData?.fullName ?: "Usuario",
+            userEmail = userData?.email ?: currentUser.email ?: "",
+            fechaHora = Timestamp.now(),
+            animalVivo = respuestas["vivo"] as? String ?: "",
+            edadCerdos = respuestas["edad"] as? String ?: "",
+            numeroAfectados = respuestas["afectados"] as? String ?: "",
+            incrementoMortalidad = respuestas["mortalidad"] as? String ?: "",
+            areaProduccion = respuestas["area"] as? String ?: "",
+            sintomasNerviosos = respuestas["sintomasNerviosos"] as? List<String> ?: emptyList(),
+            sintomasMusculoesqueleticos = respuestas["sintomasMusculoesqueleticos"] as? List<String> ?: emptyList(),
+            sintomasDigestivos = respuestas["sintomasDigestivos"] as? List<String> ?: emptyList(),
+            sintomasReproductivos = respuestas["sintomasReproductivos"] as? List<String> ?: emptyList(),
+            sintomasTegumentarios = respuestas["sintomasTegumentarios"] as? List<String> ?: emptyList(),
+            sintomasRespiratorios = respuestas["sintomasRespiratorios"] as? List<String> ?: emptyList(),
+            diagnosticoGenerado = diagnostico["diagnosticoGenerado"] as? String ?: "",
+            enfermedadesPosibles = diagnostico["enfermedadesPosibles"] as? List<String> ?: emptyList(),
+            recomendaciones = diagnostico["recomendaciones"] as? List<String> ?: emptyList()
         )
 
-        db.collection("forum_questions")
-            .add(question)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Diagnóstico publicado en el foro", Toast.LENGTH_SHORT).show()
-                // Navegar a la actividad del foro de diagnósticos
-                val intent = Intent(this, ForoDiagnosticoActivity::class.java)
+        // Guardar en Firestore
+        db.collection("diagnosticos")
+            .add(diagnosticoData)
+            .addOnSuccessListener { documentReference ->
+                // Actualizar el ID del documento
+                val diagnosticoDataConId = diagnosticoData.copy(id = documentReference.id)
+                
+                // Navegar al chat en vivo
+                val intent = Intent(this, ChatEnVivoActivity::class.java)
+                intent.putExtra(ChatEnVivoActivity.EXTRA_DIAGNOSTICO_DATA, diagnosticoDataConId)
                 startActivity(intent)
-                finish() // Cerrar la actividad actual
+                finish()
             }
-            .addOnFailureListener {
-                Toast.makeText(this, "Error al publicar el diagnóstico", Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Error al guardar diagnóstico: ${e.message}", Toast.LENGTH_SHORT).show()
+                btnDiagnostico.isEnabled = true
+                btnDiagnostico.text = "REALIZAR DIAGNÓSTICO"
             }
     }
 } 

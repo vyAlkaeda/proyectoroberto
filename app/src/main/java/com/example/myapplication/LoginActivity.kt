@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -99,13 +100,67 @@ class LoginActivity : AppCompatActivity() {
             }
 
             Log.d(TAG, "Intentando iniciar sesión con email: $email")
+            
+            // Mostrar indicador de progreso
+            binding.loginButton.isEnabled = false
+            binding.loginButton.text = "Iniciando sesión..."
+            
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Log.d(TAG, "Inicio de sesión exitoso")
-                        startActivity(Intent(this, MainActivity::class.java))
-                        finish()
+                        
+                        // Verificar que los datos del usuario existan en Firestore
+                        val currentUser = auth.currentUser
+                        if (currentUser != null) {
+                            val db = FirebaseFirestore.getInstance()
+                            db.collection("users").document(currentUser.uid)
+                                .get()
+                                .addOnSuccessListener { document ->
+                                    if (document != null && document.exists()) {
+                                        Log.d(TAG, "Datos del usuario encontrados en Firestore")
+                                        startActivity(Intent(this, MainActivity::class.java))
+                                        finish()
+                                    } else {
+                                        Log.w(TAG, "Usuario autenticado pero sin datos en Firestore")
+                                        // Crear datos básicos del usuario
+                                        val userData = mapOf(
+                                            "uid" to (currentUser.uid ?: ""),
+                                            "fullName" to "Usuario",
+                                            "email" to (currentUser.email ?: ""),
+                                            "points" to 0,
+                                            "profileImageUrl" to "",
+                                            "cardNumber" to ""
+                                        )
+                                        
+                                        db.collection("users").document(currentUser.uid)
+                                            .set(userData)
+                                            .addOnSuccessListener {
+                                                Log.d(TAG, "Datos básicos del usuario creados")
+                                                startActivity(Intent(this, MainActivity::class.java))
+                                                finish()
+                                            }
+                                            .addOnFailureListener { e ->
+                                                Log.e(TAG, "Error al crear datos básicos: ${e.message}")
+                                                startActivity(Intent(this, MainActivity::class.java))
+                                                finish()
+                                            }
+                                    }
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.e(TAG, "Error al verificar datos del usuario: ${e.message}")
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                    finish()
+                                }
+                        } else {
+                            startActivity(Intent(this, MainActivity::class.java))
+                            finish()
+                        }
                     } else {
+                        // Restaurar estado del botón
+                        binding.loginButton.isEnabled = true
+                        binding.loginButton.text = "Iniciar Sesión"
+                        
                         val errorMessage = when (task.exception?.message) {
                             "The password is invalid or the user does not have a password." -> 
                                 "Contraseña incorrecta"

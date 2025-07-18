@@ -36,6 +36,17 @@
             android:visibility="gone"
             android:contentDescription="Imagen de espuma blanca en la nariz" />
 
+        <ImageView
+            android:id="@+id/imageViewDermatitis"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/dermatitis"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="Imagen de dermatitis" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"

@@ -24,9 +24,28 @@ class FoundDiseasesActivity : AppCompatActivity() {
             adapter = foundDiseasesAdapter
             layoutManager = LinearLayoutManager(this@FoundDiseasesActivity)
         }
-        val enfermedadesConContador = intent.getSerializableExtra("enfermedades_con_contador") as? HashMap<String, Int>
-        val diseaseList = enfermedadesConContador?.map { it.key to it.value } ?: emptyList()
-        foundDiseasesAdapter.updateDiseases(diseaseList)
+        // Obtener datos del intent
+        val enfermedadesConContador = intent.getSerializableExtra("ENFERMEDADES_CON_CONTADOR") as? HashMap<String, Int>
+        val enfermedades = intent.getStringArrayListExtra("ENFERMEDADES") ?: arrayListOf()
+        val sintomasSeleccionados = intent.getStringArrayListExtra("SINTOMAS_SELECCIONADOS") ?: arrayListOf()
+        val tipoDiagnostico = intent.getStringExtra("TIPO_DIAGNOSTICO") ?: "SINTOMAS"
+
+        // Configurar título según el tipo de diagnóstico
+        val titulo = when (tipoDiagnostico) {
+            "NECROPSIA" -> "Lesiones encontradas"
+            else -> "Síntomas encontrados"
+        }
+        supportActionBar?.title = titulo
+
+        // Mostrar enfermedades con contador
+        if (enfermedadesConContador != null && enfermedadesConContador.isNotEmpty()) {
+            val diseaseList = enfermedadesConContador.entries.sortedByDescending { it.value }.map { it.key to it.value }
+            foundDiseasesAdapter.updateDiseases(diseaseList)
+            binding.tvInfo.text = "Mostrando solo enfermedades con 2 o más síntomas seleccionados en común."
+        } else {
+            foundDiseasesAdapter.updateDiseases(emptyList())
+            binding.tvInfo.text = "No se encontraron enfermedades con al menos 2 síntomas seleccionados en común."
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

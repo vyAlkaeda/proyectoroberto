@@ -16,6 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.data.ChatMessage
+import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -65,7 +67,7 @@ fun ChatScreen() {
             reverseLayout = true
         ) {
             items(messages) { message ->
-                MessageBubble(message)
+                MessageBubble(message, isFromUser = message.userId == "user")
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
@@ -104,18 +106,22 @@ fun ChatScreen() {
 }
 
 @Composable
-fun MessageBubble(message: ChatMessage) {
-    val dateFormat = remember { SimpleDateFormat("HH:mm", Locale.getDefault()) }
-    
+fun MessageBubble(message: ChatMessage, isFromUser: Boolean) {
+    val dateFormat = remember { java.text.SimpleDateFormat("HH:mm", java.util.Locale.getDefault()) }
+    val timestamp = try {
+        dateFormat.format(message.timestamp.toDate())
+    } catch (e: Exception) {
+        ""
+    }
     Column(
         modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = if (message.isFromUser) Alignment.End else Alignment.Start
+        horizontalAlignment = if (isFromUser) Alignment.End else Alignment.Start
     ) {
         Surface(
             shape = RoundedCornerShape(8.dp),
-            color = if (message.isFromUser) 
-                MaterialTheme.colorScheme.primary 
-            else 
+            color = if (isFromUser)
+                MaterialTheme.colorScheme.primary
+            else
                 MaterialTheme.colorScheme.secondary,
             modifier = Modifier.padding(vertical = 4.dp)
         ) {
@@ -123,12 +129,12 @@ fun MessageBubble(message: ChatMessage) {
                 modifier = Modifier.padding(8.dp)
             ) {
                 Text(
-                    text = message.text,
+                    text = message.message,
                     color = Color.White,
                     modifier = Modifier.padding(bottom = 4.dp)
                 )
                 Text(
-                    text = dateFormat.format(message.timestamp),
+                    text = timestamp,
                     color = Color.White.copy(alpha = 0.7f),
                     style = MaterialTheme.typography.bodySmall,
                     textAlign = TextAlign.End,

@@ -1,0 +1,43 @@
+CATEGORIA,VALOR,DESCRIPCION
+TOTAL_SINTOMAS,385,Total de síntomas analizados
+SINTOMAS_CON_ENFERMEDADES,89,Síntomas que tienen al menos una enfermedad asociada
+SINTOMAS_SIN_ENFERMEDADES,296,Síntomas sin enfermedades asociadas (requieren revisión)
+PORCENTAJE_CON_ENFERMEDADES,23.12%,Porcentaje de síntomas con enfermedades asociadas
+PORCENTAJE_SIN_ENFERMEDADES,76.88%,Porcentaje de síntomas sin enfermedades asociadas
+
+ENFERMEDADES_MAS_FRECUENTES,ANOREXIA,14 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,FIEBRE,6 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,DISNEA,5 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,DIARREA,5 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,DESHIDRATACION,3 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,ABORTO,3 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,COJERA,3 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,ICTERICIA,3 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,CIANOSIS,2 enfermedades asociadas
+ENFERMEDADES_MAS_FRECUENTES,ATAXIA,2 enfermedades asociadas
+
+ENFERMEDADES_PRINCIPALES,Estreptococosis,Enfermedad bacteriana con múltiples síntomas
+ENFERMEDADES_PRINCIPALES,PRRS,Enfermedad viral respiratoria y reproductiva
+ENFERMEDADES_PRINCIPALES,Pleuroneumonia,Enfermedad respiratoria
+ENFERMEDADES_PRINCIPALES,Circovirus,Enfermedad viral sistémica
+ENFERMEDADES_PRINCIPALES,Salmonelosis,Enfermedad bacteriana digestiva
+ENFERMEDADES_PRINCIPALES,Erisipela,Enfermedad bacteriana sistémica
+ENFERMEDADES_PRINCIPALES,Clostridiosis,Enfermedad bacteriana digestiva
+ENFERMEDADES_PRINCIPALES,Brucelosis,Enfermedad bacteriana reproductiva
+ENFERMEDADES_PRINCIPALES,ASCARIS SUUM,Parásito intestinal
+ENFERMEDADES_PRINCIPALES,ESTRONGILOIDES,Parásito intestinal
+
+TOXINAS_IMPORTANTES,AFLATOXINA,Toxina fúngica hepatotóxica
+TOXINAS_IMPORTANTES,OCRATOXINA,Toxina fúngica nefrotóxica
+TOXINAS_IMPORTANTES,TRICOTECENOS,Toxina fúngica inmunosupresora
+TOXINAS_IMPORTANTES,FUMONISINA,Toxina fúngica hepatotóxica
+TOXINAS_IMPORTANTES,ZEARALENONA,Toxina fúngica estrogénica
+
+RECOMENDACIONES,REVISION_MANUAL,Revisar manualmente los 296 síntomas sin enfermedades
+RECOMENDACIONES,ACTUALIZACION_PERIODICA,Actualizar el mapeo cada 6 meses
+RECOMENDACIONES,VALIDACION_EXPERTA,Validar el mapeo con veterinarios especialistas
+RECOMENDACIONES,INTEGRACION_APP,Integrar el mapeo en la aplicación Android
+RECOMENDACIONES,ANALISIS_ESTADISTICO,Realizar análisis estadístico de correlaciones
+
+FECHA_GENERACION,2024-12-19,Fecha de generación del mapeo
+VERSION,1.0,Versión del mapeo de síntomas y enfermedades 

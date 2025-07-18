@@ -16,6 +16,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import com.bumptech.glide.Glide
 import com.example.myapplication.data.UserData
+import com.example.myapplication.data.UserManager
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         if (result.resultCode == RESULT_OK) {
             // Recargar los datos del usuario
             loadUserData()
+            Toast.makeText(this, "Perfil actualizado correctamente", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -97,6 +99,11 @@ class MainActivity : AppCompatActivity() {
                 editProfileLauncher.launch(Intent(this, EditProfileActivity::class.java))
                 true
             }
+            R.id.action_refresh -> {
+                loadUserData()
+                Toast.makeText(this, "Datos actualizados", Toast.LENGTH_SHORT).show()
+                true
+            }
             R.id.action_logout -> {
                 try {
                     auth.signOut()
@@ -116,29 +123,58 @@ class MainActivity : AppCompatActivity() {
     private fun loadUserData() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
+            // Mostrar información básica mientras se cargan los datos completos
+            binding.userNameText.text = "Cargando..."
+            binding.userEmailText.text = currentUser.email ?: ""
+            binding.userInfoContainer.visibility = View.VISIBLE
+            
             db.collection("users").document(currentUser.uid)
                 .get()
                 .addOnSuccessListener { document ->
-                    if (document != null) {
+                    if (document != null && document.exists()) {
                         val userData = document.toObject(UserData::class.java)
                         userData?.let { user ->
-                            // Mostrar el nombre del usuario en la barra superior
-                            binding.userNameText.text = user.fullName
-                            binding.userNameText.visibility = View.VISIBLE
+                            // Mostrar información completa del usuario
+                            binding.userNameText.text = if (user.fullName.isNotEmpty()) user.fullName else "Usuario"
+                            binding.userEmailText.text = user.email.ifEmpty { currentUser.email ?: "" }
+                            binding.userInfoContainer.visibility = View.VISIBLE
 
-                            // Si hay una URL de imagen de perfil, cargarla
-                            user.profileImageUrl?.let { url ->
+                            // Cargar imagen de perfil si existe
+                            if (!user.profileImageUrl.isNullOrEmpty()) {
                                 Glide.with(this)
-                                    .load(url)
+                                    .load(user.profileImageUrl)
                                     .circleCrop()
+                                    .placeholder(R.drawable.ic_profile)
+                                    .error(R.drawable.ic_profile)
                                     .into(binding.profileImage)
+                            } else {
+                                // Usar imagen por defecto
+                                binding.profileImage.setImageResource(R.drawable.ic_profile)
                             }
+                            
+                            Log.d(TAG, "Datos del usuario cargados: ${user.fullName}")
                         }
+                    } else {
+                        // Si no hay datos en Firestore, mostrar información básica
+                        binding.userNameText.text = "Usuario"
+                        binding.userEmailText.text = currentUser.email ?: ""
+                        binding.userInfoContainer.visibility = View.VISIBLE
+                        binding.profileImage.setImageResource(R.drawable.ic_profile)
+                        Log.d(TAG, "No se encontraron datos adicionales del usuario")
                     }
                 }
                 .addOnFailureListener { e ->
                     Log.e(TAG, "Error al cargar datos del usuario: ${e.message}")
+                    // En caso de error, mostrar información básica
+                    binding.userNameText.text = "Usuario"
+                    binding.userEmailText.text = currentUser.email ?: ""
+                    binding.userInfoContainer.visibility = View.VISIBLE
+                    binding.profileImage.setImageResource(R.drawable.ic_profile)
                 }
+        } else {
+            // Si no hay usuario autenticado, ocultar información
+            binding.userInfoContainer.visibility = View.GONE
+            binding.profileImage.setImageResource(R.drawable.ic_profile)
         }
     }
 
@@ -159,14 +195,14 @@ class MainActivity : AppCompatActivity() {
     private fun setupClickListeners() {
         try {
             binding.cardDiagnosticoSintomas.setOnClickListener {
-                val intent = Intent(this, AgeGroupSelection2Activity::class.java)
-                intent.putExtra("DESTINO_ACTIVITY", SymptomsActivity::class.java.name)
+                val intent = Intent(this, SeleccionEdadActivity::class.java)
+                intent.putExtra("TIPO_DIAGNOSTICO", "SINTOMAS")
                 startActivity(intent)
             }
 
             binding.cardDiagnosticoNecropsia.setOnClickListener {
-                val intent = Intent(this, AgeGroupSelection2Activity::class.java)
-                intent.putExtra("DESTINO_ACTIVITY", NecropsiaActivity::class.java.name)
+                val intent = Intent(this, SeleccionEdadActivity::class.java)
+                intent.putExtra("TIPO_DIAGNOSTICO", "NECROPSIA")
                 startActivity(intent)
             }
 

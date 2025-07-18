@@ -1,0 +1,170 @@
+import java.io.File
+
+fun actualizarManifest() {
+    val manifestFile = File("app/src/main/AndroidManifest.xml")
+    val contenido = manifestFile.readText()
+    
+    val nuevasActividades = listOf(
+        "HiperplasiaAparatoReproductorDetailActivity",
+        "ProlapsoRectalDetailActivity",
+        "NeumoniaEosinofilicaDetailActivity",
+        "DermatitisHemorragicaNecrotizanteDetailActivity",
+        "EncefalitisDetailActivity",
+        "ProlapsoVaginalDetailActivity",
+        "AtrofiaTesticularDetailActivity",
+        "RetrasoFechaPartoDetailActivity",
+        "ExpulsionTardiaLechonesDetailActivity",
+        "AbortoTercerTercioDetailActivity",
+        "RepeticionesCeloDetailActivity",
+        "PartoPrematuroDetailActivity",
+        "CeloTardioPostdesteteDetailActivity",
+        "CeloSilenciosoDetailActivity",
+        "LechonesNacidosBlancosDetailActivity",
+        "HemorragiaEndometrialDetailActivity",
+        "HemorragiaPlacentariaDetailActivity",
+        "DescargaVaginalSanguinolentaDetailActivity",
+        "PancreatitisDetailActivity",
+        "PresenciaLechonesMomificadosDetailActivity",
+        "RepeticionCelosAntes30DiasDetailActivity",
+        "MuerteFetalDespues70DiasDetailActivity",
+        "MuerteFetosDistintosMomentosDetailActivity",
+        "VariacionTamanoCamadaDetailActivity",
+        "CerdasPrimerizasAfectadasDetailActivity",
+        "MuerteFetalDistintosMomentosDetailActivity",
+        "UlcerasOralesDetailActivity",
+        "NecrosisPancreaticaDetailActivity",
+        "EdemaLinfonodulosIleocecalesDetailActivity",
+        "UlceracionFocalIntestinoDelgadoDetailActivity",
+        "EnteritisFibrinonecroticaDetailActivity",
+        "ManchasLecheHigadoDetailActivity",
+        "EnteritisCatarrhalDetailActivity",
+        "OclusionIntestinalDetailActivity",
+        "DiarreaAmarillentaDetailActivity",
+        "DiarreaConstanteLechonesDetailActivity",
+        "DiarreaVerdosaDetailActivity",
+        "ColitisCatarrhalDetailActivity",
+        "DiarreaVerdosaOlorFetidoDetailActivity",
+        "AnorexiaCerdasDetailActivity",
+        "ParedIntestinalAdelgazadaDetailActivity",
+        "LecheSinDigerirEstomagoDetailActivity",
+        "EstrenimientoSeguidoDiarreaDetailActivity",
+        "AreasNecrosisCircularesIntestinosDetailActivity",
+        "BotonesPestososIntestinoDelgadoDetailActivity",
+        "UlcerasBotonoasIntestinosDetailActivity",
+        "AreasNecrosisCircularesDelimitadasDetailActivity",
+        "DiarreaAmarillaLiquidaDetailActivity",
+        "AdelgazamientoParedesIntestinalesDetailActivity",
+        "DiarreaAcuosaDetailActivity",
+        "AparienciaSuciaLechonDetailActivity",
+        "DistensionIntestinalHemorragicaDetailActivity",
+        "RestosLecheCoaguladaDetailActivity",
+        "VomitoBlanquecinoDetailActivity",
+        "VomitoDetailActivity",
+        "VesiculaBiliarInflamadaVerdeDetailActivity",
+        "VesiculaBiliarHemorragicaDetailActivity",
+        "PresenciaMocoIntestinoGruesoDetailActivity",
+        "HinchazonDolorosaEstomagoDetailActivity",
+        "EncefalomalasiaFocalDetailActivity",
+        "AdherenciasFibrinonecroticasAbdomenDetailActivity",
+        "AscisDetailActivity",
+        "NeumoniaIntersticialMultifocalDetailActivity",
+        "PleuritisSerosaDetailActivity",
+        "BronquiolitisExudativaDetailActivity",
+        "NeumoniaIntesticialDetailActivity",
+        "HemorragiaLinfonodulosPulmonaresDetailActivity",
+        "CongestionPulmonarDetailActivity",
+        "ConsolidacionCraneoVentralPurpuraGrisDetailActivity",
+        "BandasCicatricialesPulmonesDetailActivity",
+        "LesionesMultifocalesHigadoDetailActivity",
+        "TonsilitisNecroticaDetailActivity",
+        "BronquitisDetailActivity",
+        "NecrosisMiocardioDetailActivity",
+        "EpicarditisFibrinopurulentaDetailActivity",
+        "EndocarditisDetailActivity",
+        "MeningoencefalitisDetailActivity",
+        "MeningesEngrosadasDetailActivity",
+        "HiperexcitacionDetailActivity",
+        "OscilacionCabezaDetailActivity",
+        "EncorvamientoDetailActivity",
+        "MarchaCirculoDetailActivity",
+        "PosturaAnormalDetailActivity",
+        "HiperemiaCutaneaDetailActivity",
+        "EritemaCutaneoOrejaDetailActivity",
+        "QuemosisGraveDetailActivity",
+        "OrejaAzulDetailActivity",
+        "ManchasRojasDetailActivity",
+        "RonchasRojizasDetailActivity",
+        "ManchasMoradasDetailActivity",
+        "DermatitisDetailActivity",
+        "EdemaSubcutaneoDetailActivity",
+        "HemorragiaSubcutaneaDetailActivity",
+        "NecrosisPielDetailActivity",
+        "PielApergaminadaSuciaDetailActivity",
+        "HemorragiasVascularesDetailActivity",
+        "HemorragiasVascularesVioletaDetailActivity",
+        "AbscesosCutaneosDetailActivity",
+        "VejigaEngrosadaDetailActivity",
+        "VejigaHemorragicaDetailActivity",
+        "VejigaUlcerosaDetailActivity",
+        "ManchasBlancasRinonesDetailActivity",
+        "AbscesosRinonesDetailActivity",
+        "DistensionRenalDetailActivity",
+        "LinfonodulosRenalesAgrandadosHemorragicosDetailActivity",
+        "GangliosRenalesAgrandadosHemorragicosDetailActivity",
+        "OliguriaDetailActivity",
+        "PetequiaEsplenicaDetailActivity",
+        "InfartoEsplenicoDetailActivity",
+        "InfartoVesiculaBiliarDetailActivity",
+        "NecrosisBazoDetailActivity",
+        "PetequiasBazoDetailActivity",
+        "HemorragiaRenalDetailActivity",
+        "LinfonodulosInguinalesGrandesNegrosDetailActivity",
+        "LinfonodulosPulmonaresGrandesNegrosDetailActivity",
+        "HiperplasiaLinfoideDetailActivity",
+        "LiquidoSinovialPurulentoDetailActivity",
+        "LiquidoSinovialHemorragicoDetailActivity",
+        "LaganeoDetailActivity",
+        "HemorragiaOcularDetailActivity",
+        "OpacidadCorneaDetailActivity",
+        "CancerDetailActivity",
+        "NefritisDetailActivity",
+        "Mortalidad100LechonesLactantesDetailActivity",
+        "NecrosisFocalHigadoDetailActivity",
+        "PeritinitisFibrinosaDetailActivity",
+        "PeritonitisFibrinosaDetailActivity",
+        "AmontonamientoCerdosDetailActivity",
+        "Fiebre40a42DetailActivity",
+        "Fiebre41a42DetailActivity",
+        "Fiebre39a41DetailActivity",
+        "Fiebre40DetailActivity",
+        "Fiebre41DetailActivity",
+        "Fiebre43DetailActivity",
+        "Fiebre39a40DetailActivity",
+        "Fiebre41_5DetailActivity",
+        "Hipotermia35DetailActivity",
+        "ConversionAlimenticiaElevadaDetailActivity"
+    )
+    
+    val actividadesXML = nuevasActividades.joinToString("\n        ") { actividad ->
+        """<activity
+            android:name=".$actividad"
+            android:exported="false" />"""
+    }
+    
+    // Buscar la posición donde insertar las nuevas actividades (antes del cierre de </application>)
+    val posicionInsercion = contenido.lastIndexOf("    </application>")
+    
+    if (posicionInsercion != -1) {
+        val nuevoContenido = contenido.substring(0, posicionInsercion) + 
+                            "\n        " + actividadesXML + "\n    " +
+                            contenido.substring(posicionInsercion)
+        
+        manifestFile.writeText(nuevoContenido)
+        println("AndroidManifest.xml actualizado con ${nuevasActividades.size} nuevas actividades")
+    } else {
+        println("No se pudo encontrar la posición de inserción en el AndroidManifest.xml")
+    }
+}
+
+// Ejecutar la función
+actualizarManifest() 
