@@ -1960,20 +1960,6 @@
           "tipo": "Lesión"
         },
         {
-          "nombre": "HECES SECAS",
-          "enfermedades": [
-            "ERISIPELA"
-          ],
-          "edades": [
-            "Lechones lactantes",
-            "Lechones destetados",
-            "Crecimiento/Engorda",
-            "Adultos/Reproductores"
-          ],
-          "descripcion": "Eliminación de heces duras y secas, asociada a deshidratación o infecciones.",
-          "tipo": "Síntoma"
-        },
-        {
           "nombre": "HEMORRAGIA CEREBRAL",
           "enfermedades": [
             "ESTREPTOCOCOSIS",
@@ -1988,21 +1974,6 @@
             "Adultos/Reproductores"
           ],
           "descripcion": "Sangrado en el cerebro, generalmente asociado a infecciones bacterianas o virales.",
-          "tipo": "Lesión"
-        },
-        {
-          "nombre": "HEMORRAGIA DE LINFONODULOS PULMONARES",
-          "enfermedades": [
-            "ENFERMEDAD DE AUJESZKY",
-            "PLEURONEUMONIA"
-          ],
-          "edades": [
-            "Lechones lactantes",
-            "Lechones destetados",
-            "Crecimiento/Engorda",
-            "Adultos/Reproductores"
-          ],
-          "descripcion": "Sangrado en los linfonodos pulmonares, asociado a infecciones respiratorias.",
           "tipo": "Lesión"
         },
         {
@@ -2081,22 +2052,6 @@
           "tipo": "Síntoma"
         },
         {
-          "nombre": "HEMORRAGIA PULMONAR",
-          "enfermedades": [
-            "TRUEPERELA PYOGENES",
-            "SALMONELLA",
-            "PLEURONEUMONIA"
-          ],
-          "edades": [
-            "Lechones lactantes",
-            "Lechones destetados",
-            "Crecimiento/Engorda",
-            "Adultos/Reproductores"
-          ],
-          "descripcion": "Sangrado en los pulmones, asociado a infecciones bacterianas o virales.",
-          "tipo": "Lesión"
-        },
-        {
           "nombre": "HEMORRAGIA RENAL",
           "enfermedades": [
             "PESTE PORCINA CLASICA",
@@ -2161,34 +2116,6 @@
           ],
           "descripcion": "Falta de apetito, asociada a infecciones, toxinas o parásitos.",
           "tipo": "Síntoma"
-        },
-        {
-          "nombre": "INFLAMACION HEMORRAGICA DE INTESTINO",
-          "enfermedades": [
-            "SALMONELLA"
-          ],
-          "edades": [
-            "Lechones lactantes",
-            "Lechones destetados",
-            "Crecimiento/Engorda",
-            "Adultos/Reproductores"
-          ],
-          "descripcion": "Inflamación con sangrado en el intestino, asociada a infecciones bacterianas.",
-          "tipo": "Lesión"
-        },
-        {
-          "nombre": "INFLAMACION HEMORRAGICA DE ESTOMAGO",
-          "enfermedades": [
-            "SALMONELLA"
-          ],
-          "edades": [
-            "Lechones lactantes",
-            "Lechones destetados",
-            "Crecimiento/Engorda",
-            "Adultos/Reproductores"
-          ],
-          "descripcion": "Inflamación con sangrado en el estómago, asociada a infecciones bacterianas.",
-          "tipo": "Lesión"
         },
         {
           "nombre": "ICTERICIA RENAL",
