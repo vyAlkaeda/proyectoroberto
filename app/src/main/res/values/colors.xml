@@ -40,4 +40,14 @@
     <color name="necro_accent">#FFB300</color>
     <color name="necro_ripple">#33FF9800</color>
     <color name="circle_border">#2196F3</color>
+    
+    <!-- Colores para el foro especializado -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="foro_primary">#00796B</color>
+    <color name="foro_primary_dark">#004D40</color>
+    <color name="foro_accent">#00BCD4</color>
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="pending">#FFC107</color>
 </resources>

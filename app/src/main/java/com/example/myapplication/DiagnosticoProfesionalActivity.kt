@@ -15,51 +15,37 @@ import kotlinx.coroutines.*
 
 class DiagnosticoProfesionalActivity : AppCompatActivity() {
 
-    private lateinit var radioGroupVivo: RadioGroup
-    private lateinit var containerPreguntasAdicionales: LinearLayout
-    private lateinit var btnDiagnostico: Button
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
     private var userData: UserData? = null
-    private lateinit var diagnosticManager: DiagnosticManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diagnostico_profesional)
-
-        // Inicializar Firebase y DiagnosticManager
+        
+        // Inicializar Firebase
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
-        diagnosticManager = DiagnosticManager(this)
-
-        // Inicializar vistas
-        radioGroupVivo = findViewById(R.id.radioGroupVivo)
-        containerPreguntasAdicionales = findViewById(R.id.containerPreguntasAdicionales)
-        btnDiagnostico = findViewById(R.id.btnDiagnostico)
-
-        // Cargar datos del usuario
-        cargarDatosUsuario()
-
-        // Configurar listener para la pregunta inicial
-        radioGroupVivo.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.radioVivoSi -> {
-                    containerPreguntasAdicionales.visibility = View.VISIBLE
-                    btnDiagnostico.visibility = View.VISIBLE
-                }
-                R.id.radioVivoNo -> {
-                    containerPreguntasAdicionales.visibility = View.GONE
-                    btnDiagnostico.visibility = View.VISIBLE
-                    // Mostrar mensaje para casos de muerte
-                    mostrarMensajeMuerte()
-                }
+        
+        // Redirigir al foro especializado
+        redirigirAForoEspecializado()
+    }
+    
+    private fun redirigirAForoEspecializado() {
+        // Mostrar mensaje de transición
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Consulta Profesional")
+            .setMessage("Has seleccionado la opción de consulta profesional. Serás redirigido al foro de atención especializada donde podrás consultar directamente con veterinarios expertos en porcicultura.")
+            .setIcon(R.drawable.ic_professional)
+            .setPositiveButton("Continuar") { _, _ ->
+                val intent = Intent(this, ForoEspecializadoActivity::class.java)
+                startActivity(intent)
+                finish()
             }
-        }
-
-        // Configurar botón de diagnóstico
-        btnDiagnostico.setOnClickListener {
-            realizarDiagnostico()
-        }
+            .setNegativeButton("Volver") { _, _ ->
+                finish()
+            }
+            .setCancelable(false)
+            .show()
     }
 
     private fun cargarDatosUsuario() {

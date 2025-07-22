@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.EdadFiltradoLogic
 import com.example.myapplication.data.SintomaPorEdad
+import com.example.myapplication.data.SistemaManager
 import com.example.myapplication.databinding.ActivitySistemasYSintomasPorEdadBinding
 import com.example.myapplication.databinding.ItemSistemaBinding
 import com.example.myapplication.databinding.ItemSintomaPorSistemaBinding
@@ -133,11 +134,19 @@ class SistemasYSintomasPorEdadActivity : AppCompatActivity() {
         
         sintomasFiltrados = EdadFiltradoLogic.filtrarSintomasPorEdadYTipo(todosLosSintomas, edadSeleccionada, tipoFiltro)
         
-        // Agrupar por sistema
-        sintomasAgrupados = EdadFiltradoLogic.agruparSintomasPorSistema(sintomasFiltrados)
+        // Reclasificar síntomas usando el nuevo sistema mejorado
+        val sintomasReclasificados = sintomasFiltrados.map { sintoma ->
+            sintoma.copy(sistema = SistemaManager.determinarSistemaAvanzado(sintoma.sintoma))
+        }
         
-        // Obtener sistemas disponibles
-        sistemasDisponibles = EdadFiltradoLogic.obtenerSistemasDisponibles(sintomasFiltrados)
+        // Agrupar por sistema usando la nueva clasificación
+        sintomasAgrupados = sintomasReclasificados.groupBy { it.sistema }
+        
+        // Obtener sistemas disponibles en orden recomendado
+        val sistemasConSintomas = sintomasAgrupados.keys.toSet()
+        sistemasDisponibles = SistemaManager.obtenerOrdenRecomendado().filter { 
+            sistemasConSintomas.contains(it) 
+        }
         
         // Actualizar adapters
         sistemasAdapter.submitList(sistemasDisponibles)
