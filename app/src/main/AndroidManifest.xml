@@ -140,34 +140,9 @@
             
         <!-- Actividades de foro -->
         <activity
-            android:name=".ForoDiagnosticoActivity"
-            android:exported="false" />
-            
-        <activity
             android:name=".ForumActivity"
             android:label="Foro de Diagnósticos"
             android:parentActivityName=".MainActivity" />
-            
-        <!-- Actividades de gestión porcina -->
-        <activity
-            android:name=".CuarentenaActivity"
-            android:exported="false" />
-            
-        <activity
-            android:name=".DesteteActivity"
-            android:exported="false" />
-            
-        <activity
-            android:name=".EngordaActivity"
-            android:exported="false" />
-            
-        <activity
-            android:name=".GestacionActivity"
-            android:exported="false" />
-            
-        <activity
-            android:name=".MaternidadActivity"
-            android:exported="false" />
             
         <!-- Nuevas actividades implementadas -->
         <activity
