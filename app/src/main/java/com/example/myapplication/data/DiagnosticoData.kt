@@ -34,5 +34,9 @@ data class DiagnosticoData(
     // Diagnóstico generado
     val diagnosticoGenerado: String = "",
     val enfermedadesPosibles: List<String> = emptyList(),
-    val recomendaciones: List<String> = emptyList()
+    val recomendaciones: List<String> = emptyList(),
+    
+    // Nuevos campos para diagnóstico optimizado
+    val confianzaDiagnostico: String = "",
+    val probabilidadMaxima: Double = 0.0
 ) : Parcelable 

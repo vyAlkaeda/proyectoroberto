@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.data.DiagnosticoData
 import com.example.myapplication.data.UserData
+import com.example.myapplication.utils.DiagnosticManager
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,14 +21,16 @@ class DiagnosticoProfesionalActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
     private var userData: UserData? = null
+    private lateinit var diagnosticManager: DiagnosticManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diagnostico_profesional)
 
-        // Inicializar Firebase
+        // Inicializar Firebase y DiagnosticManager
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
+        diagnosticManager = DiagnosticManager(this)
 
         // Inicializar vistas
         radioGroupVivo = findViewById(R.id.radioGroupVivo)
@@ -248,101 +251,147 @@ class DiagnosticoProfesionalActivity : AppCompatActivity() {
         val sintomasRespiratorios = respuestas["sintomasRespiratorios"] as? List<String> ?: emptyList()
         val sintomasReproductivos = respuestas["sintomasReproductivos"] as? List<String> ?: emptyList()
         val sintomasTegumentarios = respuestas["sintomasTegumentarios"] as? List<String> ?: emptyList()
+        val sintomasMusculoesqueleticos = respuestas["sintomasMusculoesqueleticos"] as? List<String> ?: emptyList()
+        
         val edad = respuestas["edad"] as? String ?: ""
         val area = respuestas["area"] as? String ?: ""
+        val mortalidad = respuestas["mortalidad"] as? String ?: ""
 
         val diagnostico = StringBuilder()
-        diagnostico.append("ANÁLISIS DE DIAGNÓSTICO PROFESIONAL\n\n")
+        diagnostico.append("🔬 ANÁLISIS DE DIAGNÓSTICO PROFESIONAL\n\n")
 
-        // Análisis por edad
-        diagnostico.append("EDAD: $edad\n")
-        diagnostico.append("ÁREA AFECTADA: $area\n\n")
+        // Información epidemiológica
+        diagnostico.append("📊 INFORMACIÓN EPIDEMIOLÓGICA:\n")
+        diagnostico.append("• Edad: $edad\n")
+        diagnostico.append("• Área afectada: $area\n")
+        diagnostico.append("• Mortalidad: $mortalidad\n\n")
 
-        // Análisis de síntomas por sistema
+        // Consolidar todos los síntomas
         val todosLosSintomas = sintomasNerviosos + sintomasDigestivos + sintomasRespiratorios + 
-                              sintomasReproductivos + sintomasTegumentarios + 
-                              (respuestas["sintomasMusculoesqueleticos"] as? List<String> ?: emptyList())
+                              sintomasReproductivos + sintomasTegumentarios + sintomasMusculoesqueleticos
 
         if (todosLosSintomas.isNotEmpty()) {
-            diagnostico.append("SÍNTOMAS IDENTIFICADOS:\n")
-            todosLosSintomas.forEach { sintoma ->
-                diagnostico.append("• $sintoma\n")
+            diagnostico.append("🩺 SÍNTOMAS IDENTIFICADOS (${todosLosSintomas.size}):\n")
+            
+            // Agrupar síntomas por sistema
+            if (sintomasNerviosos.isNotEmpty()) {
+                diagnostico.append("  Neurológicos: ${sintomasNerviosos.joinToString(", ")}\n")
+            }
+            if (sintomasRespiratorios.isNotEmpty()) {
+                diagnostico.append("  Respiratorios: ${sintomasRespiratorios.joinToString(", ")}\n")
+            }
+            if (sintomasDigestivos.isNotEmpty()) {
+                diagnostico.append("  Digestivos: ${sintomasDigestivos.joinToString(", ")}\n")
+            }
+            if (sintomasReproductivos.isNotEmpty()) {
+                diagnostico.append("  Reproductivos: ${sintomasReproductivos.joinToString(", ")}\n")
+            }
+            if (sintomasTegumentarios.isNotEmpty()) {
+                diagnostico.append("  Tegumentarios: ${sintomasTegumentarios.joinToString(", ")}\n")
+            }
+            if (sintomasMusculoesqueleticos.isNotEmpty()) {
+                diagnostico.append("  Musculoesqueléticos: ${sintomasMusculoesqueleticos.joinToString(", ")}\n")
             }
             diagnostico.append("\n")
 
-            // Análisis de posibles enfermedades basado en síntomas
-            val enfermedadesPosibles = analizarEnfermedades(todosLosSintomas)
-            if (enfermedadesPosibles.isNotEmpty()) {
-                diagnostico.append("POSIBLES ENFERMEDADES:\n")
-                enfermedadesPosibles.forEach { enfermedad ->
-                    diagnostico.append("• $enfermedad\n")
-                }
-                diagnostico.append("\n")
-            }
-
-            // Recomendaciones
-            val recomendaciones = listOf(
-                "Realizar examen físico completo",
-                "Tomar muestras para análisis de laboratorio",
-                "Implementar medidas de bioseguridad",
-                "Consultar con veterinario especialista",
-                "Considerar necropsia si hay mortalidad"
+            // Usar el DiagnosticManager para análisis avanzado
+            val diagnosticResult = diagnosticManager.performDiagnosis(
+                symptoms = todosLosSintomas,
+                age = edad,
+                area = area,
+                mortality = mortalidad
             )
-            diagnostico.append("RECOMENDACIONES:\n")
-            recomendaciones.forEach { recomendacion ->
-                diagnostico.append("• $recomendacion\n")
+
+            // Mostrar resultados del diagnóstico
+            diagnostico.append("🎯 DIAGNÓSTICO DIFERENCIAL:\n")
+            diagnostico.append("• Confianza del diagnóstico: ${diagnosticResult.confidence}\n")
+            diagnostico.append("• Total de síntomas analizados: ${diagnosticResult.totalSymptoms}\n\n")
+
+            if (diagnosticResult.diseases.isNotEmpty()) {
+                diagnostico.append("🦠 ENFERMEDADES POSIBLES (ordenadas por probabilidad):\n")
+                diagnosticResult.diseases.forEachIndexed { index, disease ->
+                    diagnostico.append("${index + 1}. ${disease.name}\n")
+                    diagnostico.append("   • Probabilidad: ${disease.probability}%\n")
+                    diagnostico.append("   • Síntomas coincidentes: ${disease.score}/${diagnosticResult.totalSymptoms}\n")
+                    diagnostico.append("   • Síntomas: ${disease.matchingSymptoms.joinToString(", ")}\n\n")
+                }
+            } else {
+                diagnostico.append("❌ No se encontraron enfermedades que coincidan completamente con los síntomas.\n\n")
             }
 
+            // Recomendaciones mejoradas basadas en confianza
+            val recomendaciones = mutableListOf<String>()
+            
+            when (diagnosticResult.confidence) {
+                "ALTA" -> {
+                    recomendaciones.add("Proceder con tratamiento específico para la enfermedad más probable")
+                    recomendaciones.add("Confirmar diagnóstico con pruebas de laboratorio específicas")
+                    recomendaciones.add("Implementar medidas de control inmediatas")
+                }
+                "MEDIA" -> {
+                    recomendaciones.add("Realizar pruebas de laboratorio para diagnóstico diferencial")
+                    recomendaciones.add("Considerar tratamiento sintomático mientras se confirma")
+                    recomendaciones.add("Monitorear evolución del cuadro clínico")
+                }
+                "BAJA" -> {
+                    recomendaciones.add("Realizar examen físico más detallado")
+                    recomendaciones.add("Buscar síntomas adicionales no reportados")
+                    recomendaciones.add("Considerar otras causas no infecciosas")
+                }
+                else -> {
+                    recomendaciones.add("Reevaluar síntomas y realizar examen completo")
+                    recomendaciones.add("Consultar con especialista veterinario")
+                }
+            }
+            
+            // Recomendaciones generales
+            recomendaciones.addAll(listOf(
+                "Implementar medidas de bioseguridad estrictas",
+                "Aislar animales afectados si es necesario",
+                "Documentar evolución del caso",
+                "Considerar necropsia en casos de mortalidad"
+            ))
+
+            diagnostico.append("💡 RECOMENDACIONES:\n")
+            recomendaciones.forEachIndexed { index, recomendacion ->
+                diagnostico.append("${index + 1}. $recomendacion\n")
+            }
+
+            // Actualizar respuestas con nueva información
             respuestas["diagnosticoGenerado"] = diagnostico.toString()
-            respuestas["enfermedadesPosibles"] = enfermedadesPosibles
+            respuestas["enfermedadesPosibles"] = diagnosticResult.diseases.map { it.name }
             respuestas["recomendaciones"] = recomendaciones
+            respuestas["confianzaDiagnostico"] = diagnosticResult.confidence
+            respuestas["probabilidadMaxima"] = diagnosticResult.diseases.firstOrNull()?.probability ?: 0.0
+            
         } else {
-            diagnostico.append("No se han seleccionado síntomas específicos.\n")
-            diagnostico.append("Se recomienda realizar examen físico completo.\n")
+            diagnostico.append("⚠️ No se han seleccionado síntomas específicos.\n")
+            diagnostico.append("Se recomienda realizar un examen físico completo y reportar síntomas observados.\n\n")
+            
+            val recomendacionesBasicas = listOf(
+                "Realizar examen físico sistemático completo",
+                "Evaluar todos los sistemas corporales",
+                "Registrar temperatura corporal",
+                "Observar comportamiento y apetito",
+                "Documentar cualquier síntoma observable"
+            )
+            
+            diagnostico.append("💡 RECOMENDACIONES BÁSICAS:\n")
+            recomendacionesBasicas.forEachIndexed { index, recomendacion ->
+                diagnostico.append("${index + 1}. $recomendacion\n")
+            }
             
             respuestas["diagnosticoGenerado"] = diagnostico.toString()
             respuestas["enfermedadesPosibles"] = emptyList<String>()
-            respuestas["recomendaciones"] = listOf("Realizar examen físico completo")
+            respuestas["recomendaciones"] = recomendacionesBasicas
+            respuestas["confianzaDiagnostico"] = "INSUFICIENTE"
+            respuestas["probabilidadMaxima"] = 0.0
         }
 
         return respuestas
     }
 
-    private fun analizarEnfermedades(sintomas: List<String>): List<String> {
-        val enfermedades = mutableListOf<String>()
 
-        // Análisis basado en síntomas comunes
-        val sintomasNerviosos = sintomas.any { it.contains("Convulsión") || it.contains("Parálisis") || it.contains("Temblor") }
-        val sintomasDigestivos = sintomas.any { it.contains("Diarrea") || it.contains("Vómito") || it.contains("Anorexia") }
-        val sintomasRespiratorios = sintomas.any { it.contains("Tos") || it.contains("Disnea") || it.contains("Estornudo") }
-        val sintomasReproductivos = sintomas.any { it.contains("Aborto") || it.contains("Celo") || it.contains("Cerda vacía") }
-        val fiebre = sintomas.any { it.contains("Fiebre") }
-
-        // Mapeo de síntomas a posibles enfermedades
-        if (sintomasNerviosos && fiebre) {
-            enfermedades.add("Estreptococosis")
-        }
-        if (sintomasRespiratorios && fiebre) {
-            enfermedades.add("Pleuroneumonía")
-        }
-        if (sintomasReproductivos) {
-            enfermedades.add("PRRS (Síndrome Reproductivo y Respiratorio Porcino)")
-        }
-        if (sintomasDigestivos && sintomas.any { it.contains("Diarrea verdosa") }) {
-            enfermedades.add("Circovirus Porcino")
-        }
-        if (sintomasDigestivos && sintomas.any { it.contains("Diarrea amarilla") }) {
-            enfermedades.add("Salmonelosis")
-        }
-        if (sintomas.any { it.contains("Cojeras") } && fiebre) {
-            enfermedades.add("Erisipela")
-        }
-        if (sintomas.any { it.contains("Muerte súbita") }) {
-            enfermedades.add("Clostridiosis")
-        }
-
-        return enfermedades.distinct()
-    }
 
     private fun guardarDiagnostico(respuestas: MutableMap<String, Any>, diagnostico: MutableMap<String, Any>) {
         val currentUser = auth.currentUser
@@ -372,7 +421,9 @@ class DiagnosticoProfesionalActivity : AppCompatActivity() {
             sintomasRespiratorios = respuestas["sintomasRespiratorios"] as? List<String> ?: emptyList(),
             diagnosticoGenerado = diagnostico["diagnosticoGenerado"] as? String ?: "",
             enfermedadesPosibles = diagnostico["enfermedadesPosibles"] as? List<String> ?: emptyList(),
-            recomendaciones = diagnostico["recomendaciones"] as? List<String> ?: emptyList()
+            recomendaciones = diagnostico["recomendaciones"] as? List<String> ?: emptyList(),
+            confianzaDiagnostico = diagnostico["confianzaDiagnostico"] as? String ?: "",
+            probabilidadMaxima = diagnostico["probabilidadMaxima"] as? Double ?: 0.0
         )
 
         // Guardar en Firestore
