@@ -18,17 +18,18 @@ class FoundDiseasesActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Enfermedades encontradas"
-        // Mostrar enfermedades y coincidencias
-        foundDiseasesAdapter = FoundDiseasesAdapter(emptyList())
-        binding.foundDiseasesRecyclerView.apply {
-            adapter = foundDiseasesAdapter
-            layoutManager = LinearLayoutManager(this@FoundDiseasesActivity)
-        }
         // Obtener datos del intent
         val enfermedadesConContador = intent.getSerializableExtra("ENFERMEDADES_CON_CONTADOR") as? HashMap<String, Int>
         val enfermedades = intent.getStringArrayListExtra("ENFERMEDADES") ?: arrayListOf()
         val sintomasSeleccionados = intent.getStringArrayListExtra("SINTOMAS_SELECCIONADOS") ?: arrayListOf()
         val tipoDiagnostico = intent.getStringExtra("TIPO_DIAGNOSTICO") ?: "SINTOMAS"
+
+        // Mostrar enfermedades y coincidencias
+        foundDiseasesAdapter = FoundDiseasesAdapter(emptyList(), tipoDiagnostico)
+        binding.foundDiseasesRecyclerView.apply {
+            adapter = foundDiseasesAdapter
+            layoutManager = LinearLayoutManager(this@FoundDiseasesActivity)
+        }
 
         // Configurar título según el tipo de diagnóstico
         val titulo = when (tipoDiagnostico) {

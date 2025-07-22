@@ -207,7 +207,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             binding.cardVideos.setOnClickListener {
-                Toast.makeText(this, "Videos - En desarrollo", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, VideosActivity::class.java))
             }
 
             binding.cardBioseguridad.setOnClickListener {

@@ -1,13 +1,14 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemDiseaseBinding
 
 class FoundDiseasesAdapter(
-    private var diseases: List<Pair<String, Int>>
+    private var diseases: List<Pair<String, Int>>,
+    private val tipoDiagnostico: String = "SINTOMAS"
 ) : RecyclerView.Adapter<FoundDiseasesAdapter.FoundDiseaseViewHolder>() {
 
     inner class FoundDiseaseViewHolder(private val binding: ItemDiseaseBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -16,7 +17,10 @@ class FoundDiseasesAdapter(
             binding.diseaseShortDescTextView.text = "Coincidencias: ${disease.second}"
             binding.root.setOnClickListener {
                 val context = binding.root.context
-                Toast.makeText(context, "Detalles de ${disease.first} - En desarrollo", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, DiseaseDetailActivity::class.java)
+                intent.putExtra(DiseaseDetailActivity.EXTRA_DISEASE_NAME, disease.first)
+                intent.putExtra(DiseaseDetailActivity.EXTRA_TIPO_DIAGNOSTICO, tipoDiagnostico)
+                context.startActivity(intent)
             }
         }
     }

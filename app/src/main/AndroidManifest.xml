@@ -169,5 +169,21 @@
             android:name=".MaternidadActivity"
             android:exported="false" />
             
+        <!-- Nuevas actividades implementadas -->
+        <activity
+            android:name=".DiseaseDetailActivity"
+            android:label="Detalles de Enfermedad"
+            android:parentActivityName=".FoundDiseasesActivity" />
+            
+        <activity
+            android:name=".TreatmentActivity"
+            android:label="Tratamiento"
+            android:parentActivityName=".DiseaseDetailActivity" />
+            
+        <activity
+            android:name=".VideosActivity"
+            android:label="Videos Educativos"
+            android:parentActivityName=".MainActivity" />
+            
     </application>
 </manifest>
