@@ -33,6 +33,14 @@
       "tipo": "Lesión"
     },
     {
+      "sintoma": "ABSCESOS PULMONARES",
+      "enfermedades": ["PLEURONEUMONIA", "TRUEPERELA PYOGENES"],
+      "descripcion": "Acumulación de pus en los pulmones, causando dolor y dificultad respiratoria.",
+      "sistema": "Respiratorio",
+      "edades": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+      "tipo": "Lesión"
+    },
+    {
       "sintoma": "ABDOMEN PURPURA",
       "enfermedades": ["SALMONELLA"],
       "descripcion": "Coloración púrpura en el abdomen, generalmente por hemorragias internas o septicemia.",
@@ -1105,4 +1113,4 @@
       "tipo": "Síntoma"
     }
   ]
-} 
+}
