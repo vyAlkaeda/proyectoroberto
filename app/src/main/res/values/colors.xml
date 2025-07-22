@@ -40,4 +40,22 @@
     <color name="necro_accent">#FFB300</color>
     <color name="necro_ripple">#33FF9800</color>
     <color name="circle_border">#2196F3</color>
+    
+    <!-- Colores adicionales para la aplicación moderna -->
+    <color name="background_light">#F5F5F5</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="success_light">#E8F5E8</color>
+    <color name="success_dark">#2E7D32</color>
+    <color name="error_light">#FFEBEE</color>
+    <color name="error_dark">#C62828</color>
+    <color name="warning_light">#FFF8E1</color>
+    <color name="warning_dark">#F57F17</color>
+    <color name="info_light">#E3F2FD</color>
+    <color name="info_dark">#1565C0</color>
+    
+    <!-- Colores de severidad -->
+    <color name="severity_low">#4CAF50</color>
+    <color name="severity_medium">#FF9800</color>
+    <color name="severity_high">#FF5722</color>
+    <color name="severity_critical">#F44336</color>
 </resources>

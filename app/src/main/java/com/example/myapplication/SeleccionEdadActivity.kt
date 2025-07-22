@@ -70,8 +70,8 @@ class SeleccionEdadActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         adapter = EdadClasificacionAdapter(tipoDiagnostico) { edadSeleccionada ->
-            // Navegar a la pantalla de sistemas y síntomas
-            val intent = Intent(this, SistemasYSintomasPorEdadActivity::class.java)
+            // Navegar a la pantalla moderna de diagnóstico
+            val intent = Intent(this, ModernDiagnosisActivity::class.java)
             intent.putExtra("EDAD_SELECCIONADA", edadSeleccionada.etapa)
             intent.putExtra("TIPO_DIAGNOSTICO", tipoDiagnostico)
             startActivity(intent)

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".ModernDiagnosisResultsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Summary Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resumen del Diagnóstico"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/tvResultsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="5 enfermedades encontradas"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        tools:text="5 enfermedades encontradas" />
+
+                    <TextView
+                        android:id="@+id/tvSelectedAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Edad: Todas las edades"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        tools:text="Edad: Lechones lactantes" />
+
+                    <!-- Statistics Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvHighProbability"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/error_dark"
+                                tools:text="2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alta (≥70%)"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvMediumProbability"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/warning_dark"
+                                tools:text="2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Media (40-69%)"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvLowProbability"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/info_dark"
+                                tools:text="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Baja (<40%)"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Message Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvResultMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Se encontraron enfermedades con alta probabilidad. Consulta veterinaria recomendada."
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        tools:text="Se encontraron enfermedades con alta probabilidad." />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Recommendations Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecommendations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/warning_light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recomendaciones"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/warning_dark" />
+
+                    <TextView
+                        android:id="@+id/tvRecommendations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="• Consulta veterinaria inmediata\n• Aislar al animal afectado"
+                        android:textSize="14sp"
+                        android:textColor="@color/warning_dark"
+                        tools:text="• Consulta veterinaria inmediata\n• Aislar al animal afectado" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Symptoms Used Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Síntomas Analizados"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupSymptoms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:chipSpacingHorizontal="8dp"
+                        app:chipSpacingVertical="4dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Results List -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="Enfermedades Encontradas"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_diagnosis_result" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNewDiagnosis"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Nuevo Diagnóstico"
+                    app:icon="@drawable/ic_add" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnShareResults"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Compartir"
+                    app:icon="@drawable/ic_share" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB for Statistics -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabStatistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_analytics"
+        app:backgroundTint="@color/primary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
