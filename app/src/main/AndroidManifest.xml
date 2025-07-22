@@ -169,5 +169,18 @@
             android:name=".MaternidadActivity"
             android:exported="false" />
             
+        <!-- Nuevas actividades modernas -->
+        <activity
+            android:name=".ModernDiagnosisActivity"
+            android:exported="false"
+            android:label="Diagnóstico Moderno"
+            android:parentActivityName=".SeleccionEdadActivity" />
+            
+        <activity
+            android:name=".ModernDiagnosisResultsActivity"
+            android:exported="false"
+            android:label="Resultados del Diagnóstico"
+            android:parentActivityName=".ModernDiagnosisActivity" />
+            
     </application>
 </manifest>
