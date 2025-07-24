@@ -1,13 +1,10 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.data.DiseaseData
-import com.example.myapplication.models.Disease
 import androidx.recyclerview.widget.RecyclerView
-import android.widget.Toast
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.myapplication.databinding.ItemDiseaseBinding
@@ -21,7 +18,7 @@ class EtapaResultadosActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.etapaResultadosRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = EtapaResultadosAdapter(enfermedadesFiltradas) { enfermedad ->
-            mostrarSintomasDialogo(enfermedad)
+            navegarADetalleEnfermedad(enfermedad)
         }
         recyclerView.adapter = adapter
 
@@ -33,18 +30,10 @@ class EtapaResultadosActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { onBackPressed() }
     }
 
-    private fun mostrarSintomasDialogo(nombreEnfermedad: String) {
-        val disease = DiseaseData.diseases.find { it.name.equals(nombreEnfermedad, ignoreCase = true) }
-        if (disease != null) {
-            val sintomas = disease.symptoms.joinToString("\n")
-            AlertDialog.Builder(this)
-                .setTitle("Síntomas de $nombreEnfermedad")
-                .setMessage(sintomas)
-                .setPositiveButton("Cerrar", null)
-                .show()
-        } else {
-            Toast.makeText(this, "No se encontraron síntomas para esta enfermedad", Toast.LENGTH_SHORT).show()
-        }
+    private fun navegarADetalleEnfermedad(nombreEnfermedad: String) {
+        val intent = Intent(this, DiseaseDetailActivity::class.java)
+        intent.putExtra("ENFERMEDAD_NOMBRE", nombreEnfermedad)
+        startActivity(intent)
     }
 }
 
@@ -67,7 +56,7 @@ class EtapaResultadosAdapter(
     class EtapaResultadosViewHolder(private val binding: ItemDiseaseBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(nombreEnfermedad: String, onItemClick: (String) -> Unit) {
             binding.diseaseNameTextView.text = nombreEnfermedad
-            binding.diseaseShortDescTextView.text = "Toca para ver síntomas"
+            binding.diseaseShortDescTextView.text = "Toca para ver detalles"
             binding.root.setOnClickListener { onItemClick(nombreEnfermedad) }
         }
     }

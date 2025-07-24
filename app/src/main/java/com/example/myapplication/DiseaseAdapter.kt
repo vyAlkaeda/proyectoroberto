@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,13 @@ class DiseaseAdapter(
         fun bind(disease: String) {
             binding.apply {
                 diseaseNameTextView.text = disease
+                
+                // Configurar click listener para navegar al detalle
+                root.setOnClickListener {
+                    val intent = Intent(itemView.context, DiseaseDetailActivity::class.java)
+                    intent.putExtra("ENFERMEDAD_NOMBRE", disease)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

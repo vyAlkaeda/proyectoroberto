@@ -20,6 +20,23 @@ data class SintomaPorEdad(
     val etapas: List<String>
 )
 
+// Data classes para la nueva estructura del JSON (compatible con claves en MAYÚSCULAS)
+data class SintomaJson(
+    val NOMBRE: String,
+    val ENFERMEDADES: List<String>,
+    val DESCRIPCION: String,
+    val EDADES: List<String>,
+    val TIPO: String
+)
+
+data class SistemaJson(
+    val SINTOMAS: List<SintomaJson>
+)
+
+data class EnfermedadesJson(
+    val SISTEMAS: Map<String, SistemaJson>
+)
+
 object EdadFiltradoLogic {
     
     // Cargar clasificación de edades desde JSON
@@ -41,7 +58,7 @@ object EdadFiltradoLogic {
         }
     }
     
-    // Cargar síntomas desde enfermedades.json
+    // Cargar síntomas desde enfermedades.json con la nueva estructura
     fun cargarSintomasCompletos(context: Context): List<SintomaPorEdad> {
         return try {
             val inputStream = context.assets.open("enfermedades.json")
@@ -52,20 +69,26 @@ object EdadFiltradoLogic {
             val json = String(buffer, Charsets.UTF_8)
             
             val gson = Gson()
-            val type = object : TypeToken<List<Map<String, Any>>>() {}.type
-            val sintomasRaw: List<Map<String, Any>> = gson.fromJson(json, type)
+            val enfermedadesData: EnfermedadesJson = gson.fromJson(json, EnfermedadesJson::class.java)
             
-            sintomasRaw.map { sintoma ->
-                val nombreSintoma = sintoma["sintoma"] as String
-                SintomaPorEdad(
-                    sintoma = nombreSintoma,
-                    enfermedades = (sintoma["enfermedades"] as List<*>).map { it.toString() },
-                    descripcion = sintoma["descripcion"] as? String ?: "",
-                    sistema = sintoma["sistema"] as? String ?: determinarSistema(nombreSintoma),
-                    tipo = sintoma["tipo"] as? String ?: "Síntoma",
-                    etapas = (sintoma["etapas"] as? List<*>)?.map { it.toString() } ?: listOf("Todas")
-                )
+            val sintomasCompletos = mutableListOf<SintomaPorEdad>()
+            
+            // Iterar sobre cada sistema y sus síntomas
+            enfermedadesData.SISTEMAS.forEach { (nombreSistema, sistemaData) ->
+                sistemaData.SINTOMAS.forEach { sintomaJson ->
+                    val sintomaPorEdad = SintomaPorEdad(
+                        sintoma = sintomaJson.NOMBRE,
+                        enfermedades = sintomaJson.ENFERMEDADES,
+                        descripcion = sintomaJson.DESCRIPCION,
+                        sistema = nombreSistema,
+                        tipo = sintomaJson.TIPO,
+                        etapas = sintomaJson.EDADES
+                    )
+                    sintomasCompletos.add(sintomaPorEdad)
+                }
             }
+            
+            sintomasCompletos
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
@@ -81,30 +104,55 @@ object EdadFiltradoLogic {
             sintomas.filter { sintoma ->
                 // Mapear la edad seleccionada a los rangos del JSON
                 val edadMapeada = mapearEdadSeleccionada(edadSeleccionada)
-                sintoma.etapas.contains(edadMapeada) || sintoma.etapas.contains("Todas")
+                sintoma.etapas.contains(edadMapeada) || sintoma.etapas.contains("TODAS LAS EDADES")
             }
         }
     }
     
-    // Filtrar síntomas por tipo (Síntoma o Lesión)
+    // Filtrar síntomas por tipo (SINTOMA/SIGNOS o LESION)
     fun filtrarSintomasPorTipo(sintomas: List<SintomaPorEdad>, tipo: String): List<SintomaPorEdad> {
         return sintomas.filter { sintoma ->
-            sintoma.tipo.equals(tipo, ignoreCase = true)
+            cumpleTipoFiltro(sintoma.tipo, tipo)
         }
     }
     
     // Filtrar síntomas por edad y tipo
     fun filtrarSintomasPorEdadYTipo(sintomas: List<SintomaPorEdad>, edadSeleccionada: String, tipo: String): List<SintomaPorEdad> {
-        return if (edadSeleccionada == "Todas") {
+        android.util.Log.d("EdadFiltradoLogic", "Filtrando síntomas - Edad: $edadSeleccionada, Tipo: $tipo")
+        android.util.Log.d("EdadFiltradoLogic", "Total síntomas antes del filtro: ${sintomas.size}")
+        
+        val resultado = if (edadSeleccionada == "Todas") {
             // Si se selecciona "Todas", solo filtrar por tipo
             sintomas.filter { sintoma ->
-                sintoma.tipo.equals(tipo, ignoreCase = true)
+                cumpleTipoFiltro(sintoma.tipo, tipo)
             }
         } else {
             sintomas.filter { sintoma ->
                 val edadMapeada = mapearEdadSeleccionada(edadSeleccionada)
-                (sintoma.etapas.contains(edadMapeada) || sintoma.etapas.contains("Todas")) &&
-                sintoma.tipo.equals(tipo, ignoreCase = true)
+                val cumpleEdad = sintoma.etapas.contains(edadMapeada) || sintoma.etapas.contains("TODAS LAS EDADES")
+                val cumpleTipo = cumpleTipoFiltro(sintoma.tipo, tipo)
+                cumpleEdad && cumpleTipo
+            }
+        }
+        
+        android.util.Log.d("EdadFiltradoLogic", "Total síntomas después del filtro: ${resultado.size}")
+        return resultado
+    }
+    
+    // Función auxiliar para verificar si un tipo cumple con el filtro
+    private fun cumpleTipoFiltro(tipoSintoma: String, tipoFiltro: String): Boolean {
+        return when (tipoFiltro.uppercase()) {
+            "SINTOMA" -> {
+                // Para síntomas incluir también SIGNOS NEUROLOGICOS y SIGNOS CLINICOS
+                tipoSintoma.equals("SINTOMA", ignoreCase = true) ||
+                tipoSintoma.equals("SIGNO NEUROLOGICO", ignoreCase = true) ||
+                tipoSintoma.equals("SIGNO CLINICO", ignoreCase = true)
+            }
+            "LESION" -> {
+                tipoSintoma.equals("LESION", ignoreCase = true)
+            }
+            else -> {
+                tipoSintoma.equals(tipoFiltro, ignoreCase = true)
             }
         }
     }
@@ -119,16 +167,39 @@ object EdadFiltradoLogic {
         return sintomas.map { it.sistema }.distinct().sorted()
     }
     
-    // Mapear edad seleccionada a formato del JSON
+    // Obtener todos los sistemas disponibles del JSON completo
+    fun obtenerTodosLosSistemas(context: Context): List<String> {
+        return try {
+            val inputStream = context.assets.open("enfermedades.json")
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
+            inputStream.read(buffer)
+            inputStream.close()
+            val json = String(buffer, Charsets.UTF_8)
+            
+            val gson = Gson()
+            val enfermedadesData: EnfermedadesJson = gson.fromJson(json, EnfermedadesJson::class.java)
+            
+            // Obtener todos los nombres de sistemas y ordenarlos
+            enfermedadesData.SISTEMAS.keys.toList().sorted()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emptyList()
+        }
+    }
+    
+    // Mapear edad seleccionada a formato del JSON (compatible con valores en MAYÚSCULAS)
     private fun mapearEdadSeleccionada(edad: String): String {
-        return when (edad) {
-            "Todas" -> "Todas"
-            "Lechones lactantes" -> "Lechones lactantes"
-            "Lechones destetados" -> "Lechones destetados"
-            "Crecimiento/Engorda" -> "Crecimiento/Engorda"
-            "Adultos/Reproductores" -> "Adultos/Reproductores"
+        val edadMapeada = when (edad) {
+            "Todas" -> "TODAS LAS EDADES"
+            "Lechones lactantes" -> "LECHONES LACTANTES"
+            "Lechones destetados" -> "LECHONES DESTETADOS"
+            "Crecimiento/Engorda" -> "CRECIMIENTO/ENGORDA"
+            "Adultos/Reproductores" -> "ADULTOS/REPRODUCTORES"
             else -> edad
         }
+        android.util.Log.d("EdadFiltradoLogic", "Mapeando edad: '$edad' -> '$edadMapeada'")
+        return edadMapeada
     }
     
     // Obtener descripción de una edad específica
@@ -137,7 +208,7 @@ object EdadFiltradoLogic {
         return clasificaciones.find { it.etapa == etapa }?.descripcion ?: ""
     }
     
-    // Determinar sistema basado en el nombre del síntoma
+    // Determinar sistema basado en el nombre del síntoma (ya no necesario con la nueva estructura)
     fun determinarSistema(sintoma: String): String {
         val sintomaLower = sintoma.lowercase()
         return when {

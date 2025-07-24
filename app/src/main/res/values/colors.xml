@@ -8,36 +8,48 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     
-    <!-- Colores personalizados de la app -->
-    <color name="primary">#2196F3</color>
-    <color name="primary_dark">#1976D2</color>
-    <color name="primary_light">#BBDEFB</color>
-    <color name="accent">#FF4081</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
+    <!-- Colores médicos profesionales -->
+    <color name="primary">#2E7D32</color> <!-- Verde médico oscuro -->
+    <color name="primary_dark">#1B5E20</color> <!-- Verde médico más oscuro -->
+    <color name="primary_light">#C8E6C9</color> <!-- Verde médico claro -->
+    <color name="accent">#FF6B35</color> <!-- Naranja médico para acentos -->
+    <color name="primary_text">#263238</color> <!-- Azul gris oscuro para texto principal -->
+    <color name="secondary_text">#546E7A</color> <!-- Azul gris medio para texto secundario -->
     <color name="icons">#FFFFFF</color>
-    <color name="divider">#BDBDBD</color>
+    <color name="divider">#CFD8DC</color> <!-- Azul gris claro para divisores -->
     <color name="card_background">#FFFFFF</color>
-    <color name="background">#FFFFFF</color>
-    <color name="lesion_tag">#F44336</color>
-    <color name="sintoma_tag">#4CAF50</color>
-    <color name="category_selected">#2196F3</color>
+    <color name="background">#FAFAFA</color> <!-- Gris muy claro para fondo -->
+    <color name="lesion_tag">#D32F2F</color> <!-- Rojo médico para lesiones -->
+    <color name="sintoma_tag">#388E3C</color> <!-- Verde médico para síntomas -->
+    <color name="category_selected">#2E7D32</color> <!-- Verde médico para seleccionado -->
     <color name="category_unselected">#FFFFFF</color>
-    <color name="apps_text">#95A4AC</color>
-    <color name="login_button">#5F9EA0</color>
+    <color name="apps_text">#78909C</color> <!-- Azul gris para texto de apps -->
+    <color name="login_button">#2E7D32</color> <!-- Verde médico para botones -->
     
-    <!-- Colores para el nuevo diseño -->
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="info_background">#E3F2FD</color>
-    <color name="info_text">#1565C0</color>
-    <color name="gradient_start">#2196F3</color>
-    <color name="gradient_end">#1976D2</color>
-    <color name="ripple_color">#80FFFFFF</color>
-    <color name="necro_primary">#FF9800</color> <!-- Naranja moderno -->
-    <color name="necro_primary_dark">#F57C00</color>
-    <color name="necro_primary_light">#FFE0B2</color>
-    <color name="necro_accent">#FFB300</color>
-    <color name="necro_ripple">#33FF9800</color>
-    <color name="circle_border">#2196F3</color>
+    <!-- Colores para el nuevo diseño médico -->
+    <color name="text_primary">#263238</color>
+    <color name="text_secondary">#546E7A</color>
+    <color name="info_background">#E8F5E8</color> <!-- Verde muy claro para info -->
+    <color name="info_text">#2E7D32</color> <!-- Verde médico para texto de info -->
+    <color name="gradient_start">#2E7D32</color> <!-- Verde médico -->
+    <color name="gradient_end">#1B5E20</color> <!-- Verde médico oscuro -->
+    <color name="ripple_color">#802E7D32</color> <!-- Verde médico con transparencia -->
+    <color name="necro_primary">#D84315</color> <!-- Rojo naranja médico para necropsia -->
+    <color name="necro_primary_dark">#BF360C</color> <!-- Rojo naranja oscuro -->
+    <color name="necro_primary_light">#FFCCBC</color> <!-- Rojo naranja claro -->
+    <color name="necro_accent">#FF5722</color> <!-- Rojo naranja para acentos -->
+    <color name="necro_ripple">#33D84315</color> <!-- Rojo naranja con transparencia -->
+    <color name="circle_border">#2E7D32</color> <!-- Verde médico para bordes -->
+    
+    <!-- Colores adicionales para estilo médico -->
+    <color name="medical_blue">#1976D2</color> <!-- Azul médico -->
+    <color name="medical_blue_dark">#1565C0</color> <!-- Azul médico oscuro -->
+    <color name="medical_blue_light">#BBDEFB</color> <!-- Azul médico claro -->
+    <color name="medical_gray">#607D8B</color> <!-- Gris médico -->
+    <color name="medical_gray_dark">#455A64</color> <!-- Gris médico oscuro -->
+    <color name="medical_gray_light">#ECEFF1</color> <!-- Gris médico claro -->
+    <color name="medical_white">#FAFAFA</color> <!-- Blanco médico -->
+    <color name="medical_alert">#FF5722</color> <!-- Rojo naranja para alertas -->
+    <color name="medical_success">#4CAF50</color> <!-- Verde para éxito -->
+    <color name="medical_warning">#FF9800</color> <!-- Naranja para advertencias -->
 </resources>

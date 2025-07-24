@@ -1,28 +1,13 @@
 package com.example.myapplication.data
 
-data class Disease(
-    val name: String,
-    val symptoms: List<String>
-)
-
-object DiseaseData {
-    val diseases = listOf(
-        Disease("Estreptococosis", listOf("FIEBRE", "ANOREXIA", "ARTRITIS", "COJERA", "DEPRESION", "CABEZA AGACHADA", "CEGUERA", "SORDERA", "CONVULSIONES", "ATAXIA", "NEUMONIA INTERSTICIAL", "BRONCONEUMONIA PURULENTA")),
-        Disease("Pleuroneumonia", listOf("FIEBRE", "ANOREXIA", "DISNEA", "TOS", "CIANOSIS", "ABSCESOS PULMONARES", "BRONCONEUMONIA", "BULLAS PULMONARES", "VOMITO")),
-        Disease("PRRS", listOf("FIEBRE", "ANOREXIA", "DISNEA", "TOS", "CIANOSIS", "CONJUNTIVITIS", "TOS PRODUCTIVA", "LETARGIA", "LECHONES MOMIFICADOS", "BAJO NUMERO DE NACIDOS VIVOS", "CELO TARDIO POSTDESTETE", "NEUMONIA INTERSTICIAL")),
-        Disease("Circovirus", listOf("ANOREXIA", "DIARREA", "DIARREA VERDOSA", "DESMEDRO", "EMACIACION", "CELO SILENCIO", "ATAXIA")),
-        Disease("Salmonelosis", listOf("FIEBRE", "ANOREXIA", "DIARREA", "DIARREA AMARILLA", "ABDOMEN PURPURA", "VOMITO", "DESHIDRATACION")),
-        Disease("Erisipela", listOf("FIEBRE", "ANOREXIA", "COJERA", "AGALAXIA", "ABORTO", "LECHONES MOMIFICADOS", "HECES SECAS")),
-        Disease("Brucelosis", listOf("ABORTO", "ANESTRO", "MASTITIS", "ABSCESOS EN BAZO", "ABSCESOS EN RIÑONES")),
-        Disease("Clostridiosis", listOf("ANOREXIA", "DIARREA", "DIARREA GRIS PASTOSA", "DIARREA HEMORRAGICA", "DEPRESION", "MUERTE SUBITA")),
-        Disease("AFLATOXINA", listOf("ANOREXIA", "EQUIMOSIS")),
-        Disease("OCRATOXINA", listOf("ANOREXIA", "DIARREA", "POLIDIPSIA", "RETRASO DEL CRECIMIENTO")),
-        Disease("TRICOTECENOS", listOf("ANOREXIA", "DIARREA", "RECHAZO DE ALIMENTO", "VOMITO", "LECHONES NACIDOS CON PATAS ABIERTAS (SPLAYLEGS)")),
-        Disease("FUMONISINA", listOf("ANOREXIA", "DISNEA", "TOS", "ICTERICIA", "RETRASO DEL CRECIMIENTO")),
-        Disease("CAMPILOBACTERIOSIS", listOf("ANOREXIA", "DIARREA MUCOSA O CREMOSA", "CALAMBRES ABDOMINALES", "VOMITO CON MANCHAS DE SANGRE", "DESHIDRATACION")),
-        Disease("COCCIDIOSIS", listOf("ANOREXIA", "DIARREA GRASOSA", "DEBILIDAD", "MUERTE", "DESHIDRATACION")),
-        Disease("ASCARIS SUUM", listOf("ANOREXIA", "DIARREA AGUDA AMARILLA", "DISNEA", "TOS ASMATICA", "ICTERICIA", "DOLOR ABDOMINAL", "CONVULSIONES")),
-        Disease("ESTRONGILOIDES", listOf("ANOREXIA", "DIARREA AGUDA AMARILLA", "DISNEA", "TOS ASMATICA", "EMACIACION", "MUERTE SUBITA")),
-        Disease("ZEARALENONA", listOf("ABORTO EN CUALQUIER ETAPA", "MASTITIS INTERSTICIAL", "LECHONES NACIDOS CON PATAS ABIERTAS (SPLAYLEGS)"))
-    )
-} 
+data class DiseaseData(
+    val nombre: String,
+    val descripcion: String? = null,
+    val sintomas: List<String> = emptyList(),
+    val edades: List<String> = emptyList(),
+    val sistemas: List<String> = emptyList(),
+    val tipo: String = "",
+    val remedios: List<String> = emptyList(),
+    val tratamientos: List<String> = emptyList(),
+    val prevencion: List<String> = emptyList()
+) 

@@ -1,4 +1,7 @@
 package com.example.myapplication
 
-class CuarentenaActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class CuarentenaActivity : AppCompatActivity() {
+    // TODO: Implementar funcionalidad de cuarentena
 }

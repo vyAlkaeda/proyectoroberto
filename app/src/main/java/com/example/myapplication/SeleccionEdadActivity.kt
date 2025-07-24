@@ -27,14 +27,8 @@ class SeleccionEdadActivity : AppCompatActivity() {
 
         tipoDiagnostico = intent.getStringExtra("TIPO_DIAGNOSTICO") ?: "SINTOMAS"
 
-        // Cambiar el color del borde del círculo según el tipo de diagnóstico
-        val color = if (tipoDiagnostico == "NECROPSIA") R.color.necro_primary else R.color.primary
-        val res = resources
-        res.getIdentifier("circle_border", "color", packageName).let { colorId ->
-            res.getResourceName(colorId)
-        }
-        // Actualizar el color del recurso circle_border
-        applicationContext.setTheme(color)
+        // Configuración de colores según el tipo de diagnóstico
+        // (Implementación futura para personalización de temas)
 
         aplicarEstiloPorTipoDiagnostico()
         setupToolbar()
@@ -45,15 +39,19 @@ class SeleccionEdadActivity : AppCompatActivity() {
 
     private fun aplicarEstiloPorTipoDiagnostico() {
         if (tipoDiagnostico == "NECROPSIA") {
-            binding.toolbar.setBackgroundColor(resources.getColor(R.color.necro_primary))
-            binding.tvTitulo.setTextColor(resources.getColor(R.color.necro_primary_dark))
-            binding.tvSubtitulo.setTextColor(resources.getColor(R.color.necro_primary_dark))
-            binding.root.setBackgroundColor(resources.getColor(R.color.necro_primary_light))
+            binding.toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.necro_primary))
+            // Configurar color del texto del toolbar como blanco
+            binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.tvTitulo.setTextColor(ContextCompat.getColor(this, R.color.necro_primary_dark))
+            binding.tvSubtitulo.setTextColor(ContextCompat.getColor(this, R.color.necro_primary_dark))
+            binding.root.setBackgroundColor(ContextCompat.getColor(this, R.color.necro_primary_light))
         } else {
-            binding.toolbar.setBackgroundColor(resources.getColor(R.color.primary))
-            binding.tvTitulo.setTextColor(resources.getColor(R.color.primary_dark))
-            binding.tvSubtitulo.setTextColor(resources.getColor(R.color.primary_dark))
-            binding.root.setBackgroundColor(resources.getColor(R.color.white))
+            binding.toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.primary))
+            // Configurar color del texto del toolbar como blanco
+            binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.tvTitulo.setTextColor(ContextCompat.getColor(this, R.color.primary_dark))
+            binding.tvSubtitulo.setTextColor(ContextCompat.getColor(this, R.color.primary_dark))
+            binding.root.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
         }
     }
 
@@ -66,6 +64,9 @@ class SeleccionEdadActivity : AppCompatActivity() {
             else -> "Diagnóstico por Síntomas"
         }
         supportActionBar?.title = titulo
+        
+        // Configurar color del icono de navegación como blanco
+        binding.toolbar.navigationIcon?.setTint(ContextCompat.getColor(this, R.color.white))
     }
 
     private fun setupRecyclerView() {

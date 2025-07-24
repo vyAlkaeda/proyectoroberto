@@ -67,18 +67,6 @@
             
         <!-- Actividades de selección de edad -->
         <activity
-            android:name=".AgeGroupSelectionActivity"
-            android:exported="false"
-            android:label="Selecciona un grupo de Edad"
-            android:parentActivityName=".MainActivity" />
-            
-        <activity
-            android:name=".AgeGroupSelection2Activity"
-            android:exported="false"
-            android:label="Selecciona un grupo de Edad"
-            android:parentActivityName=".MainActivity" />
-            
-        <activity
             android:name=".SeleccionEdadActivity"
             android:exported="false"
             android:label="Selecciona Rango de Edad"
@@ -92,24 +80,24 @@
             
         <!-- Actividades de síntomas y diagnóstico -->
         <activity
-            android:name=".SymptomsActivity"
-            android:label="Signos y Síntomas"
-            android:parentActivityName=".MainActivity" />
-            
-        <activity
             android:name=".DiseaseResultsActivity"
             android:label="Enfermedades Posibles"
-            android:parentActivityName=".SymptomsActivity" />
+            android:parentActivityName=".MainActivity" />
             
         <activity
             android:name=".FoundDiseasesActivity"
             android:label="Enfermedades encontradas"
-            android:parentActivityName=".SymptomsActivity" />
+            android:parentActivityName=".MainActivity" />
+            
+        <activity
+            android:name=".DiseaseDetailActivity"
+            android:label="Detalle de Enfermedad"
+            android:parentActivityName=".DiseaseResultsActivity" />
             
         <activity
             android:name=".EtapaResultadosActivity"
             android:label="Resultados por Etapa"
-            android:parentActivityName=".AgeGroupSelectionActivity" />
+            android:parentActivityName=".SeleccionEdadActivity" />
             
         <!-- Actividades de bioseguridad -->
         <activity

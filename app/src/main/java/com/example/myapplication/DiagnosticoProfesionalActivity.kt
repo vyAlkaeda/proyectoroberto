@@ -160,76 +160,76 @@ class DiagnosticoProfesionalActivity : AppCompatActivity() {
             val sintomasRespiratorios = mutableListOf<String>()
 
             // Síntomas Nerviosos
-            if (findViewById<CheckBox>(R.id.checkDebilidad).isChecked) sintomasNerviosos.add("Debilidad")
-            if (findViewById<CheckBox>(R.id.checkConvulsiones).isChecked) sintomasNerviosos.add("Convulsiones")
-            if (findViewById<CheckBox>(R.id.checkIncordinacion).isChecked) sintomasNerviosos.add("Incordinación")
-            if (findViewById<CheckBox>(R.id.checkParalisis).isChecked) sintomasNerviosos.add("Parálisis")
-            if (findViewById<CheckBox>(R.id.checkDecubito).isChecked) sintomasNerviosos.add("Decúbito lateral")
-            if (findViewById<CheckBox>(R.id.checkTemblores).isChecked) sintomasNerviosos.add("Temblores")
-            if (findViewById<CheckBox>(R.id.checkCabezaLado).isChecked) sintomasNerviosos.add("Cabeza de lado")
-            if (findViewById<CheckBox>(R.id.checkOpistotono).isChecked) sintomasNerviosos.add("Opistótono")
-            if (findViewById<CheckBox>(R.id.checkRigidez).isChecked) sintomasNerviosos.add("Rigidez muscular")
-            if (findViewById<CheckBox>(R.id.checkPedaleo).isChecked) sintomasNerviosos.add("Pedaleo")
-            if (findViewById<CheckBox>(R.id.checkDepresion).isChecked) sintomasNerviosos.add("Depresión")
-            if (findViewById<CheckBox>(R.id.checkPosturasAnormales).isChecked) sintomasNerviosos.add("Posturas anormales")
-            if (findViewById<CheckBox>(R.id.checkNistagmo).isChecked) sintomasNerviosos.add("Nistagmo")
-            if (findViewById<CheckBox>(R.id.checkCabezaAgachada).isChecked) sintomasNerviosos.add("Cabeza agachada")
-            if (findViewById<CheckBox>(R.id.checkLetargo).isChecked) sintomasNerviosos.add("Letargo")
-            if (findViewById<CheckBox>(R.id.checkMarchaCirculos).isChecked) sintomasNerviosos.add("Marcha en círculos")
-            if (findViewById<CheckBox>(R.id.checkMarchaReversa).isChecked) sintomasNerviosos.add("Marcha en reversa")
+            if (findViewById<CheckBox>(R.id.checkDebilidad).isChecked) sintomasNerviosos.add("DEBILIDAD")
+            if (findViewById<CheckBox>(R.id.checkConvulsiones).isChecked) sintomasNerviosos.add("CONVULSIONES")
+            if (findViewById<CheckBox>(R.id.checkIncordinacion).isChecked) sintomasNerviosos.add("INCOORDINACION")
+            if (findViewById<CheckBox>(R.id.checkParalisis).isChecked) sintomasNerviosos.add("PARALISIS")
+            if (findViewById<CheckBox>(R.id.checkDecubito).isChecked) sintomasNerviosos.add("DECUBITO LATERAL")
+            if (findViewById<CheckBox>(R.id.checkTemblores).isChecked) sintomasNerviosos.add("TEMBLORES")
+            if (findViewById<CheckBox>(R.id.checkCabezaLado).isChecked) sintomasNerviosos.add("CABEZA DE LADO")
+            if (findViewById<CheckBox>(R.id.checkOpistotono).isChecked) sintomasNerviosos.add("OPISTOTONO")
+            if (findViewById<CheckBox>(R.id.checkRigidez).isChecked) sintomasNerviosos.add("RIGIDEZ MUSCULAR")
+            if (findViewById<CheckBox>(R.id.checkPedaleo).isChecked) sintomasNerviosos.add("PEDALEO")
+            if (findViewById<CheckBox>(R.id.checkDepresion).isChecked) sintomasNerviosos.add("DEPRESION")
+            if (findViewById<CheckBox>(R.id.checkPosturasAnormales).isChecked) sintomasNerviosos.add("POSTURAS ANORMALES")
+            if (findViewById<CheckBox>(R.id.checkNistagmo).isChecked) sintomasNerviosos.add("NISTAGMO")
+            if (findViewById<CheckBox>(R.id.checkCabezaAgachada).isChecked) sintomasNerviosos.add("CABEZA AGACHADA")
+            if (findViewById<CheckBox>(R.id.checkLetargo).isChecked) sintomasNerviosos.add("LETARGO")
+            if (findViewById<CheckBox>(R.id.checkMarchaCirculos).isChecked) sintomasNerviosos.add("MARCHA EN CIRCULOS")
+            if (findViewById<CheckBox>(R.id.checkMarchaReversa).isChecked) sintomasNerviosos.add("MARCHA EN REVERSA")
 
             // Síntomas Musculoesqueléticos
-            if (findViewById<CheckBox>(R.id.checkCojeras).isChecked) sintomasMusculoesqueleticos.add("Cojeras")
-            if (findViewById<CheckBox>(R.id.checkResistencia).isChecked) sintomasMusculoesqueleticos.add("Resistencia a moverse")
-            if (findViewById<CheckBox>(R.id.checkBursitis).isChecked) sintomasMusculoesqueleticos.add("Bursitis")
-            if (findViewById<CheckBox>(R.id.checkInflamacionPierna).isChecked) sintomasMusculoesqueleticos.add("Inflamación de pierna")
-            if (findViewById<CheckBox>(R.id.checkArticulaciones).isChecked) sintomasMusculoesqueleticos.add("Articulaciones inflamadas")
+            if (findViewById<CheckBox>(R.id.checkCojeras).isChecked) sintomasMusculoesqueleticos.add("COJERA")
+            if (findViewById<CheckBox>(R.id.checkResistencia).isChecked) sintomasMusculoesqueleticos.add("RESISTENCIA A MOVERSE")
+            if (findViewById<CheckBox>(R.id.checkBursitis).isChecked) sintomasMusculoesqueleticos.add("BURSITIS")
+            if (findViewById<CheckBox>(R.id.checkInflamacionPierna).isChecked) sintomasMusculoesqueleticos.add("INFLAMACION DE PIERNA")
+            if (findViewById<CheckBox>(R.id.checkArticulaciones).isChecked) sintomasMusculoesqueleticos.add("ARTICULACIONES INFLAMADAS")
 
             // Síntomas Digestivos
-            if (findViewById<CheckBox>(R.id.checkAnorexia).isChecked) sintomasDigestivos.add("Anorexia")
-            if (findViewById<CheckBox>(R.id.checkBajoConsumo).isChecked) sintomasDigestivos.add("Bajo consumo")
-            if (findViewById<CheckBox>(R.id.checkPerdidaPeso).isChecked) sintomasDigestivos.add("Pérdida de peso")
-            if (findViewById<CheckBox>(R.id.checkCrecimientoLento).isChecked) sintomasDigestivos.add("Crecimiento lento")
-            if (findViewById<CheckBox>(R.id.checkVomito).isChecked) sintomasDigestivos.add("Vómito")
-            if (findViewById<CheckBox>(R.id.checkDiarreaLiquida).isChecked) sintomasDigestivos.add("Diarrea líquida")
-            if (findViewById<CheckBox>(R.id.checkDiarreaGelatinosa).isChecked) sintomasDigestivos.add("Diarrea gelatinosa")
-            if (findViewById<CheckBox>(R.id.checkDiarreaCremosa).isChecked) sintomasDigestivos.add("Diarrea cremosa")
-            if (findViewById<CheckBox>(R.id.checkDiarreaVerdosa).isChecked) sintomasDigestivos.add("Diarrea verdosa")
-            if (findViewById<CheckBox>(R.id.checkDiarreaAmarilla).isChecked) sintomasDigestivos.add("Diarrea amarilla")
-            if (findViewById<CheckBox>(R.id.checkDiarreaGris).isChecked) sintomasDigestivos.add("Diarrea gris")
-            if (findViewById<CheckBox>(R.id.checkDiarreaCafe).isChecked) sintomasDigestivos.add("Diarrea café")
-            if (findViewById<CheckBox>(R.id.checkDiarreaNegra).isChecked) sintomasDigestivos.add("Diarrea negra")
-            if (findViewById<CheckBox>(R.id.checkDiarreaSangre).isChecked) sintomasDigestivos.add("Diarrea con sangre")
-            if (findViewById<CheckBox>(R.id.checkDiarreaBlanquecina).isChecked) sintomasDigestivos.add("Diarrea blanquecina")
+            if (findViewById<CheckBox>(R.id.checkAnorexia).isChecked) sintomasDigestivos.add("ANOREXIA")
+            if (findViewById<CheckBox>(R.id.checkBajoConsumo).isChecked) sintomasDigestivos.add("BAJO CONSUMO")
+            if (findViewById<CheckBox>(R.id.checkPerdidaPeso).isChecked) sintomasDigestivos.add("PERDIDA DE PESO")
+            if (findViewById<CheckBox>(R.id.checkCrecimientoLento).isChecked) sintomasDigestivos.add("CRECIMIENTO LENTO")
+            if (findViewById<CheckBox>(R.id.checkVomito).isChecked) sintomasDigestivos.add("VOMITO")
+            if (findViewById<CheckBox>(R.id.checkDiarreaLiquida).isChecked) sintomasDigestivos.add("DIARREA LIQUIDA")
+            if (findViewById<CheckBox>(R.id.checkDiarreaGelatinosa).isChecked) sintomasDigestivos.add("DIARREA GELATINOSA")
+            if (findViewById<CheckBox>(R.id.checkDiarreaCremosa).isChecked) sintomasDigestivos.add("DIARREA CREMOSA")
+            if (findViewById<CheckBox>(R.id.checkDiarreaVerdosa).isChecked) sintomasDigestivos.add("DIARREA VERDOSA")
+            if (findViewById<CheckBox>(R.id.checkDiarreaAmarilla).isChecked) sintomasDigestivos.add("DIARREA AMARILLA")
+            if (findViewById<CheckBox>(R.id.checkDiarreaGris).isChecked) sintomasDigestivos.add("DIARREA GRIS")
+            if (findViewById<CheckBox>(R.id.checkDiarreaCafe).isChecked) sintomasDigestivos.add("DIARREA CAFE")
+            if (findViewById<CheckBox>(R.id.checkDiarreaNegra).isChecked) sintomasDigestivos.add("DIARREA NEGRA")
+            if (findViewById<CheckBox>(R.id.checkDiarreaSangre).isChecked) sintomasDigestivos.add("DIARREA CON SANGRE")
+            if (findViewById<CheckBox>(R.id.checkDiarreaBlanquecina).isChecked) sintomasDigestivos.add("DIARREA BLANQUECINA")
 
             // Síntomas Reproductivos
-            if (findViewById<CheckBox>(R.id.checkAbortoPrimer).isChecked) sintomasReproductivos.add("Aborto primer tercio")
-            if (findViewById<CheckBox>(R.id.checkAbortoSegundo).isChecked) sintomasReproductivos.add("Aborto segundo tercio")
-            if (findViewById<CheckBox>(R.id.checkAbortoTercer).isChecked) sintomasReproductivos.add("Aborto tercer tercio")
-            if (findViewById<CheckBox>(R.id.checkCerdaVacia).isChecked) sintomasReproductivos.add("Cerda vacía")
-            if (findViewById<CheckBox>(R.id.checkAnestro).isChecked) sintomasReproductivos.add("Anestro")
-            if (findViewById<CheckBox>(R.id.checkCeloSilencioso).isChecked) sintomasReproductivos.add("Celo silencioso")
+            if (findViewById<CheckBox>(R.id.checkAbortoPrimer).isChecked) sintomasReproductivos.add("ABORTO PRIMER TERCIO")
+            if (findViewById<CheckBox>(R.id.checkAbortoSegundo).isChecked) sintomasReproductivos.add("ABORTO SEGUNDO TERCIO")
+            if (findViewById<CheckBox>(R.id.checkAbortoTercer).isChecked) sintomasReproductivos.add("ABORTO TERCER TERCIO")
+            if (findViewById<CheckBox>(R.id.checkCerdaVacia).isChecked) sintomasReproductivos.add("CERDA VACIA")
+            if (findViewById<CheckBox>(R.id.checkAnestro).isChecked) sintomasReproductivos.add("ANESTRO")
+            if (findViewById<CheckBox>(R.id.checkCeloSilencioso).isChecked) sintomasReproductivos.add("CELO SILENCIOSO")
 
             // Síntomas Tegumentarios
-            if (findViewById<CheckBox>(R.id.checkFiebre39).isChecked) sintomasTegumentarios.add("Fiebre 39.3-39.8°C")
-            if (findViewById<CheckBox>(R.id.checkFiebre41).isChecked) sintomasTegumentarios.add("Fiebre 41.5°C")
-            if (findViewById<CheckBox>(R.id.checkFiebre40).isChecked) sintomasTegumentarios.add("Fiebre 40.5-41.5°C")
-            if (findViewById<CheckBox>(R.id.checkFiebre43).isChecked) sintomasTegumentarios.add("Fiebre 43°C")
-            if (findViewById<CheckBox>(R.id.checkDeshidratacion).isChecked) sintomasTegumentarios.add("Deshidratación")
-            if (findViewById<CheckBox>(R.id.checkConjuntivitis).isChecked) sintomasTegumentarios.add("Conjuntivitis")
-            if (findViewById<CheckBox>(R.id.checkCeguera).isChecked) sintomasTegumentarios.add("Ceguera")
-            if (findViewById<CheckBox>(R.id.checkPielPalida).isChecked) sintomasTegumentarios.add("Piel pálida")
-            if (findViewById<CheckBox>(R.id.checkPielAmarilla).isChecked) sintomasTegumentarios.add("Piel amarilla")
-            if (findViewById<CheckBox>(R.id.checkPielAzul).isChecked) sintomasTegumentarios.add("Piel azul")
+            if (findViewById<CheckBox>(R.id.checkFiebre39).isChecked) sintomasTegumentarios.add("FIEBRE 39.3-39.8°C")
+            if (findViewById<CheckBox>(R.id.checkFiebre41).isChecked) sintomasTegumentarios.add("FIEBRE 41.5°C")
+            if (findViewById<CheckBox>(R.id.checkFiebre40).isChecked) sintomasTegumentarios.add("FIEBRE 40.5-41.5°C")
+            if (findViewById<CheckBox>(R.id.checkFiebre43).isChecked) sintomasTegumentarios.add("FIEBRE 43°C")
+            if (findViewById<CheckBox>(R.id.checkDeshidratacion).isChecked) sintomasTegumentarios.add("DESHIDRATACION")
+            if (findViewById<CheckBox>(R.id.checkConjuntivitis).isChecked) sintomasTegumentarios.add("CONJUNTIVITIS")
+            if (findViewById<CheckBox>(R.id.checkCeguera).isChecked) sintomasTegumentarios.add("CEGUERA")
+            if (findViewById<CheckBox>(R.id.checkPielPalida).isChecked) sintomasTegumentarios.add("PIEL PALIDA")
+            if (findViewById<CheckBox>(R.id.checkPielAmarilla).isChecked) sintomasTegumentarios.add("PIEL AMARILLA")
+            if (findViewById<CheckBox>(R.id.checkPielAzul).isChecked) sintomasTegumentarios.add("PIEL AZUL")
 
             // Síntomas Respiratorios
-            if (findViewById<CheckBox>(R.id.checkDisnea).isChecked) sintomasRespiratorios.add("Disnea")
-            if (findViewById<CheckBox>(R.id.checkTaquipnea).isChecked) sintomasRespiratorios.add("Taquipnea")
-            if (findViewById<CheckBox>(R.id.checkTosSeca).isChecked) sintomasRespiratorios.add("Tos seca")
-            if (findViewById<CheckBox>(R.id.checkTosProductiva).isChecked) sintomasRespiratorios.add("Tos productiva")
-            if (findViewById<CheckBox>(R.id.checkEstornudo).isChecked) sintomasRespiratorios.add("Estornudo")
-            if (findViewById<CheckBox>(R.id.checkEscurrimientoNasal).isChecked) sintomasRespiratorios.add("Escurrimiento nasal")
-            if (findViewById<CheckBox>(R.id.checkMuerteSubita).isChecked) sintomasRespiratorios.add("Muerte súbita")
+            if (findViewById<CheckBox>(R.id.checkDisnea).isChecked) sintomasRespiratorios.add("DISNEA")
+            if (findViewById<CheckBox>(R.id.checkTaquipnea).isChecked) sintomasRespiratorios.add("TAQUIPNEA")
+            if (findViewById<CheckBox>(R.id.checkTosSeca).isChecked) sintomasRespiratorios.add("TOS SECA")
+            if (findViewById<CheckBox>(R.id.checkTosProductiva).isChecked) sintomasRespiratorios.add("TOS PRODUCTIVA")
+            if (findViewById<CheckBox>(R.id.checkEstornudo).isChecked) sintomasRespiratorios.add("ESTORNUDO")
+            if (findViewById<CheckBox>(R.id.checkEscurrimientoNasal).isChecked) sintomasRespiratorios.add("ESCURRIMIENTO NASAL")
+            if (findViewById<CheckBox>(R.id.checkMuerteSubita).isChecked) sintomasRespiratorios.add("MUERTE SUBITA")
 
             respuestas["sintomasNerviosos"] = sintomasNerviosos
             respuestas["sintomasMusculoesqueleticos"] = sintomasMusculoesqueleticos
@@ -311,12 +311,12 @@ class DiagnosticoProfesionalActivity : AppCompatActivity() {
     private fun analizarEnfermedades(sintomas: List<String>): List<String> {
         val enfermedades = mutableListOf<String>()
 
-        // Análisis basado en síntomas comunes
-        val sintomasNerviosos = sintomas.any { it.contains("Convulsión") || it.contains("Parálisis") || it.contains("Temblor") }
-        val sintomasDigestivos = sintomas.any { it.contains("Diarrea") || it.contains("Vómito") || it.contains("Anorexia") }
-        val sintomasRespiratorios = sintomas.any { it.contains("Tos") || it.contains("Disnea") || it.contains("Estornudo") }
-        val sintomasReproductivos = sintomas.any { it.contains("Aborto") || it.contains("Celo") || it.contains("Cerda vacía") }
-        val fiebre = sintomas.any { it.contains("Fiebre") }
+        // Análisis basado en síntomas comunes (usando nombres normalizados)
+        val sintomasNerviosos = sintomas.any { it.contains("CONVULSIONES") || it.contains("PARALISIS") || it.contains("TEMBLOR") }
+        val sintomasDigestivos = sintomas.any { it.contains("DIARREA") || it.contains("VOMITO") || it.contains("ANOREXIA") }
+        val sintomasRespiratorios = sintomas.any { it.contains("TOS") || it.contains("DISNEA") || it.contains("ESTORNUDO") }
+        val sintomasReproductivos = sintomas.any { it.contains("ABORTO") || it.contains("CELO") || it.contains("CERDA VACIA") }
+        val fiebre = sintomas.any { it.contains("FIEBRE") }
 
         // Mapeo de síntomas a posibles enfermedades
         if (sintomasNerviosos && fiebre) {
@@ -328,16 +328,16 @@ class DiagnosticoProfesionalActivity : AppCompatActivity() {
         if (sintomasReproductivos) {
             enfermedades.add("PRRS (Síndrome Reproductivo y Respiratorio Porcino)")
         }
-        if (sintomasDigestivos && sintomas.any { it.contains("Diarrea verdosa") }) {
+        if (sintomasDigestivos && sintomas.any { it.contains("DIARREA VERDOSA") }) {
             enfermedades.add("Circovirus Porcino")
         }
-        if (sintomasDigestivos && sintomas.any { it.contains("Diarrea amarilla") }) {
+        if (sintomasDigestivos && sintomas.any { it.contains("DIARREA AMARILLA") }) {
             enfermedades.add("Salmonelosis")
         }
-        if (sintomas.any { it.contains("Cojeras") } && fiebre) {
+        if (sintomas.any { it.contains("COJERA") } && fiebre) {
             enfermedades.add("Erisipela")
         }
-        if (sintomas.any { it.contains("Muerte súbita") }) {
+        if (sintomas.any { it.contains("MUERTE SUBITA") }) {
             enfermedades.add("Clostridiosis")
         }
 

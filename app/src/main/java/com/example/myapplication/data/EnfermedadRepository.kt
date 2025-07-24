@@ -2,81 +2,99 @@ package com.example.myapplication.data
 
 import android.content.Context
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.google.gson.JsonObject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-// Nueva estructura de datos para el JSON
-data class SintomaEnfermedad(
-    val sintoma: String,
-    val enfermedades: List<String>,
-    val descripcion: String,
-    val edades: List<String>? = null // Nuevo campo opcional para edades
-)
-
-fun cargarSintomasEnfermedadesDesdeJson(context: Context): List<SintomaEnfermedad> {
-    val json = context.assets.open("sintomas_enfermedades_custom.json").bufferedReader().use { it.readText() }
-    val gson = Gson()
-    val type = object : TypeToken<List<SintomaEnfermedad>>() {}.type
-    return gson.fromJson(json, type)
-}
-
-fun filtrarSintomasPorEdad(sintomas: List<SintomaEnfermedad>, edad: String): List<SintomaEnfermedad> {
-    return sintomas.filter { it.edades?.contains(edad) ?: (edad == "Todas las edades") }
-}
-
-fun cargarSintomasEnfermedadesCustomDesdeJson(context: android.content.Context): SintomasEnfermedadesCustom {
-    return try {
-        val inputStream = context.assets.open("enfermedades.json")
-        val size = inputStream.available()
-        val buffer = ByteArray(size)
-        inputStream.read(buffer)
-        inputStream.close()
-        val json = String(buffer, Charsets.UTF_8)
-        
-        val gson = Gson()
-        gson.fromJson(json, SintomasEnfermedadesCustom::class.java)
-    } catch (e: Exception) {
-        e.printStackTrace()
-        SintomasEnfermedadesCustom(emptyMap())
-    }
-}
-
-fun obtenerSistemasDisponiblesParaEdad(sintomasData: SintomasEnfermedadesCustom, edad: String): List<String> {
-    val sistemas = mutableSetOf<String>()
+class EnfermedadRepository(private val context: Context) {
     
-    sintomasData.sistemas.forEach { (nombreSistema, sistema) ->
-        sistema.sintomas.forEach { sintoma ->
-            if (edad == "Todas las edades" || sintoma.edades.contains(mapearEdadAppAJson(edad))) {
-                sistemas.add(nombreSistema)
+    private val gson = Gson()
+    
+    suspend fun obtenerEnfermedadPorNombre(nombreEnfermedad: String): DiseaseData? = withContext(Dispatchers.IO) {
+        try {
+            val jsonString = context.assets.open("enfermedades.json").bufferedReader().use { it.readText() }
+            val jsonObject = gson.fromJson(jsonString, JsonObject::class.java)
+            val sistemas = jsonObject.getAsJsonObject("SISTEMAS")
+            
+            val sintomasEncontrados = mutableListOf<String>()
+            val edadesEncontradas = mutableSetOf<String>()
+            val sistemasEncontrados = mutableSetOf<String>()
+            var descripcionEncontrada = ""
+            
+            // Buscar la enfermedad en todos los sistemas
+            sistemas.entrySet().forEach { (nombreSistema, sistemaObj) ->
+                val sintomas = sistemaObj.asJsonObject.getAsJsonArray("SINTOMAS")
+                
+                sintomas.forEach { sintomaElement ->
+                    val sintoma = sintomaElement.asJsonObject
+                    val enfermedades = sintoma.getAsJsonArray("ENFERMEDADES")
+                    
+                    if (enfermedades.any { it.asString.equals(nombreEnfermedad, ignoreCase = true) }) {
+                        // Encontramos un síntoma asociado a esta enfermedad
+                        val nombreSintoma = sintoma.get("NOMBRE").asString
+                        sintomasEncontrados.add(nombreSintoma)
+                        
+                        // Obtener edades
+                        val edades = sintoma.getAsJsonArray("EDADES")
+                        edades.forEach { edadElement ->
+                            edadesEncontradas.add(edadElement.asString)
+                        }
+                        
+                        // Obtener descripción del primer síntoma encontrado
+                        if (descripcionEncontrada.isEmpty()) {
+                            descripcionEncontrada = sintoma.get("DESCRIPCION").asString
+                        }
+                        
+                        sistemasEncontrados.add(nombreSistema)
+                    }
+                }
             }
+            
+            if (sintomasEncontrados.isNotEmpty()) {
+                DiseaseData(
+                    nombre = nombreEnfermedad,
+                    descripcion = descripcionEncontrada,
+                    sintomas = sintomasEncontrados.distinct(),
+                    edades = edadesEncontradas.toList(),
+                    sistemas = sistemasEncontrados.toList(),
+                    tipo = "ENFERMEDAD"
+                )
+            } else {
+                null
+            }
+            
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
         }
     }
     
-    return sistemas.sorted()
-}
-
-fun obtenerSintomasParaSistemaYEdad(sintomasData: SintomasEnfermedadesCustom, sistema: String, edad: String): List<SintomaCustom> {
-    val sistemaData = sintomasData.sistemas[sistema] ?: return emptyList()
-    
-    return sistemaData.sintomas.filter { sintoma ->
-        edad == "Todas las edades" || sintoma.edades.contains(mapearEdadAppAJson(edad))
-    }.sortedBy { it.nombre }
-}
-
-private fun mapearEdadAppAJson(edadApp: String): String {
-    return when (edadApp) {
-        "Lechones lactantes (0-21 días)" -> "Lechones lactantes"
-        "Lechones destetados (22-56 días)" -> "Lechones destetados"
-        "Crecimiento/Engorda (57 días a mercado)" -> "Crecimiento/Engorda"
-        "Adultos/Reproductores" -> "Adultos/Reproductores"
-        else -> edadApp
+    suspend fun obtenerTodasLasEnfermedades(): List<String> = withContext(Dispatchers.IO) {
+        try {
+            val jsonString = context.assets.open("enfermedades.json").bufferedReader().use { it.readText() }
+            val jsonObject = gson.fromJson(jsonString, JsonObject::class.java)
+            val sistemas = jsonObject.getAsJsonObject("SISTEMAS")
+            
+            val enfermedades = mutableSetOf<String>()
+            
+            sistemas.entrySet().forEach { (_, sistemaObj) ->
+                val sintomas = sistemaObj.asJsonObject.getAsJsonArray("SINTOMAS")
+                
+                sintomas.forEach { sintomaElement ->
+                    val sintoma = sintomaElement.asJsonObject
+                    val enfermedadesSintoma = sintoma.getAsJsonArray("ENFERMEDADES")
+                    
+                    enfermedadesSintoma.forEach { enfermedadElement ->
+                        enfermedades.add(enfermedadElement.asString)
+                    }
+                }
+            }
+            
+            enfermedades.toList().sorted()
+            
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emptyList()
+        }
     }
-}
-
-fun convertirSintomaCustomASintomaEnfermedad(sintomaCustom: SintomaCustom): SintomaEnfermedad {
-    return SintomaEnfermedad(
-        sintoma = sintomaCustom.nombre,
-        enfermedades = sintomaCustom.enfermedades,
-        descripcion = "Síntoma del sistema corporal",
-        edades = sintomaCustom.edades
-    )
 } 

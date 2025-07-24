@@ -1,0 +1,2382 @@
+{
+  "sistemas": {
+    "Sistema Tegumentario": {
+      "sintomas": [
+        {
+          "nombre": "ABCESOS CUTANEOS",
+          "enfermedades": ["TRUEPERELA PYOGENES", "CLAMIDIA"],
+          "descripcion": "Acumulaciones de pus en la piel, causadas por infecciones bacterianas.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ABDOMEN PURPURA",
+          "enfermedades": ["SALMONELLA"],
+          "descripcion": "Coloración púrpura del abdomen debido a hemorragias subcutáneas.",
+          "edades": ["Lechones lactantes", "Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ARTRITIS",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "MICOPLASMA", "ERISIPELA", "PESTE PORCINA AFRICANA", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Inflamación de las articulaciones que causa dolor y limitación del movimiento.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ARTRITIS PURULENTA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "TRUEPERELA PYOGENES"],
+          "descripcion": "Inflamación articular con presencia de pus, indicando infección bacteriana.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Infección"
+        },
+        {
+          "nombre": "ARTRITIS SUPURATIVA",
+          "enfermedades": ["TRUEPERELA PYOGENES"],
+          "descripcion": "Inflamación de articulaciones con formación de pus y destrucción tisular.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Infección"
+        },
+        {
+          "nombre": "BURSITIS",
+          "enfermedades": ["BRUCELOSIS"],
+          "descripcion": "Inflamación de las bursas (bolsas sinoviales) que protegen las articulaciones.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "COJERA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "CLAMIDIA", "BRUCELOSIS", "ERISIPELA", "CAMPILOBACTERIOSIS", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Alteración en la marcha debido a dolor o lesión en extremidades.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CONJUNTIVITIS",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "PRRS", "INFLUENZA PORCINA", "PESTE PORCINA CLASICA", "RINITIS ATROFICA"],
+          "descripcion": "Inflamación de la membrana que recubre el ojo y el párpado interno.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "CONJUNTIVITIS DEL RECIEN NACIDO",
+          "enfermedades": ["CLAMIDIA"],
+          "descripcion": "Inflamación ocular en lechones recién nacidos por infección bacteriana.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Infección"
+        },
+        {
+          "nombre": "CORAZON BLANDO",
+          "enfermedades": ["CIRCOVIRUS", "ERISIPELA"],
+          "descripcion": "Consistencia anormal del músculo cardíaco, indicando degeneración tisular.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "COSTRAS SECAS EN PIEL",
+          "enfermedades": ["LEPTOSPIROSIS", "EPIDERMITIS EXUDATIVA", "ERISIPELA"],
+          "descripcion": "Formación de costras secas en la superficie de la piel por lesiones cutáneas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "DECOLORACION DEL MUSCULO DORSAL",
+          "enfermedades": ["CLOSTRIDIUM P."],
+          "descripcion": "Cambio en la coloración normal del músculo dorsal, indicando necrosis o degeneración.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "DEFORMACION DE ARTICULACIONES",
+          "enfermedades": ["CLAMIDIA", "ENFERMEDAD DE GLÄSSER", "MICOPLASMA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Alteración en la forma normal de las articulaciones por inflamación crónica.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Deformidad"
+        },
+        {
+          "nombre": "DERMATITIS",
+          "enfermedades": ["CIRCOVIRUS", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Inflamación de la piel con enrojecimiento, hinchazón y posible formación de lesiones.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "DERMATITIS HEMORRAGICA NECORTIZANTE",
+          "enfermedades": ["CIRCOVIRUS"],
+          "descripcion": "Inflamación cutánea con hemorragias y muerte tisular, característica del circovirus.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "EDEMA DE EXTREMIDADES POSTERIORES",
+          "enfermedades": ["PASTEURELOSIS", "E. COLI"],
+          "descripcion": "Hinchazón de las extremidades posteriores por acumulación de líquido.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EDEMA DE LENGUA",
+          "enfermedades": ["PASTEURELOSIS", "PLEURONEUMONIA"],
+          "descripcion": "Hinchazón de la lengua por acumulación de líquido.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EDEMA PALPEBRAL",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "E. COLI", "PRRS"],
+          "descripcion": "Hinchazón de los párpados, indicando inflamación ocular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA SUBCUTANEO",
+          "enfermedades": ["CIRCOVIRUS"],
+          "descripcion": "Hinchazón del tejido subcutáneo por acumulación de líquido.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EPIFORA",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "RINITIS ATROFICA", "INFLUENZA PORCINA"],
+          "descripcion": "Lagrimeo excesivo, indicando irritación o inflamación ocular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EQUIMOSIS (MORETON)",
+          "enfermedades": ["AFLATOXINA", "TRICOTECENOS", "CIRCOVIRUS", "PESTE PORCINA AFRICANA", "LEPTOSPIROSIS", "CIRCOVIRUS", "ERISIPELA"],
+          "descripcion": "Hemorragia subcutánea que aparece como mancha púrpura en la piel.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ERITEMA CUTANEO",
+          "enfermedades": ["PRRS", "EPIDERMITIS EXUDATIVA", "ERISIPELA"],
+          "descripcion": "Enrojecimiento de la piel por dilatación de vasos sanguíneos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "GANGRENA GASEOSA",
+          "enfermedades": ["CLOSTRIDIUM P."],
+          "descripcion": "Necrosis tisular con producción de gas, característica de infecciones por Clostridium.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LESION HORIZONTAL EN PEZUÑAS",
+          "enfermedades": ["PASTEURELOSIS"],
+          "descripcion": "Lesiones horizontales en las pezuñas, indicando problemas de crecimiento o infección.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MANCHAS HEMORRAGICAS EN LA PIEL",
+          "enfermedades": ["LEPTOSPIROSIS", "ERISIPELA"],
+          "descripcion": "Manchas rojas en la piel causadas por hemorragias subcutáneas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MANCHAS MORADAS",
+          "enfermedades": ["CIRCOVIRUS"],
+          "descripcion": "Manchas de color púrpura en la piel, indicando hemorragias subcutáneas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MANCHAS ROJAS",
+          "enfermedades": ["ERISIPELA"],
+          "descripcion": "Manchas rojas en la piel, característica de la erisipela porcina.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HIPEREMIA CUTANEA",
+          "enfermedades": ["EPIDERMITIS EXUDATIVA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Enrojecimiento excesivo de la piel por aumento del flujo sanguíneo.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HINCHAZON DE CUELLO",
+          "enfermedades": ["PASTEURELOSIS", "E. COLI", "CLAMIDIA"],
+          "descripcion": "Hinchazón de la región del cuello, indicando inflamación o edema.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        }
+      ]
+    },
+    "Sistema Digestivo": {
+      "sintomas": [
+        {
+          "nombre": "ABCESOS EN BAZO",
+          "enfermedades": ["BRUCELOSIS"],
+          "descripcion": "Acumulaciones de pus en el bazo, indicando infección sistémica.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ABCESOS EN RIÑONES",
+          "enfermedades": ["BRUCELOSIS"],
+          "descripcion": "Acumulaciones de pus en los riñones por infección bacteriana.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ABCESOS HEPATICOS",
+          "enfermedades": ["TRUEPERELA PYOGENES"],
+          "descripcion": "Acumulaciones de pus en el hígado por infección bacteriana.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ADENOMATOSIS INTESTINAL",
+          "enfermedades": ["ILEITIS"],
+          "descripcion": "Proliferación anormal de tejido glandular en el intestino.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ADHERENCIAS FIBRINONECROTICAS EN ABDOMEN",
+          "enfermedades": ["CLOSTRIDIUM P."],
+          "descripcion": "Adherencias entre órganos abdominales con tejido necrótico y fibrina.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ANOREXIA",
+          "enfermedades": ["AFLATOXINA", "OCRATOXINA", "TRICOTECENOS", "FUMONISINA", "CAMPILOBACTERIOSIS", "COCCIDIOSIS", "ASCARIS SUUM", "ROTAVIRUS PORCINO", "PRRS", "INFLUENZA PORCINA", "GASTROENTERITIS TRASMISIBLE", "ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "PLEURONEUMONIA", "ENFERMEDAD DE GLÄSSER", "CLAMIDIA", "TRUEPERELA PYOGENES", "PASTEURELOSIS", "LEPTOSPIROSIS", "ERISIPELA", "E. COLI", "SALMONELLA", "DIARREA EPIDEMICA PORCINA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "EPIDERMITIS EXUDATIVA", "CLOSTRIDIUM P."],
+          "descripcion": "Pérdida completa del apetito, síntoma común en múltiples enfermedades.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "APARENCIA SUCIA DEL LECHON",
+          "enfermedades": ["GASTROENTERITIS TRASMISIBLE"],
+          "descripcion": "Lechones con aspecto desaseado debido a diarrea y deshidratación.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "AREAS DE NECROSIS CIRCULARES Y CONCENTRICAS EN INTESTINOS",
+          "enfermedades": ["PESTE PORCINA CLASICA"],
+          "descripcion": "Lesiones intestinales características con necrosis en forma de círculos concéntricos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ASCITIS",
+          "enfermedades": ["CLOSTRIDIUM P.", "PRRS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Acumulación de líquido en la cavidad abdominal.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ATROFIA DE VELLOSIDADES INTESTINALES",
+          "enfermedades": ["GASTROENTERITIS TRASMISIBLE", "ROTAVIRUS PORCINO", "E. COLI"],
+          "descripcion": "Deterioro de las vellosidades intestinales que afecta la absorción de nutrientes.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "BOTONES PESTOSOS EN INTESTINO DELGADO",
+          "enfermedades": ["PESTE PORCINA CLASICA", "PESTE PORCINA AFRICANA"],
+          "descripcion": "Lesiones ulcerativas características en el intestino delgado.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "CALAMBRES ABDOMINALES",
+          "enfermedades": ["CAMPILOBACTERIOSIS"],
+          "descripcion": "Contracciones dolorosas de los músculos abdominales.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CAQUEXIA",
+          "enfermedades": ["AFLATOXINA", "COCCIDIOSIS", "ESTRONGILOIDES", "ASCARIS SUUM", "GASTROENTERITIS TRASMISIBLE"],
+          "descripcion": "Pérdida extrema de peso y masa muscular por enfermedad crónica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "COLITIS CATARRAL",
+          "enfermedades": ["CIRCOVIRUS", "DISENTERIA PORCINA"],
+          "descripcion": "Inflamación del colon con secreción mucosa excesiva.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "CONGESTION Y EDEMA DE COLON",
+          "enfermedades": ["DISENTERIA PORCINA", "E. COLI"],
+          "descripcion": "Inflamación del colon con acumulación de líquido y congestión vascular.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "CONVERSION ALIMENTICIA ELEVADA",
+          "enfermedades": ["RINITIS ATROFICA", "MICOPLASMA", "AFLATOXINA", "ASCARIS SUUM", "CAMPILOBACTERIOSIS", "CIRCOVIRUS", "CLAMIDIA", "CLOSTRIDIUM P.", "COCCIDIOSIS", "DIARREA EPIDEMICA PORCINA", "DISENTERIA PORCINA", "E. COLI", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE GLÄSSER", "ENFERMEDAD DE OJO AZUL", "EPIDERMITIS EXUDATIVA", "ERISIPELA", "ESTREPTOCOCOSIS", "ESTRONGILOIDES", "FUMONISINA", "GASTROENTERITIS TRASMISIBLE", "INFLUENZA PORCINA", "LEPTOSPIROSIS", "OCRATOXINA", "PARVOVIRUS PORCINO", "PASTEURELOSIS", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "PLEURONEUMONIA", "PRRS", "ROTAVIRUS PORCINO", "SALMONELLA", "TRICOTECENOS", "TRUEPERELA PYOGENES", "RINITIS ATROFICA"],
+          "descripcion": "Aumento en la cantidad de alimento necesario para producir un kilo de peso, indicando ineficiencia alimenticia.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DESHIDRATACION",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "COCCIDIOSIS", "GASTROENTERITIS TRASMISIBLE", "E. COLI", "SALMONELLA", "ROTAVIRUS PORCINO", "DISENTERIA PORCINA", "DIARREA EPIDEMICA PORCINA", "EPIDERMITIS EXUDATIVA", "COCCIDIOSIS"],
+          "descripcion": "Pérdida excesiva de líquidos corporales, común en enfermedades digestivas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DESMEDRO",
+          "enfermedades": ["CIRCOVIRUS", "ILEITIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Retraso en el crecimiento y desarrollo, con pérdida de peso progresiva.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA INESPECIFICA",
+          "enfermedades": ["OCRATOXINA", "TRICOTECENOS", "GASTROENTERITIS TRASMISIBLE", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Diarrea sin características específicas, común en múltiples enfermedades.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA AGUDA AMARILLA",
+          "enfermedades": ["ESTRONGILOIDES", "E. COLI", "GASTROENTERITIS TRASMISIBLE", "ASCARIS SUUM", "ROTAVIRUS PORCINO", "SALMONELLA"],
+          "descripcion": "Diarrea líquida de color amarillo, indicando afectación del intestino delgado.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA BLANQUECINA",
+          "enfermedades": ["COCCIDIOSIS"],
+          "descripcion": "Diarrea de color blanquecino, característica de infecciones por coccidios.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA CAFÉ",
+          "enfermedades": ["PASTEURELOSIS"],
+          "descripcion": "Diarrea de color café, indicando presencia de sangre digerida.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA COLOR ALQUITRAN",
+          "enfermedades": ["ILEITIS", "DISENTERIA PORCINA"],
+          "descripcion": "Diarrea de color negro como alquitrán, indicando hemorragia digestiva alta.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA COLOR GRIS CEMENTO",
+          "enfermedades": ["ILEITIS", "CLOSTRIDIUM P."],
+          "descripcion": "Diarrea de color gris como cemento, característica de ciertas infecciones bacterianas.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA CON SANGRE COLOR ALQUITRAN",
+          "enfermedades": ["DISENTERIA PORCINA", "ILEITIS"],
+          "descripcion": "Diarrea con sangre de color negro, indicando hemorragia digestiva.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA CON SANGRE Y MOCO",
+          "enfermedades": ["DISENTERIA PORCINA", "COCCIDIOSIS", "CLOSTRIDIUM P."],
+          "descripcion": "Diarrea con presencia de sangre y moco, indicando inflamación intestinal severa.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA GRASOSA",
+          "enfermedades": ["COCCIDIOSIS"],
+          "descripcion": "Diarrea con aspecto grasoso, indicando malabsorción de grasas.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA VERDOSA",
+          "enfermedades": ["SALMONELLA", "CIRCOVIRUS"],
+          "descripcion": "Diarrea de color verde, indicando alteración en la digestión de bilis.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA HEMORRAGICA",
+          "enfermedades": ["CLOSTRIDIUM P.", "DISENTERIA PORCINA"],
+          "descripcion": "Diarrea con presencia de sangre fresca, indicando hemorragia intestinal.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA MUCOSA O CREMOSA",
+          "enfermedades": ["CAMPILOBACTERIOSIS"],
+          "descripcion": "Diarrea con aspecto mucoso o cremoso, característica de infecciones bacterianas.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "MANCHA DE DIARREA EN LA PIEL DEL PERINÉ",
+          "enfermedades": ["DISENTERIA PORCINA"],
+          "descripcion": "Manchas de diarrea en la región perianal, indicando diarrea persistente.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA SANGUINOLENTA",
+          "enfermedades": ["CAMPILOBACTERIOSIS"],
+          "descripcion": "Diarrea con presencia de sangre, indicando lesión intestinal.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DIARREA VERDOSA CON OLOR FETIDO",
+          "enfermedades": ["DIARREA EPIDEMICA PORCINA"],
+          "descripcion": "Diarrea verde con olor muy desagradable, característica de la diarrea epidémica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DILATACION DEL INTESTINO DELGADO",
+          "enfermedades": ["E. COLI"],
+          "descripcion": "Aumento del diámetro del intestino delgado por acumulación de gas o líquido.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "DILATACION GASTRICA",
+          "enfermedades": ["E. COLI"],
+          "descripcion": "Aumento del tamaño del estómago por acumulación de gas o líquido.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "DISMINUCION DE CRECIMIENTO",
+          "enfermedades": ["AFLATOXINA", "OCRATOXINA", "TRICOTECENOS", "FUMONISINA", "CAMPILOBACTERIOSIS", "COCCIDIOSIS", "ASCARIS SUUM", "ROTAVIRUS PORCINO", "PRRS", "INFLUENZA PORCINA", "GASTROENTERITIS TRASMISIBLE", "ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "PLEURONEUMONIA", "ENFERMEDAD DE GLÄSSER", "CLAMIDIA", "TRUEPERELA PYOGENES", "PASTEURELOSIS", "LEPTOSPIROSIS", "ERISIPELA", "E. COLI", "SALMONELLA", "DIARREA EPIDEMICA PORCINA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "EPIDERMITIS EXUDATIVA", "CLOSTRIDIUM P."],
+          "descripcion": "Reducción en la velocidad de crecimiento, común en múltiples enfermedades.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DISTENSION INTESTINAL HEMORRAGICA",
+          "enfermedades": ["GASTROENTERITIS TRASMISIBLE", "DISENTERIA PORCINA", "CLOSTRIDIUM P.", "ILEITIS"],
+          "descripcion": "Dilatación intestinal con presencia de hemorragia en la pared intestinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "EDEMA DE COLON",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "E. COLI", "CLOSTRIDIUM P."],
+          "descripcion": "Hinchazón del colon por acumulación de líquido en el tejido.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA DE LINFONODULOS ILEOCECALES",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "E. COLI"],
+          "descripcion": "Hinchazón de los ganglios linfáticos en la región ileocecal.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA DE LINFONODULOS MESENTERICOS",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "GASTROENTERITIS TRASMISIBLE", "ILEITIS", "E. COLI", "CIRCOVIRUS"],
+          "descripcion": "Hinchazón de los ganglios linfáticos del mesenterio.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA DE VESICULA BILIAR",
+          "enfermedades": ["ASCARIS SUUM", "SALMONELLA", "E. COLI"],
+          "descripcion": "Hinchazón de la vesícula biliar por acumulación de líquido.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA DEL MESOCOLON",
+          "enfermedades": ["E. COLI", "DISENTERIA PORCINA"],
+          "descripcion": "Hinchazón del mesocolon, membrana que sostiene el colon.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA FIBRINOHEMORRAGICO DE INTESTINO DELGADO",
+          "enfermedades": ["PASTEURELOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Hinchazón del intestino delgado con presencia de fibrina y hemorragia.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "EDEMA INTESTINAL",
+          "enfermedades": ["E. COLI", "CLOSTRIDIUM P.", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Hinchazón generalizada del intestino por acumulación de líquido.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA MESENTERICO",
+          "enfermedades": ["E. COLI"],
+          "descripcion": "Hinchazón del mesenterio, membrana que sostiene el intestino.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENFISEMA DE YEYUNO",
+          "enfermedades": ["CLOSTRIDIUM P.", "ILEITIS", "ROTAVIRUS PORCINO"],
+          "descripcion": "Presencia de gas en la pared del yeyuno, indicando necrosis tisular.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ENTERITIS",
+          "enfermedades": ["ROTAVIRUS", "SALMONELLA", "DIARREA EPIDEMICA PORCINA"],
+          "descripcion": "Inflamación del intestino delgado.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENTERITIS CATARRAL",
+          "enfermedades": ["ASCARIS SUUM", "ROTAVIRUS"],
+          "descripcion": "Inflamación del intestino delgado con secreción mucosa excesiva.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENTERITIS FIBRINONECROTICA",
+          "enfermedades": ["COCCIDIOSIS", "ILEITIS"],
+          "descripcion": "Inflamación del intestino delgado con formación de fibrina y necrosis.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ENTEROCOLITIS",
+          "enfermedades": ["SALMONELLA", "E. COLI", "GASTROENTERITIS TRASMISIBLE", "DIARREA EPIDEMICA PORCINA", "ASCARIS SUUM"],
+          "descripcion": "Inflamación simultánea del intestino delgado y colon.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EXUDADO SANGUINOLENTO EN INTESTINO DELGADO",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "ILEITIS"],
+          "descripcion": "Presencia de exudado con sangre en el intestino delgado.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EXUDADO SANGUINOLENTO EN INTESTINO GRUESO",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "DISENTERIA PORCINA"],
+          "descripcion": "Presencia de exudado con sangre en el intestino grueso.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "FIBRINA INTESTINAL",
+          "enfermedades": ["DISENTERIA PORCINA", "CLOSTRIDIUM P."],
+          "descripcion": "Presencia de fibrina en el intestino, indicando inflamación severa.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ESTREÑIMIENTO SEGUIDO DE DIARREA",
+          "enfermedades": ["PESTE PORCINA CLASICA"],
+          "descripcion": "Constipación seguida de diarrea, patrón característico de ciertas enfermedades.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HECES SECAS",
+          "enfermedades": ["ERISIPELA"],
+          "descripcion": "Heces con bajo contenido de agua, indicando deshidratación o alteración digestiva.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LESIONES MULTIFOCALES EN HIGADO",
+          "enfermedades": ["TRUEPERELA PYOGENES", "SALMONELLA", "AFLATOXINA", "ASCARIS SUUM"],
+          "descripcion": "Múltiples lesiones distribuidas en el hígado, indicando infección sistémica o toxinas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MANCHAS DE LECHE EN HIGADO",
+          "enfermedades": ["ASCARIS SUUM"],
+          "descripcion": "Manchas blancas en el hígado causadas por migración de larvas de Ascaris.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LOS LECHONES SE ACUESTAN SOBRE LA CERDA",
+          "enfermedades": ["DIARREA EPIDEMICA PORCINA"],
+          "descripcion": "Comportamiento anormal donde los lechones se acuestan sobre la cerda, indicando debilidad.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HEPATITIS",
+          "enfermedades": ["OCRATOXINA", "FUMONISINA", "ASCARIS SUUM", "CLOSTRIDIUM P."],
+          "descripcion": "Inflamación del hígado, indicando daño hepático por toxinas o infección.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "HEPATOMEGALIA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "CIRCOVIRUS", "PLEURONEUMONIA", "ERISIPELA", "SALMONELLA", "CLOSTRIDIUM P.", "PESTE PORCINA AFRICANA", "ASCARIS SUUM", "AFLATOXINA"],
+          "descripcion": "Aumento del tamaño del hígado, indicando inflamación o congestión hepática.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "INFARTO DE VESICULA BILIAR",
+          "enfermedades": ["PESTE PORCINA CLASICA", "PESTE PORCINA AFRICANA", "SALMONELLA"],
+          "descripcion": "Muerte tisular de la vesícula biliar por falta de irrigación sanguínea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "INFARTO ESPLENICO",
+          "enfermedades": ["PESTE PORCINA CLASICA"],
+          "descripcion": "Muerte tisular del bazo por falta de irrigación sanguínea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "INFARTOS VENOSOS EN CURVATURA MAYOR DEL ESTOMAGO",
+          "enfermedades": ["E. COLI", "SALMONELLA"],
+          "descripcion": "Muerte tisular en la curvatura mayor del estómago por trombosis venosa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "INFLAMACION HEMORRAGICA DE INTESTINO",
+          "enfermedades": ["ILEITIS", "DISENTERIA PORCINA"],
+          "descripcion": "Inflamación intestinal con presencia de hemorragias.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "INTESTINO DELGADO ROJO OBSCURO",
+          "enfermedades": ["CLOSTRIDIUM P.", "ILEITIS"],
+          "descripcion": "Coloración roja oscura del intestino delgado, indicando congestión o hemorragia.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "INTESTINO DELGADO TRANSPARENTE",
+          "enfermedades": ["CLOSTRIDIUM P.", "ROTAVIRUS PORCINO"],
+          "descripcion": "Intestino delgado con paredes transparentes, indicando atrofia de vellosidades.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "IRRITACION PERIANAL",
+          "enfermedades": ["E. COLI"],
+          "descripcion": "Irritación de la región perianal, indicando diarrea o infección local.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LECHE COAGULADA",
+          "enfermedades": ["E. COLI", "DIARREA EPIDEMICA PORCINA", "GASTROENTERITIS TRASMISIBLE"],
+          "descripcion": "Leche con aspecto coagulado, indicando alteración en la producción láctea.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        }
+      ]
+    },
+    "Sistema Respiratorio": {
+      "sintomas": [
+        {
+          "nombre": "ABCESOS PULMONARES",
+          "enfermedades": ["TRUEPERELA PYOGENES"],
+          "descripcion": "Lesiones purulentas en el tejido pulmonar, causadas por bacterias.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ADHERENCIAS EN PULMON Y COSTILLAS",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS"],
+          "descripcion": "Adherencias fibrinosas entre pulmones y pared torácica.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "AREAS DE CONSOLIDACION PURPURA-GRIS EN PULMON",
+          "enfermedades": ["MICOPLASMA"],
+          "descripcion": "Zonas de pulmón consolidado con coloración púrpura-grisácea.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "BANDAS CICATRICIALES EN PULMONES",
+          "enfermedades": ["MICOPLASMA"],
+          "descripcion": "Cicatrices fibróticas en el tejido pulmonar por infecciones previas.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "BRONCONEUMONIA",
+          "enfermedades": ["ESTRONGILOIDES", "INFLUENZA PORCINA"],
+          "descripcion": "Inflamación de bronquios y tejido pulmonar adyacente.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BRONCONEUMONIA CATARRAL PURULENTA",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación broncopulmonar con secreción mucosa y pus.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BRONCONEUMONIA PURULENTA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación broncopulmonar con formación de pus.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BRONCONEUMONIA SUPURATIVA LOBULAR",
+          "enfermedades": ["MICOPLASMA"],
+          "descripcion": "Inflamación purulenta que afecta lóbulos pulmonares completos.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BRONQIOLITIS EXUDATIVA",
+          "enfermedades": ["INFLUENZA PORCINA"],
+          "descripcion": "Inflamación de los bronquiolos con exudado inflamatorio.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BRONQUITIS",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "INFLUENZA PORCINA", "MICOPLASMA", "PASTEURELOSIS", "PRRS", "RINITIS ATROFICA"],
+          "descripcion": "Inflamación de los bronquios que causa tos y dificultad respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BRONQUITIS SUPURATIVA",
+          "enfermedades": ["CLAMIDIA", "PLEURONEUMONIA", "PASTEURELOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación bronquial con formación de pus.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "BULLAS PULMONARES",
+          "enfermedades": ["PLEURONEUMONIA"],
+          "descripcion": "Cavidades llenas de aire en el tejido pulmonar.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "CONGESTIÓN PULMONAR",
+          "enfermedades": ["EPIDERMITIS EXUDATIVA", "MICOPLASMA", "INFLUENZA PORCINA", "PLEURONEUMONIA", "PRRS", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Acumulación de sangre en los vasos pulmonares.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CONSOLIDACION CRÁNEO VENTRAL PURPURA-GRIS EN PULMONES",
+          "enfermedades": ["MICOPLASMA"],
+          "descripcion": "Consolidación pulmonar en la parte ventral anterior con coloración púrpura-gris.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "DESCARGA NASAL",
+          "enfermedades": ["INFLUENZA PORCINA", "RINITIS ATROFICA", "PRRS"],
+          "descripcion": "Secreción nasal anormal, indicando inflamación del tracto respiratorio superior.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DESCARGA NASAL SANGUINOLENTA",
+          "enfermedades": ["PASTEURELOSIS", "RINITIS ATROFICA", "PESTE PORCINA AFRICANA", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Secreción nasal con presencia de sangre, indicando lesión vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DISNEA",
+          "enfermedades": ["FUMONISINA", "ASCARIS SUUM", "ESTRONGILOIDES", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "PLEURONEUMONIA", "CLAMIDIA", "MICOPLASMA", "ERISIPELA", "SALMONELLA", "PESTE PORCINA CLASICA", "ENFERMEDAD DE GLÄSSER", "PRRS"],
+          "descripcion": "Dificultad para respirar, síntoma común en enfermedades respiratorias y sistémicas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EDEMA CONJUTIVAL",
+          "enfermedades": ["RINITIS ATROFICA", "E. COLI", "ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Hinchazón de la conjuntiva ocular, indicando inflamación del ojo.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA DE LINFONODULOS BRONQUIALES",
+          "enfermedades": ["INFLUENZA PORCINA", "PRRS"],
+          "descripcion": "Hinchazón de los ganglios linfáticos bronquiales, indicando infección respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EDEMA PULMONAR",
+          "enfermedades": ["FUMONISINA", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "PLEURONEUMONIA", "PASTEURELOSIS", "SALMONELLA"],
+          "descripcion": "Acumulación de líquido en los espacios alveolares del pulmón.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ENFISEMA PULMONAR",
+          "enfermedades": ["INFLUENZA PORCINA", "PASTEURELOSIS", "PLEURONEUMONIA", "MICOPLASMA"],
+          "descripcion": "Dilatación anormal de los espacios aéreos pulmonares con destrucción de paredes alveolares.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ESPUMA BLANCA EN TRAQUEA",
+          "enfermedades": ["PASTEURELOSIS", "PLEURONEUMONIA"],
+          "descripcion": "Presencia de espuma blanca en la tráquea, indicando edema pulmonar.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ESPUMA SANGUINOLENTA",
+          "enfermedades": ["PLEURONEUMONIA"],
+          "descripcion": "Espuma con presencia de sangre en vías respiratorias.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ESTORNUDO",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "RINITIS ATROFICA", "INFLUENZA PORCINA", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Expulsión violenta de aire por la nariz, indicando irritación del tracto respiratorio superior.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EXUDADO MUCOSO EN TRAQUEA",
+          "enfermedades": ["PLEURONEUMONIA", "PASTEURELOSIS"],
+          "descripcion": "Presencia de secreción mucosa en la tráquea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EPISTAXIS (HEMORRAGIA NASAL)",
+          "enfermedades": ["RINITIS ATROFICA", "PASTEURELOSIS"],
+          "descripcion": "Hemorragia nasal, indicando lesión vascular en el tracto respiratorio superior.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LESIONES MULTIFOCALES EN PULMON",
+          "enfermedades": ["TRUEPERELA PYOGENES", "PLEURONEUMONIA"],
+          "descripcion": "Múltiples lesiones distribuidas en el tejido pulmonar, indicando infección bacteriana.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LAGAÑEO",
+          "enfermedades": ["INFLUENZA PORCINA", "RINITIS ATROFICA", "PASTEURELOSIS"],
+          "descripcion": "Secreción ocular espesa y pegajosa, indicando infección respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        }
+      ]
+    },
+    "Sistema Nervioso": {
+      "sintomas": [
+        {
+          "nombre": "ADIPSIA",
+          "enfermedades": ["PLEURONEUMONIA", "PASTEURELOSIS", "ESTREPTOCOCOSIS"],
+          "descripcion": "Ausencia completa de sed y falta de deseo de beber agua.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ATAXIA (INCOORDINACION)",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "LEPTOSPIROSIS", "E. COLI", "BRUCELOSIS"],
+          "descripcion": "Falta de coordinación en los movimientos, indicando afectación del sistema nervioso.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "CABEZA AGACHADA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "E. COLI", "ENFERMEDAD DE GLÄSSER", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Posición anormal de la cabeza hacia abajo, indicando malestar o dolor.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CEGUERA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Pérdida completa de la visión, temporal o permanente.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CONVULSIONES",
+          "enfermedades": ["ASCARIS SUUM", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "E. COLI", "PESTE PORCINA CLASICA", "ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Contracciones musculares involuntarias y violentas, indicando afectación del sistema nervioso central.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "DECUBITO LATERAL",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "E. COLI", "ERISIPELA"],
+          "descripcion": "Posición de reposo lateral, indicando debilidad o alteración del estado mental.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "DEPRESION",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "PLEURONEUMONIA", "PESTE PORCINA AFRICANA", "INFLUENZA PORCINA", "SALMONELLA"],
+          "descripcion": "Estado de letargia y falta de respuesta a estímulos ambientales.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ENCEFALITIS",
+          "enfermedades": ["PRRS", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación del encéfalo, indicando afectación del sistema nervioso central.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENCEFALOMALASIA FOCAL",
+          "enfermedades": ["E. COLI"],
+          "descripcion": "Reblandecimiento focal del tejido cerebral, indicando necrosis localizada.",
+          "edades": ["Lechones lactantes", "Lechones destetados"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ENCEFALOMIELITIS",
+          "enfermedades": ["CLAMIDIA", "ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Inflamación del encéfalo y médula espinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENCORVAMIENTO",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Postura encorvada, indicando dolor o afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LETARGIA",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "PLEURONEUMONIA", "CLAMIDIA", "PESTE PORCINA CLASICA", "EPIDERMITIS EXUDATIVA", "MICOPLASMA", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Estado de somnolencia y falta de respuesta a estímulos, indicando enfermedad sistémica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LORDOSIS",
+          "enfermedades": ["ASCARIS SUUM", "CIRCOVIRUS"],
+          "descripcion": "Curvatura anormal de la columna vertebral hacia adelante.",
+          "edades": ["Todas las edades"],
+          "tipo": "Deformidad"
+        },
+        {
+          "nombre": "MARCHA EN CIRCULOS",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "LEPTOSPIROSIS"],
+          "descripcion": "Comportamiento anormal de caminar en círculos, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "MARCHA EN REVERSA",
+          "enfermedades": ["E. COLI"],
+          "descripcion": "Comportamiento anormal de caminar hacia atrás, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "MENINGES ENGROSADAS (PAQUIMENINGITIS)",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Engrosamiento de las meninges, indicando inflamación del sistema nervioso central.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "MENINGITIS",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "ERISIPELA"],
+          "descripcion": "Inflamación de las meninges que recubren el cerebro y médula espinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "MENINGOENCEFALITIS",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de las meninges y el encéfalo, indicando afectación neurológica severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "HEMORRAGIA CEREBRAL",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "E. COLI", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Hemorragia en el tejido cerebral, indicando lesión vascular severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA DE LINFONODULOS PULMONARES",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "PLEURONEUMONIA"],
+          "descripcion": "Hemorragia en los ganglios linfáticos pulmonares, indicando lesión vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA DEL CORDON UMBILICAL",
+          "enfermedades": ["PRRS"],
+          "descripcion": "Hemorragia en el cordón umbilical, indicando problemas vasculares.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA ENDOMETRIAL",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Hemorragia en el endometrio (revestimiento del útero).",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA HEPATICA",
+          "enfermedades": ["AFLATOXINA", "TRICOTECENOS", "ASCARIS SUUM"],
+          "descripcion": "Hemorragia en el tejido hepático, indicando lesión vascular del hígado.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA OCULAR",
+          "enfermedades": ["INFLUENZA PORCINA", "ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Hemorragia en el ojo, indicando lesión vascular ocular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA PLACENTARIA",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE AUJESZKY", "PESTE PORCINA CLASICA"],
+          "descripcion": "Hemorragia en la placenta, indicando lesión vascular placentaria.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA PULMONAR",
+          "enfermedades": ["TRUEPERELA PYOGENES", "SALMONELLA", "PLEURONEUMONIA"],
+          "descripcion": "Hemorragia en el tejido pulmonar, indicando lesión vascular pulmonar.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA RENAL",
+          "enfermedades": ["PESTE PORCINA CLASICA", "PESTE PORCINA AFRICANA"],
+          "descripcion": "Hemorragia en el tejido renal, indicando lesión vascular del riñón.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA SUBCUTANEA",
+          "enfermedades": ["CIRCOVIRUS"],
+          "descripcion": "Hemorragia bajo la piel, indicando lesión vascular subcutánea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HEMORRAGIA TESTICULAR",
+          "enfermedades": ["CLAMIDIA", "BRUCELOSIS", "ERISIPELA", "LEPTOSPIROSIS"],
+          "descripcion": "Hemorragia en los testículos, indicando lesión vascular testicular.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "Hemorragias vasculares (color violeta en la piel)",
+          "enfermedades": ["PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Hemorragias vasculares que aparecen como manchas violetas en la piel.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HIPEREXCITACION",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Estado de excitación excesiva, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        }
+      ]
+    },
+    "Sistema Reproductivo": {
+      "sintomas": [
+        {
+          "nombre": "ABORTO",
+          "enfermedades": ["INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "BRUCELOSIS", "ERISIPELA", "CLAMIDIA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "ZEARALENONA"],
+          "descripcion": "Interrupción del embarazo antes de que el feto sea viable.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "ABORTO TERCER TERCIO",
+          "enfermedades": ["PRRS", "LEPTOSPIROSIS", "CIRCOVIRUS"],
+          "descripcion": "Aborto que ocurre en el último tercio de la gestación.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "ANESTRO",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "BRUCELOSIS", "CLAMIDIA"],
+          "descripcion": "Ausencia de ciclos estrales normales en hembras reproductoras.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "ATROFIA TESTICULAR",
+          "enfermedades": ["ZEARALENONA", "BRUCELOSIS"],
+          "descripcion": "Reducción del tamaño de los testículos por daño tisular.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "BAJO NUMERO DE NACIDOS VIVOS",
+          "enfermedades": ["PRRS", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "PARVOVIRUS PORCINO", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "MICOPLASMA"],
+          "descripcion": "Reducción en el número de lechones nacidos vivos por camada.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "CELO SILENCIOSO",
+          "enfermedades": ["CIRCOVIRUS"],
+          "descripcion": "Celo sin manifestaciones externas visibles de comportamiento estral.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "CELO TARDIO POSTDESTETE",
+          "enfermedades": ["PRRS", "LEPTOSPIROSIS", "ENFERMEDAD DE AUJESZKY", "ESTRONGILOIDES", "CIRCOVIRUS"],
+          "descripcion": "Retraso en el retorno al celo después del destete.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "DESCARGA VAGINAL COLOR CAFÉ-GRISASEO",
+          "enfermedades": ["CLAMIDIA", "ERISIPELA", "ZEARALENONA"],
+          "descripcion": "Secreción vaginal de color café-grisáceo, indicando infección o alteración hormonal.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "DESCARGA VAGINAL SANGUINOLENTA",
+          "enfermedades": ["BRUCELOSIS", "CLAMIDIA"],
+          "descripcion": "Secreción vaginal con presencia de sangre, indicando lesión o infección del tracto reproductivo.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "EDEMA ESCROTAL",
+          "enfermedades": ["ZEARALENONA", "CLOSTRIDIUM P."],
+          "descripcion": "Hinchazón del escroto por acumulación de líquido.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EDEMA PREPUCIAL",
+          "enfermedades": ["ZEARALENONA"],
+          "descripcion": "Hinchazón del prepucio por acumulación de líquido.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EDEMA TESTICULAR",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "BRUCELOSIS"],
+          "descripcion": "Hinchazón de los testículos por acumulación de líquido.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ENDOMETRITIS",
+          "enfermedades": ["TRUEPERELA PYOGENES", "BRUCELOSIS", "ESTREPTOCOCOSIS", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Inflamación del endometrio (revestimiento interno del útero).",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EPIDIDIMITIS",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "CLAMIDIA", "BRUCELOSIS"],
+          "descripcion": "Inflamación del epidídimo (conducto que conecta los testículos).",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EXPULSION TARDIA DE LECHONES",
+          "enfermedades": ["PRRS"],
+          "descripcion": "Retraso en el parto, indicando problemas reproductivos.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "FALLA REPRODUCTIVA",
+          "enfermedades": ["BRUCELOSIS", "PRRS", "PARVOVIRUS PORCINO", "ENFERMEDAD DE AUJESZKY", "LEPTOSPIROSIS"],
+          "descripcion": "Fracaso en la reproducción, incluyendo infertilidad y problemas de gestación.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "LECHONES MOMIFICADOS",
+          "enfermedades": ["PRRS", "CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "PARVOVIRUS PORCINO", "LEPTOSPIROSIS", "ERISIPELA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Fetos que mueren durante la gestación y se momifican, indicando infección viral o bacteriana.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "LECHONES NACIDOS BLANCOS",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Lechones que nacen con coloración blanca anormal, indicando anemia o problemas circulatorios.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LECHONES NACIDOS CON PATAS ABIERTAS (SPLAYLEGS)",
+          "enfermedades": ["ZEARALENONA", "TRICOTECENOS"],
+          "descripcion": "Lechones que nacen con las patas abiertas hacia los lados, indicando problemas neuromusculares.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Deformidad"
+        },
+        {
+          "nombre": "LECHONES NACIDOS DEBILES",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "PARVOVIRUS PORCINO", "PESTE PORCINA CLASICA"],
+          "descripcion": "Lechones que nacen con poca vitalidad y fuerza muscular reducida.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LECHONES NACIDOS MUERTOS",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "PARVOVIRUS PORCINO", "INFLUENZA PORCINA", "ERISIPELA", "LEPTOSPIROSIS"],
+          "descripcion": "Lechones que nacen sin vida, indicando infección durante la gestación.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "MANCHAS BLANCAS (DE CAL) EN PLACENTA",
+          "enfermedades": ["ZEARALENONA", "LEPTOSPIROSIS"],
+          "descripcion": "Manchas blancas calcificadas en la placenta, indicando lesiones placentarias.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MALFORMACIONES FETALES",
+          "enfermedades": ["PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Anomalías en el desarrollo fetal, indicando infección viral durante la gestación.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Deformidad"
+        },
+        {
+          "nombre": "METRITIS",
+          "enfermedades": ["CLAMIDIA", "BRUCELOSIS", "TRUEPERELA PYOGENES", "E. COLI"],
+          "descripcion": "Inflamación del útero, común después del parto o por infección bacteriana.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "MUERTE FETAL EN DISTINTAS EDADES",
+          "enfermedades": ["PARVOVIRUS PORCINO", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Muerte fetal que ocurre en diferentes etapas de la gestación.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "INFERTILIDAD",
+          "enfermedades": ["PRRS", "BRUCELOSIS", "LEPTOSPIROSIS", "ERISIPELA", "CLAMIDIA", "PARVOVIRUS PORCINO", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Incapacidad para concebir, indicando problemas reproductivos.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo reproductivo"
+        },
+        {
+          "nombre": "HIPERTROFIA DEL APARATO REPRODUCTOR DE LA CERDA",
+          "enfermedades": ["ZEARALENONA"],
+          "descripcion": "Aumento del tamaño del aparato reproductor femenino por efecto hormonal.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HIPOGALAXIA",
+          "enfermedades": ["LEPTOSPIROSIS", "DIARREA EPIDEMICA PORCINA", "ERISIPELA", "BRUCELOSIS"],
+          "descripcion": "Disminución en la producción de leche en hembras lactantes.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        }
+      ]
+    },
+    "Sistema Cardiovascular": {
+      "sintomas": [
+        {
+          "nombre": "ANEMIA",
+          "enfermedades": ["ESTRONGILOIDES"],
+          "descripcion": "Reducción en el número de glóbulos rojos o hemoglobina en sangre.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CIANOSIS",
+          "enfermedades": ["ERISIPELA", "PRRS", "PLEURONEUMONIA", "ENFERMEDAD DE GLÄSSER", "SALMONELLA", "PESTE PORCINA AFRICANA", "E. COLI", "PESTE PORCINA CLASICA", "MICOPLASMA"],
+          "descripcion": "Coloración azulada de la piel y mucosas por falta de oxigenación.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "CIANOSIS EN PECHO Y ESTOMAGO",
+          "enfermedades": ["PASTEURELOSIS"],
+          "descripcion": "Coloración azulada específicamente en la región torácica y abdominal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ENDOCARDITIS",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ERISIPELA"],
+          "descripcion": "Inflamación del endocardio (revestimiento interno del corazón).",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENDOCARDITIS MURAL",
+          "enfermedades": ["TRUEPERELA PYOGENES", "ESTREPTOCOCOSIS", "ERISIPELA"],
+          "descripcion": "Inflamación del endocardio que afecta las paredes del corazón.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENDOCARDITIS VALVULAR",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ERISIPELA"],
+          "descripcion": "Inflamación del endocardio que afecta las válvulas cardíacas.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ENDOCARDITIS VEGETATIVA",
+          "enfermedades": ["ERISIPELA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación del endocardio con formación de vegetaciones (masas de fibrina y bacterias).",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "EPICARDITIS FIBRINOPURULENTA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación del epicardio (revestimiento externo del corazón) con fibrina y pus.",
+          "edades": ["Lechones destetados", "Crecimiento/Engorda"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ESPLENOMEGALIA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "CIRCOVIRUS", "PLEURONEUMONIA", "ERISIPELA", "SALMONELLA", "CLOSTRIDIUM P.", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Aumento del tamaño del bazo, indicando respuesta inmunológica o infección.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "LINFADENITIS",
+          "enfermedades": ["CIRCOVIRUS", "DIARREA EPIDEMICA PORCINA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de los ganglios linfáticos, indicando respuesta inmunológica a infección.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "LINFONODULOS INGUINALES GRANDES Y NEGROS",
+          "enfermedades": ["PRRS", "PESTE PORCINA AFRICANA"],
+          "descripcion": "Ganglios linfáticos inguinales aumentados de tamaño y con coloración negra.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LINFONODULOS PULMONARES GRANDES Y NEGROS",
+          "enfermedades": ["PRRS"],
+          "descripcion": "Ganglios linfáticos pulmonares aumentados de tamaño y con coloración negra.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LINFONODULOS RENALES AGRANDADOS HEMORRAGICOS",
+          "enfermedades": ["PESTE PORCINA AFRICANA"],
+          "descripcion": "Ganglios linfáticos renales aumentados de tamaño con hemorragias.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LIQUIDO SINOVIAL HEMORRAGICO",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "ERISIPELA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Líquido articular con presencia de sangre, indicando inflamación severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "LIQUIDO SINOVIAL PURULENTO",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "MICOPLASMA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Líquido articular con presencia de pus, indicando infección bacteriana.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MASTITIS",
+          "enfermedades": ["PRRS", "TRUEPERELA PYOGENES", "E. COLI", "EPIDERMITIS EXUDATIVA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de las glándulas mamarias, común en hembras lactantes.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "MIOCARDITIS",
+          "enfermedades": ["PRRS", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación del músculo cardíaco, indicando afectación del corazón.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "MIOCARDITIS HEMORRAGICA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación del músculo cardíaco con hemorragias.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "HIDROPERICARDIO",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS"],
+          "descripcion": "Acumulación de líquido en el pericardio (membrana que recubre el corazón).",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HIDROTORAX",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS"],
+          "descripcion": "Acumulación de líquido en la cavidad torácica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HIPERPLASIA DE LINFONODULOS",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY", "ILEITIS"],
+          "descripcion": "Aumento del número de células en los ganglios linfáticos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "HIPERPLASIA LINFOIDE",
+          "enfermedades": ["MICOPLASMA", "PRRS"],
+          "descripcion": "Proliferación excesiva del tejido linfoide.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        }
+      ]
+    },
+    "Sistema Endocrino": {
+      "sintomas": [
+        {
+          "nombre": "AGALAXIA",
+          "enfermedades": ["AFLATOXINA", "FUMONISINA", "ERISIPELA"],
+          "descripcion": "Ausencia o disminución de la producción de leche en hembras lactantes.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        }
+      ]
+    },
+    "Sistema Esquelético": {
+      "sintomas": [
+        {
+          "nombre": "BRAQUIGNATISMO SUPERIOR",
+          "enfermedades": ["RINITIS ATROFICA"],
+          "descripcion": "Acortamiento del maxilar superior, característico de la rinitis atrófica.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Deformidad"
+        }
+      ]
+    },
+    "Sistema Urinario": {
+      "sintomas": [
+        {
+          "nombre": "CONSUMO DE ORINA",
+          "enfermedades": ["CIRCOVIRUS"],
+          "descripcion": "Comportamiento anormal de beber orina, indicando deficiencias nutricionales.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "EDEMA RENAL",
+          "enfermedades": ["AFLATOXINA", "OCRATOXINA", "CIRCOVIRUS"],
+          "descripcion": "Hinchazón de los riñones por acumulación de líquido.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "EQUIMOSIS RENAL",
+          "enfermedades": ["PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Hemorragias en el tejido renal, indicando lesión vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "Ganglios renales agrandados hemorragicos",
+          "enfermedades": ["PESTE PORCINA AFRICANA"],
+          "descripcion": "Ganglios linfáticos renales aumentados de tamaño con hemorragias.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "MANCHAS BLANCAS EN RIÑONES",
+          "enfermedades": ["CIRCOVIRUS", "LEPTOSPIROSIS"],
+          "descripcion": "Manchas blancas en el tejido renal, indicando lesiones o calcificaciones.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        }
+      ]
+    },
+    "Sistema General": {
+      "sintomas": [
+        {
+          "nombre": "CANCER",
+          "enfermedades": ["AFLATOXINA"],
+          "descripcion": "Crecimiento anormal de células que puede afectar múltiples órganos.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Enfermedad"
+        },
+        {
+          "nombre": "EMACIACION",
+          "enfermedades": ["ESTRONGILOIDES", "ROTAVIRUS PORCINO", "CIRCOVIRUS", "ASCARIS SUUM", "PRRS", "CIRCOVIRUS", "COCCIDIOSIS"],
+          "descripcion": "Pérdida extrema de peso y masa muscular, indicando enfermedad crónica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "FIEBRE",
+          "enfermedades": ["DISENTERIA PORCINA", "CLOSTRIDIUM P.", "TRUEPERELA PYOGENES", "RINITIS ATROFICA", "PRRS", "CIRCOVIRUS", "PLEURONEUMONIA", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "ERISIPELA", "ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE GLÄSSER", "CLAMIDIA", "MICOPLASMA", "SALMONELLA", "PASTEURELOSIS", "LEPTOSPIROSIS", "ROTAVIRUS PORCINO", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Elevación de la temperatura corporal por encima de lo normal, indicando infección o inflamación.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "MORTALIDAD DEL 100% EN LECHONES LACTANTES",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "GASTROENTERITIS TRASMISIBLE", "DIARREA EPIDEMICA PORCINA"],
+          "descripcion": "Mortalidad completa en lechones lactantes, indicando enfermedad muy severa.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "HIPOTERMIA",
+          "enfermedades": ["PASTEURELOSIS", "E. COLI", "CLOSTRIDIUM P.", "SALMONELLA"],
+          "descripcion": "Temperatura corporal por debajo de lo normal, indicando enfermedad severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ICTERICIA",
+          "enfermedades": ["AFLATOXINA", "FUMONISINA", "ASCARIS SUUM", "CIRCOVIRUS", "ENFERMEDAD DE GLÄSSER", "LEPTOSPIROSIS"],
+          "descripcion": "Coloración amarillenta de la piel y mucosas, indicando problemas hepáticos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "MUERTE FETAL DESPUES DE LOS 70 DIAS DE GESTACION",
+          "enfermedades": ["PARVOVIRUS PORCINO", "CIRCOVIRUS", "PRRS"],
+          "descripcion": "Muerte del feto después de los 70 días de gestación, indicando infección viral.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "MUERTE SUBITA",
+          "enfermedades": ["FUMONISINA", "LEPTOSPIROSIS", "CLOSTRIDIUM P.", "ERISIPELA", "ESTRONGILOIDES", "PRRS", "CIRCOVIRUS", "PLEURONEUMONIA", "PESTE PORCINA AFRICANA"],
+          "descripcion": "Muerte inesperada sin signos previos de enfermedad, indicando afectación severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "NECROSIS CUTANEA",
+          "enfermedades": ["TRICOTECENOS", "PESTE PORCINA AFRICANA", "ENFERMEDAD DE AUJESZKY", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Muerte del tejido cutáneo, indicando afectación vascular o infección severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS DE EPIGLOTIS",
+          "enfermedades": ["PESTE PORCINA CLASICA", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Muerte del tejido de la epiglotis, afectando la respiración y deglución.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS HEPATICA",
+          "enfermedades": ["LEPTOSPIROSIS", "AFLATOXINA", "CLOSTRIDIUM P."],
+          "descripcion": "Muerte del tejido hepático, indicando afectación severa del hígado.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS DE LA COLA",
+          "enfermedades": ["ZEARALENONA"],
+          "descripcion": "Muerte del tejido de la cola, causada por toxinas fúngicas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS DE LAS OREJAS",
+          "enfermedades": ["SALMONELLA", "EPIDERMITIS EXUDATIVA", "ENFERMEDAD DE GLÄSSER", "TRICOTECENOS", "ESTREPTOCOCOSIS", "ZEARALENONA"],
+          "descripcion": "Muerte del tejido de las orejas, indicando afectación vascular o infección.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS DEL INTESTINO GRUESO",
+          "enfermedades": ["CLOSTRIDIUM P."],
+          "descripcion": "Muerte del tejido del intestino grueso, indicando infección bacteriana severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS DEL MIOCARDIO",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Muerte del tejido del músculo cardíaco, indicando afectación severa del corazón.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS DEL MUSCULO DORSAL",
+          "enfermedades": ["DIARREA EPIDEMICA PORCINA", "CLOSTRIDIUM P."],
+          "descripcion": "Muerte del tejido muscular dorsal, indicando afectación muscular severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS EN LA PIEL",
+          "enfermedades": ["PESTE PORCINA AFRICANA", "ERISIPELA", "EPIDERMITIS EXUDATIVA", "AFLATOXINA", "FUMONISINA"],
+          "descripcion": "Muerte del tejido cutáneo, indicando afectación vascular o toxinas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS ESPLENICA",
+          "enfermedades": ["PLEURONEUMONIA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "ERISIPELA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Muerte del tejido del bazo, indicando infección sistémica severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS FOCAL DE HIGADO",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "CLOSTRIDIUM P."],
+          "descripcion": "Muerte focal del tejido hepático, indicando afectación localizada del hígado.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS PANCREATICA",
+          "enfermedades": ["FUMONISINA", "CLOSTRIDIUM P."],
+          "descripcion": "Muerte del tejido pancreático, indicando afectación severa del páncreas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NECROSIS PULMONAR",
+          "enfermedades": ["PASTEURELOSIS", "PLEURONEUMONIA", "MICOPLASMA"],
+          "descripcion": "Muerte del tejido pulmonar, indicando infección respiratoria severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "NEFRITIS",
+          "enfermedades": ["OCRATOXINA", "LEPTOSPIROSIS", "CIRCOVIRUS"],
+          "descripcion": "Inflamación de los riñones, indicando afectación renal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEFRITIS INTERSTICIAL",
+          "enfermedades": ["CIRCOVIRUS", "LEPTOSPIROSIS"],
+          "descripcion": "Inflamación del tejido intersticial renal, indicando afectación renal específica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA BRONCO INTERSTICIAL",
+          "enfermedades": ["MICOPLASMA", "CLAMIDIA", "CIRCOVIRUS", "PRRS", "INFLUENZA PORCINA"],
+          "descripcion": "Inflamación de bronquios y tejido intersticial pulmonar.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA EMBOLICA",
+          "enfermedades": ["TRUEPERELA PYOGENES", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación pulmonar causada por émbolos bacterianos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA EOSINOFILICA",
+          "enfermedades": ["ASCARIS SUUM"],
+          "descripcion": "Inflamación pulmonar con infiltración de eosinófilos, causada por migración de parásitos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA FIBRINO PURULENTA",
+          "enfermedades": ["PASTEURELOSIS", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS", "PLEURONEUMONIA"],
+          "descripcion": "Inflamación pulmonar con fibrina y pus, indicando infección bacteriana severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA FIBRINO-NECROTICA",
+          "enfermedades": ["PLEURONEUMONIA", "PASTEURELOSIS"],
+          "descripcion": "Inflamación pulmonar con fibrina y necrosis tisular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA HEMORRAGICA",
+          "enfermedades": ["PLEURONEUMONIA"],
+          "descripcion": "Inflamación pulmonar con hemorragias en el tejido pulmonar.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMONIA INTERSTICIAL",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "INFLUENZA PORCINA", "PRRS"],
+          "descripcion": "Inflamación del tejido intersticial pulmonar.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "NEUMOTORAX",
+          "enfermedades": ["PLEURONEUMONIA", "PASTEURELOSIS", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "SALMONELLA"],
+          "descripcion": "Acumulación de aire en la cavidad pleural, causando colapso pulmonar.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "NISTAGMO",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Movimientos involuntarios de los ojos, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "OCLUSION INTESTINAL",
+          "enfermedades": ["ASCARIS SUUM"],
+          "descripcion": "Bloqueo del intestino por parásitos, causando obstrucción del tránsito intestinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "OJOS HUNDIDOS",
+          "enfermedades": ["E. COLI", "ROTAVIRUS PORCINO", "SALMONELLA", "CLOSTRIDIUM P.", "GASTROENTERITIS TRASMISIBLE"],
+          "descripcion": "Ojos hundidos en las órbitas, indicando deshidratación severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "OLIGURIA",
+          "enfermedades": ["GASTROENTERITIS TRASMISIBLE", "LEPTOSPIROSIS"],
+          "descripcion": "Disminución en la producción de orina, indicando afectación renal o deshidratación.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "OLOR ACIDO DEL EXCREMENTO",
+          "enfermedades": ["COCCIDIOSIS"],
+          "descripcion": "Olor ácido característico en las heces, indicando infección parasitaria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "ONFALITIS",
+          "enfermedades": ["E. COLI", "EPIDERMITIS EXUDATIVA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación del ombligo en lechones recién nacidos.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "ONFALOFLEBITIS",
+          "enfermedades": ["TRUEPERELA PYOGENES", "E. COLI", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Inflamación de la vena umbilical, indicando infección bacteriana.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "OPACIDAD DE CORNEA",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL"],
+          "descripcion": "Pérdida de transparencia de la córnea, afectando la visión.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "OPISTOTONO",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Arqueamiento excesivo de la espalda hacia atrás, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "ORQUITIS",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "CLAMIDIA", "BRUCELOSIS"],
+          "descripcion": "Inflamación de los testículos, indicando infección bacteriana.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "OSCILACION DE LA CABEZA",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS"],
+          "descripcion": "Movimientos oscilantes de la cabeza, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "OSTEOMIELITIS PURULENTA",
+          "enfermedades": ["TRUEPERELA PYOGENES", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Inflamación purulenta del hueso y médula ósea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Infección"
+        },
+        {
+          "nombre": "PALIDEZ",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "CIRCOVIRUS", "ILEITIS"],
+          "descripcion": "Coloración pálida de la piel y mucosas, indicando anemia o shock.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PANCREATITIS",
+          "enfermedades": ["LEPTOSPIROSIS", "CAMPILOBACTERIOSIS", "AFLATOXINA"],
+          "descripcion": "Inflamación del páncreas, indicando afectación de este órgano.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PARALISIS",
+          "enfermedades": ["E. COLI", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Pérdida de la capacidad de movimiento, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "PARALISIS POSTERIOR",
+          "enfermedades": ["BRUCELOSIS", "ERISIPELA", "TRUEPERELA PYOGENES"],
+          "descripcion": "Pérdida de movimiento en las extremidades posteriores.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "PARTO PREMATURO",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE AUJESZKY", "PESTE PORCINA CLASICA", "LEPTOSPIROSIS", "BRUCELOSIS"],
+          "descripcion": "Nacimiento antes del tiempo normal de gestación.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PEDALEO",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Movimientos de pedaleo con las extremidades, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "PELO HIRSUTO",
+          "enfermedades": ["AFLATOXINA", "COCCIDIOSIS", "CIRCOVIRUS", "INFLUENZA PORCINA", "ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "PESTE PORCINA CLASICA", "PRRS"],
+          "descripcion": "Pelo áspero y erizado, indicando mal estado general del animal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PERICARDITIS",
+          "enfermedades": ["ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER", "CLAMIDIA", "PASTEURELOSIS"],
+          "descripcion": "Inflamación del pericardio (membrana que recubre el corazón).",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PERICARDITIS FIBRINOSA",
+          "enfermedades": ["PLEURONEUMONIA", "MICOPLASMA", "ENFERMEDAD DE OJO AZUL", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación del pericardio con formación de fibrina.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PERITONITIS",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación del peritoneo (membrana que recubre la cavidad abdominal).",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PERITONITIS FIBRINOSA",
+          "enfermedades": ["ENFERMEDAD DE OJO AZUL", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación del peritoneo con formación de fibrina.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PETEQUIA ESPLENICA",
+          "enfermedades": ["TRUEPERELA PYOGENES", "ERISIPELA", "SALMONELLA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Hemorragias puntiformes en el bazo, indicando afectación vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "PETEQUIA CARDIACA",
+          "enfermedades": ["ERISIPELA", "CIRCOVIRUS", "PARVOVIRUS PORCINO", "ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS"],
+          "descripcion": "Hemorragias puntiformes en el corazón, indicando afectación vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "PETEQUIA EN RIÑONES",
+          "enfermedades": ["PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "SALMONELLA", "LEPTOSPIROSIS"],
+          "descripcion": "Hemorragias puntiformes en los riñones, indicando afectación vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "PETEQUIA PULMONAR",
+          "enfermedades": ["PRRS", "ENFERMEDAD DE GLÄSSER", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Hemorragias puntiformes en el pulmón, indicando afectación vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "PIEL APERGAMINADA",
+          "enfermedades": ["EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Piel con aspecto de pergamino, indicando deshidratación y lesión cutánea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "PIEL SECA Y AGRIETADA",
+          "enfermedades": ["EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Piel seca con grietas, indicando deshidratación y lesión cutánea.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "PLACENTITIS",
+          "enfermedades": ["PRRS", "CLAMIDIA", "BRUCELOSIS", "ERISIPELA", "LEPTOSPIROSIS", "ZEARALENONA", "ENFERMEDAD DE AUJESZKY", "PESTE PORCINA CLASICA"],
+          "descripcion": "Inflamación de la placenta, afectando el desarrollo fetal.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PLEURITIS",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS", "PLEURONEUMONIA"],
+          "descripcion": "Inflamación de la pleura (membrana que recubre los pulmones).",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PLEURITIS FIBRINOSA",
+          "enfermedades": ["PLEURONEUMONIA", "MICOPLASMA", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de la pleura con formación de fibrina.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "PLEURITIS SEROSA",
+          "enfermedades": ["INFLUENZA PORCINA", "PASTEURELOSIS", "PLEURONEUMONIA", "MICOPLASMA"],
+          "descripcion": "Inflamación de la pleura con acumulación de líquido seroso.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "POLIARTRITIS",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "CLAMIDIA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de múltiples articulaciones simultáneamente.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "POLIDIPSIA",
+          "enfermedades": ["OCRATOXINA", "GASTROENTERITIS TRASMISIBLE", "PASTEURELOSIS", "LEPTOSPIROSIS", "AFLATOXINA", "FUMONISINA"],
+          "descripcion": "Sed excesiva, indicando deshidratación o afectación renal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "POLISEROSITIS",
+          "enfermedades": ["CLAMIDIA", "CIRCOVIRUS", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación de múltiples membranas serosas del cuerpo.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "POLISEROSITIS SEROFIBRINOSA",
+          "enfermedades": ["ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de múltiples membranas serosas con líquido seroso y fibrina.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "POSICION PERRO SENTADO",
+          "enfermedades": ["PLEURONEUMONIA", "ENFERMEDAD DE AUJESZKY", "PASTEURELOSIS"],
+          "descripcion": "Posición anormal sentada como un perro, indicando dificultad respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "POSTRACION",
+          "enfermedades": ["CIRCOVIRUS", "INFLUENZA PORCINA", "ENFERMEDAD DE OJO AZUL", "PASTEURELOSIS", "LEPTOSPIROSIS", "PESTE PORCINA CLASICA", "ESTREPTOCOCOSIS", "SALMONELLA", "TRUEPERELA PYOGENES", "EPIDERMITIS EXUDATIVA", "PRRS", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Estado de debilidad extrema y falta de respuesta, indicando enfermedad severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PRESENCIA DE GAS EN EL INTESTINO GRUESO",
+          "enfermedades": ["CLOSTRIDIUM P."],
+          "descripcion": "Acumulación de gas en el intestino grueso, indicando fermentación bacteriana anormal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PRESENCIA DE MOCO EN INTESTINO GRUESO",
+          "enfermedades": ["DISENTERIA PORCINA", "ILEITIS"],
+          "descripcion": "Presencia de moco en el intestino grueso, indicando inflamación intestinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PROLAPSO RECTAL",
+          "enfermedades": ["ZEARALENONA", "TRICOTECENOS", "DISENTERIA PORCINA"],
+          "descripcion": "Salida del recto a través del ano, indicando debilidad muscular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PROLAPSO UTERINO",
+          "enfermedades": ["ZEARALENONA", "TRICOTECENOS"],
+          "descripcion": "Salida del útero a través de la vulva, indicando debilidad muscular.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PSEUDOPREÑEZ",
+          "enfermedades": ["ZEARALENONA", "PARVOVIRUS PORCINO", "ENFERMEDAD DE AUJESZKY", "PRRS", "TRICOTECENOS", "AFLATOXINA"],
+          "descripcion": "Falsa gestación, indicando alteraciones hormonales.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "PUNTOS BLANCOS EN RIÑONES",
+          "enfermedades": ["LEPTOSPIROSIS", "OCRATOXINA", "CIRCOVIRUS"],
+          "descripcion": "Puntos blancos en los riñones, indicando lesiones o calcificaciones.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "QUEMOSIS",
+          "enfermedades": ["PESTE PORCINA CLASICA", "ENFERMEDAD DE OJO AZUL", "PRRS", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Hinchazón de la conjuntiva ocular, indicando inflamación severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "RAQUITISMO",
+          "enfermedades": ["ASCARIS SUUM"],
+          "descripcion": "Deformidad de la columna vertebral, causada por deficiencias nutricionales.",
+          "edades": ["Todas las edades"],
+          "tipo": "Deformidad"
+        },
+        {
+          "nombre": "REPETICIONES DE CELO 21-35 DIAS",
+          "enfermedades": ["PRRS", "LEPTOSPIROSIS", "PARVOVIRUS PORCINO", "CLAMIDIA", "ERISIPELA", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Ciclos estrales anormales con repeticiones cada 21-35 días.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "RETENCION PLACENTARIA",
+          "enfermedades": ["BRUCELOSIS", "CLAMIDIA"],
+          "descripcion": "Retención de la placenta después del parto, indicando infección uterina.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "RETRASO EN LA FECHA DE PARTO",
+          "enfermedades": ["PRRS"],
+          "descripcion": "Prolongación del período de gestación más allá de lo normal.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "RIGIDEZ MUSCULAR (ESPASTICIDAD)",
+          "enfermedades": ["ESTREPTOCOCOSIS", "CLAMIDIA", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Rigidez y espasmos musculares, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "SANGRE EN LA ORINA",
+          "enfermedades": ["LEPTOSPIROSIS", "OCRATOXINA", "TRICOTECENOS"],
+          "descripcion": "Presencia de sangre en la orina, indicando afectación renal o urinaria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "SEPTICEMIA",
+          "enfermedades": ["ESTREPTOCOCOSIS", "EPIDERMITIS EXUDATIVA", "BRUCELOSIS", "ERISIPELA", "E. COLI", "SALMONELLA"],
+          "descripcion": "Infección bacteriana en el torrente sanguíneo, indicando enfermedad sistémica severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Infección"
+        },
+        {
+          "nombre": "SIALORREA",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "PASTEURELOSIS", "PESTE PORCINA CLASICA"],
+          "descripcion": "Salivación excesiva, indicando afectación neurológica o inflamación oral.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "SINOVITIS",
+          "enfermedades": ["ERISIPELA", "ENFERMEDAD DE GLÄSSER", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de la membrana sinovial de las articulaciones.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "SORDERA",
+          "enfermedades": ["ESTREPTOCOCOSIS"],
+          "descripcion": "Pérdida de la audición, indicando afectación del oído interno.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "INMUNOSUPRESION",
+          "enfermedades": ["AFLATOXINA", "OCRATOXINA", "TRICOTECENOS", "FUMONISINA", "ZEARALENONA", "CIRCOVIRUS", "PRRS", "INFLUENZA PORCINA"],
+          "descripcion": "Disminución de la respuesta inmunológica, aumentando la susceptibilidad a infecciones.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TAQUIPNEA",
+          "enfermedades": ["INFLUENZA PORCINA", "PLEURONEUMONIA", "ENFERMEDAD DE GLÄSSER", "PASTEURELOSIS", "PESTE PORCINA AFRICANA", "PRRS", "MICOPLASMA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Respiración rápida y superficial, indicando dificultad respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TEMBLORES",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "ESTREPTOCOCOSIS", "LEPTOSPIROSIS", "PESTE PORCINA CLASICA", "TRICOTECENOS"],
+          "descripcion": "Movimientos involuntarios y rítmicos, indicando afectación neurológica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "TENDINITIS",
+          "enfermedades": ["BRUCELOSIS", "ERISIPELA", "ESTREPTOCOCOSIS", "ENFERMEDAD DE GLÄSSER"],
+          "descripcion": "Inflamación de los tendones, causando dolor y limitación del movimiento.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "TENESMO",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "COCCIDIOSIS", "SALMONELLA", "E. COLI", "DISENTERIA PORCINA"],
+          "descripcion": "Deseo doloroso e ineficaz de defecar, indicando inflamación rectal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TIFLITIS NECROTICA",
+          "enfermedades": ["SALMONELLA", "CLOSTRIDIUM P.", "ILEITIS"],
+          "descripcion": "Inflamación necrótica del ciego, indicando infección bacteriana severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "TIFLOCOLITIS",
+          "enfermedades": ["CAMPILOBACTERIOSIS", "DISENTERIA PORCINA", "SALMONELLA", "CLOSTRIDIUM P.", "ILEITIS"],
+          "descripcion": "Inflamación del ciego y colon, indicando infección intestinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "TONSILITIS NECROTICA",
+          "enfermedades": ["ENFERMEDAD DE AUJESZKY", "FUMONISINA", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Inflamación necrótica de las amígdalas, indicando infección severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Necrosis"
+        },
+        {
+          "nombre": "TORSION DEL TABIQUE NASAL",
+          "enfermedades": ["RINITIS ATROFICA"],
+          "descripcion": "Desviación del tabique nasal, característica de la rinitis atrófica.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Deformidad"
+        },
+        {
+          "nombre": "TOS ASMATICA",
+          "enfermedades": ["ASCARIS SUUM", "ESTRONGILOIDES"],
+          "descripcion": "Tos con características asmáticas, causada por migración de parásitos.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TOS CRONICA SECA",
+          "enfermedades": ["MICOPLASMA"],
+          "descripcion": "Tos seca persistente, característica de infección por micoplasma.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TOS PAROXISTICA",
+          "enfermedades": ["PLEURONEUMONIA", "PASTEURELOSIS", "INFLUENZA PORCINA", "PRRS", "CIRCOVIRUS"],
+          "descripcion": "Tos en ataques violentos y repetitivos, indicando afectación respiratoria severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TOS PRODUCTIVA",
+          "enfermedades": ["PRRS", "INFLUENZA PORCINA", "ENFERMEDAD DE AUJESZKY", "ENFERMEDAD DE OJO AZUL", "FUMONISINA", "SALMONELLA", "ESTRONGILOIDES", "PLEURONEUMONIA"],
+          "descripcion": "Tos con expectoración de moco o pus, indicando infección respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TOS SECA",
+          "enfermedades": ["PESTE PORCINA CLASICA", "RINITIS ATROFICA"],
+          "descripcion": "Tos sin expectoración, indicando irritación de las vías respiratorias.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "TRAQUEITIS",
+          "enfermedades": ["PLEURONEUMONIA", "CLAMIDIA", "PASTEURELOSIS", "ESTREPTOCOCOSIS"],
+          "descripcion": "Inflamación de la tráquea, causando dificultad respiratoria.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "TREMOR CONGENITO",
+          "enfermedades": ["CIRCOVIRUS", "ENFERMEDAD DE OJO AZUL", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA"],
+          "descripcion": "Temblores musculares presentes desde el nacimiento, indicando afectación neurológica congénita.",
+          "edades": ["Lechones lactantes"],
+          "tipo": "Signo neurológico"
+        },
+        {
+          "nombre": "TROMBOSIS CORONARIA",
+          "enfermedades": ["ERISIPELA", "ESTREPTOCOCOSIS"],
+          "descripcion": "Formación de coágulos en las arterias coronarias, causando isquemia cardíaca.",
+          "edades": ["Crecimiento/Engorda", "Adultos/Reproductores"],
+          "tipo": "Lesión vascular"
+        },
+        {
+          "nombre": "TROMBOSIS DE VASOS SANGUINEOS DEL PULMON",
+          "enfermedades": ["PASTEURELOSIS", "PLEURONEUMONIA", "PRRS"],
+          "descripcion": "Formación de coágulos en los vasos sanguíneos pulmonares, causando embolismo.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión vascular"
+        },
+        {
+          "nombre": "ULCERACION FOCAL DE INTESTINO DELGADO",
+          "enfermedades": ["COCCIDIOSIS", "ASCARIS SUUM", "ESTRONGILOIDES", "ILEITIS", "CLOSTRIDIUM P."],
+          "descripcion": "Úlceras localizadas en el intestino delgado, indicando inflamación crónica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ULCERAS BOTONOSAS EN INTESTINO DELGADO Y GRUESO",
+          "enfermedades": ["PESTE PORCINA CLASICA"],
+          "descripcion": "Úlceras características en forma de botón en el tracto intestinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ULCERAS EN LA PIEL",
+          "enfermedades": ["ZEARALENONA", "TRICOTECENOS", "OCRATOXINA", "EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Lesiones ulcerativas en la piel, causadas por toxinas o infecciones.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "ULCERAS ORALES",
+          "enfermedades": ["TRICOTECENOS", "OCRATOXINA"],
+          "descripcion": "Úlceras en la cavidad oral, indicando afectación por micotoxinas.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "URETRA PURULENTA",
+          "enfermedades": ["EPIDERMITIS EXUDATIVA"],
+          "descripcion": "Inflamación purulenta de la uretra, indicando infección bacteriana.",
+          "edades": ["Todas las edades"],
+          "tipo": "Infección"
+        },
+        {
+          "nombre": "URETRITIS",
+          "enfermedades": ["CLAMIDIA"],
+          "descripcion": "Inflamación de la uretra, causada por infección bacteriana.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "URTICARIA ROMBOIDE",
+          "enfermedades": ["ERISIPELA"],
+          "descripcion": "Lesiones cutáneas en forma de rombo, característica de la erisipela.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "VEJIGA ENGROSADA",
+          "enfermedades": ["OCRATOXINA", "CIRCOVIRUS"],
+          "descripcion": "Aumento del grosor de la pared vesical, indicando inflamación crónica.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "VEJIGA HEMORRAGICA",
+          "enfermedades": ["OCRATOXINA", "SALMONELLA", "CIRCOVIRUS"],
+          "descripcion": "Hemorragias en la vejiga urinaria, indicando lesión vascular.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "VEJIGA ULCEROSA",
+          "enfermedades": ["CIRCOVIRUS", "OCRATOXINA"],
+          "descripcion": "Presencia de úlceras en la mucosa vesical, indicando inflamación severa.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "VESICULA BILIAR HEMORRAGICA",
+          "enfermedades": ["CLOSTRIDIUM P.", "SALMONELLA", "AFLATOXINA"],
+          "descripcion": "Hemorragias en la vesícula biliar, indicando lesión hepática.",
+          "edades": ["Todas las edades"],
+          "tipo": "Lesión"
+        },
+        {
+          "nombre": "VESICULA BILIAR INFLAMADA COLOR VERDE OBSCURO",
+          "enfermedades": ["LEPTOSPIROSIS"],
+          "descripcion": "Inflamación de la vesícula biliar con coloración verde oscura, indicando colestasis.",
+          "edades": ["Todas las edades"],
+          "tipo": "Inflamación"
+        },
+        {
+          "nombre": "VIENTRE PROMINENTE",
+          "enfermedades": ["ASCARIS SUUM"],
+          "descripcion": "Abdomen distendido y prominente, causado por parasitosis intestinal.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "VOMITO",
+          "enfermedades": ["TRICOTECENOS", "ESTRONGILOIDES", "GASTROENTERITIS TRASMISIBLE", "PLEURONEUMONIA", "ROTAVIRUS PORCINO", "PESTE PORCINA AFRICANA", "PESTE PORCINA CLASICA", "DIARREA EPIDEMICA PORCINA", "ENFERMEDAD DE AUJESZKY"],
+          "descripcion": "Expulsión del contenido gástrico por la boca, indicando afectación digestiva.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "VOMITO CON MANCHAS DE SANGRE",
+          "enfermedades": ["CAMPILOBACTERIOSIS"],
+          "descripcion": "Vómito con presencia de sangre, indicando lesión en el tracto digestivo superior.",
+          "edades": ["Todas las edades"],
+          "tipo": "Signo clínico"
+        },
+        {
+          "nombre": "VULVOVAGINITIS",
+          "enfermedades": ["ZEARALENONA"],
+          "descripcion": "Inflamación de la vulva y vagina, causada por efectos estrogénicos de micotoxinas.",
+          "edades": ["Adultos/Reproductores"],
+          "tipo": "Inflamación"
+        }
+      ]
+    }
+  }
+} 

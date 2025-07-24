@@ -18,6 +18,11 @@ class FoundDiseasesActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Enfermedades encontradas"
+        
+        // Configurar color del texto del toolbar como blanco
+        binding.toolbar.setTitleTextColor(resources.getColor(R.color.white))
+        // Configurar color del icono de navegación como blanco
+        binding.toolbar.navigationIcon?.setTint(resources.getColor(R.color.white))
         // Mostrar enfermedades y coincidencias
         foundDiseasesAdapter = FoundDiseasesAdapter(emptyList())
         binding.foundDiseasesRecyclerView.apply {
@@ -41,10 +46,18 @@ class FoundDiseasesActivity : AppCompatActivity() {
         if (enfermedadesConContador != null && enfermedadesConContador.isNotEmpty()) {
             val diseaseList = enfermedadesConContador.entries.sortedByDescending { it.value }.map { it.key to it.value }
             foundDiseasesAdapter.updateDiseases(diseaseList)
-            binding.tvInfo.text = "Mostrando solo enfermedades con 2 o más síntomas seleccionados en común."
+            val textoInfo = when (tipoDiagnostico) {
+                "NECROPSIA" -> "Mostrando solo enfermedades con 2 o más lesiones seleccionadas en común."
+                else -> "Mostrando solo enfermedades con 2 o más síntomas seleccionados en común."
+            }
+            binding.tvInfo.text = textoInfo
         } else {
             foundDiseasesAdapter.updateDiseases(emptyList())
-            binding.tvInfo.text = "No se encontraron enfermedades con al menos 2 síntomas seleccionados en común."
+            val textoInfo = when (tipoDiagnostico) {
+                "NECROPSIA" -> "No se encontraron enfermedades con al menos 2 lesiones seleccionadas en común."
+                else -> "No se encontraron enfermedades con al menos 2 síntomas seleccionados en común."
+            }
+            binding.tvInfo.text = textoInfo
         }
     }
 

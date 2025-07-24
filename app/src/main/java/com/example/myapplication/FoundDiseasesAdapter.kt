@@ -1,8 +1,8 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemDiseaseBinding
 
@@ -16,7 +16,9 @@ class FoundDiseasesAdapter(
             binding.diseaseShortDescTextView.text = "Coincidencias: ${disease.second}"
             binding.root.setOnClickListener {
                 val context = binding.root.context
-                Toast.makeText(context, "Detalles de ${disease.first} - En desarrollo", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, DiseaseDetailActivity::class.java)
+                intent.putExtra("ENFERMEDAD_NOMBRE", disease.first)
+                context.startActivity(intent)
             }
         }
     }
